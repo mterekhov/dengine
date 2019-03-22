@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4CBF7ABF2245309E00537E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF7ABE2245309E00537E08 /* AppDelegate.swift */; };
+		4C8F5E76224536DD009C0E01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8F5E74224536DD009C0E01 /* AppDelegate.swift */; };
+		4C8F5E77224536DD009C0E01 /* AOpenGLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8F5E75224536DD009C0E01 /* AOpenGLView.swift */; };
 		4CBF7AC12245309E00537E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CBF7AC02245309E00537E08 /* Assets.xcassets */; };
 		4CBF7AC42245309E00537E08 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CBF7AC22245309E00537E08 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C8F5E74224536DD009C0E01 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4C8F5E75224536DD009C0E01 /* AOpenGLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AOpenGLView.swift; sourceTree = "<group>"; };
 		4CBF7ABB2245309E00537E08 /* game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CBF7ABE2245309E00537E08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CBF7AC02245309E00537E08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CBF7AC32245309E00537E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4CBF7AC52245309E00537E08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,13 +53,14 @@
 		4CBF7ABD2245309E00537E08 /* game */ = {
 			isa = PBXGroup;
 			children = (
-				4CBF7ABE2245309E00537E08 /* AppDelegate.swift */,
+				4C8F5E75224536DD009C0E01 /* AOpenGLView.swift */,
+				4C8F5E74224536DD009C0E01 /* AppDelegate.swift */,
 				4CBF7AC02245309E00537E08 /* Assets.xcassets */,
 				4CBF7AC22245309E00537E08 /* MainMenu.xib */,
 				4CBF7AC52245309E00537E08 /* Info.plist */,
 				4CBF7AC62245309E00537E08 /* game.entitlements */,
 			);
-			path = game;
+			name = game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,6 +95,7 @@
 				TargetAttributes = {
 					4CBF7ABA2245309E00537E08 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -130,7 +134,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CBF7ABF2245309E00537E08 /* AppDelegate.swift in Sources */,
+				4C8F5E76224536DD009C0E01 /* AppDelegate.swift in Sources */,
+				4C8F5E77224536DD009C0E01 /* AOpenGLView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,17 +272,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = game/game.entitlements;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = game.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 67BUZRGVX2;
-				INFOPLIST_FILE = game/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = customertimes.game;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -286,11 +293,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = game/game.entitlements;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = game.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 67BUZRGVX2;
-				INFOPLIST_FILE = game/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
