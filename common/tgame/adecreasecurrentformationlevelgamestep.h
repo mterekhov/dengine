@@ -18,7 +18,7 @@ public:
     ADecreaseCurrentFormationLevelGameStep();
     virtual ~ADecreaseCurrentFormationLevelGameStep();
     
-    virtual void executeStep(ADataStorage &dataStorage);
+    virtual void executeStep(ASceneGraph &dataStorage);
 };
 
 //==============================================================================

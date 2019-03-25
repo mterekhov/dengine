@@ -21,7 +21,7 @@ AFormationRotateGameStep::~AFormationRotateGameStep()
 
 //==============================================================================
 
-void AFormationRotateGameStep::executeStep(ADataStorage &dataStorage)
+void AFormationRotateGameStep::executeStep(ASceneGraph &dataStorage)
 {
     switch (_buttonCode)
     {
@@ -44,7 +44,7 @@ void AFormationRotateGameStep::executeStep(ADataStorage &dataStorage)
 
 //==============================================================================
 
-void AFormationRotateGameStep::rotateX(ADataStorage &dataStorage)
+void AFormationRotateGameStep::rotateX(ASceneGraph &dataStorage)
 {
     AMatrix m = AMatrix::rotationX(M_PI_2);
     rotate(m, dataStorage);
@@ -52,7 +52,7 @@ void AFormationRotateGameStep::rotateX(ADataStorage &dataStorage)
 
 //==============================================================================
 
-void AFormationRotateGameStep::rotateY(ADataStorage &dataStorage)
+void AFormationRotateGameStep::rotateY(ASceneGraph &dataStorage)
 {
     AMatrix m = AMatrix::rotationY(M_PI_2);
     rotate(m, dataStorage);
@@ -60,7 +60,7 @@ void AFormationRotateGameStep::rotateY(ADataStorage &dataStorage)
 
 //==============================================================================
 
-void AFormationRotateGameStep::rotateZ(ADataStorage &dataStorage)
+void AFormationRotateGameStep::rotateZ(ASceneGraph &dataStorage)
 {
     AMatrix m = AMatrix::rotationZ(M_PI_2);
     rotate(m, dataStorage);
@@ -68,7 +68,7 @@ void AFormationRotateGameStep::rotateZ(ADataStorage &dataStorage)
 
 //==============================================================================
 
-void AFormationRotateGameStep::rotate(const AMatrix& m, ADataStorage &dataStorage)
+void AFormationRotateGameStep::rotate(const AMatrix& m, ASceneGraph &dataStorage)
 {
     AFormation* rotatedFormation = AFormationOperations::createRotatedFrustumFormation(*dataStorage.currentFormation(),
                                                                                    m,

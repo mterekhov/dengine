@@ -29,7 +29,7 @@ void AGameStepsController::addStepToProcessQueue(AGameStepProtocol *gameStep)
 
 //==============================================================================
 
-TUint AGameStepsController::processSteps(ADataStorage& dataStorage)
+TUint AGameStepsController::processSteps(ASceneGraph& dataStorage)
 {
     printf("start %i steps execution ... ", _stepsQueue.size());
     

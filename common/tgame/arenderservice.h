@@ -29,11 +29,11 @@ typedef TRObjectsList::const_iterator TRObjectsListConstIter;
 
 //==============================================================================
 
-class ACrafter
+class ARenderService
 {
 private:
     ATextureManager _textureManager;
-    ADataStorage& _dataStorage;
+    ASceneGraph& _dataStorage;
     TRObjectsList _texturedRenderList;
     TRObjectsList _solidRenderList;
 
@@ -56,8 +56,8 @@ private:
     void createDroppedBlocks();
     
 public:
-    ACrafter(ADataStorage& dataStorage);
-    virtual ~ACrafter();
+    ARenderService(ASceneGraph& dataStorage);
+    virtual ~ARenderService();
 
     void refreshRenderLists();
     void processRender();

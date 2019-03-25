@@ -26,7 +26,7 @@ typedef TFormationList::const_iterator TFormationListConstIter;
 
 //==============================================================================
 
-class ADataStorage
+class ASceneGraph
 {
 private:
     //  list of all formations. It shouldn't be used for rendering!!!!
@@ -59,8 +59,8 @@ private:
 public:
     static TFloat cellSize();
 
-    ADataStorage();
-    ~ADataStorage();
+    ASceneGraph();
+    ~ASceneGraph();
     
     //  These methods create formations
     //  push it into _formationList and returns the created one

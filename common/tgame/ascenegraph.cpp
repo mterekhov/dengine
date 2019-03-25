@@ -11,21 +11,21 @@ namespace spcTGame
     
 //==============================================================================
 
-ADataStorage::ADataStorage() : _currentFormation(0), _wellFormation(0)
+ASceneGraph::ASceneGraph() : _currentFormation(0), _wellFormation(0)
 {
     srand(static_cast<TUint>(time(0)));
 }
 
 //==============================================================================
 
-ADataStorage::~ADataStorage()
+ASceneGraph::~ASceneGraph()
 {
     destroyAllFormations();
 }
 
 //==============================================================================
 
-TFloat ADataStorage::cellSize()
+TFloat ASceneGraph::cellSize()
 {
     return 1.0f;
 }
@@ -36,7 +36,7 @@ TFloat ADataStorage::cellSize()
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation1()
+AFormation* ASceneGraph::createFormation1()
 {
     AFormation* newFormation = AFormationFactory::createFormation1();
 
@@ -45,7 +45,7 @@ AFormation* ADataStorage::createFormation1()
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation2()
+AFormation* ASceneGraph::createFormation2()
 {
     AFormation* newFormation = AFormationFactory::createFormation2();
 
@@ -54,7 +54,7 @@ AFormation* ADataStorage::createFormation2()
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation3()
+AFormation* ASceneGraph::createFormation3()
 {
     AFormation* newFormation = AFormationFactory::createFormation3();
 
@@ -63,7 +63,7 @@ AFormation* ADataStorage::createFormation3()
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation4()
+AFormation* ASceneGraph::createFormation4()
 {
     AFormation* newFormation = AFormationFactory::createFormation4();
 
@@ -72,7 +72,7 @@ AFormation* ADataStorage::createFormation4()
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation5()
+AFormation* ASceneGraph::createFormation5()
 {
     AFormation* newFormation = AFormationFactory::createFormation5();
 
@@ -81,7 +81,7 @@ AFormation* ADataStorage::createFormation5()
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation6()
+AFormation* ASceneGraph::createFormation6()
 {
     AFormation* newFormation = AFormationFactory::createFormation6();
 
@@ -90,7 +90,7 @@ AFormation* ADataStorage::createFormation6()
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation7()
+AFormation* ASceneGraph::createFormation7()
 {
     AFormation* newFormation = AFormationFactory::createFormation7();
 
@@ -99,7 +99,7 @@ AFormation* ADataStorage::createFormation7()
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation8()
+AFormation* ASceneGraph::createFormation8()
 {
     AFormation* newFormation = AFormationFactory::createFormation8();
 
@@ -108,7 +108,7 @@ AFormation* ADataStorage::createFormation8()
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation9()
+AFormation* ASceneGraph::createFormation9()
 {
     AFormation* newFormation = AFormationFactory::createFormation9();
 
@@ -117,7 +117,7 @@ AFormation* ADataStorage::createFormation9()
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation10()
+AFormation* ASceneGraph::createFormation10()
 {
     AFormation* newFormation = AFormationFactory::createFormation10();
 
@@ -126,7 +126,7 @@ AFormation* ADataStorage::createFormation10()
 
 //==============================================================================
 
-AFormation* ADataStorage::createRandomFormation()
+AFormation* ASceneGraph::createRandomFormation()
 {
     TUint formationIndex = rand() % FORMATIONS_COUNT;
     AFormation* newFormation = 0;
@@ -175,14 +175,14 @@ AFormation* ADataStorage::createRandomFormation()
 
 //==============================================================================
 
-void ADataStorage::assignCurrentFormation(AFormation* formation)
+void ASceneGraph::assignCurrentFormation(AFormation* formation)
 {
     _currentFormation = createFormation(formation);
 }
 
 //==============================================================================
 
-void ADataStorage::replaceCurrentFormation(AFormation* formation)
+void ASceneGraph::replaceCurrentFormation(AFormation* formation)
 {
     deleteFormation(_currentFormation);
     _currentFormation = createFormation(formation);
@@ -190,7 +190,7 @@ void ADataStorage::replaceCurrentFormation(AFormation* formation)
 
 //==============================================================================
 
-AFormation* ADataStorage::currentFormation()
+AFormation* ASceneGraph::currentFormation()
 {
     return _currentFormation;
 }
@@ -201,7 +201,7 @@ AFormation* ADataStorage::currentFormation()
 
 //==============================================================================
 
-AFormation* ADataStorage::createWellFormation(const TFloat width, const TFloat height, const TFloat depth)
+AFormation* ASceneGraph::createWellFormation(const TFloat width, const TFloat height, const TFloat depth)
 {
     deleteFormation(_wellFormation);
     AFormation* newFormation = AFormationFactory::createFormation(width, height, depth);
@@ -212,28 +212,28 @@ AFormation* ADataStorage::createWellFormation(const TFloat width, const TFloat h
 
 //==============================================================================
 
-AFormation* ADataStorage::wellFormation()
+AFormation* ASceneGraph::wellFormation()
 {
     return _wellFormation;
 }
 
 //==============================================================================
 
-TFloat ADataStorage::wellWidth()
+TFloat ASceneGraph::wellWidth()
 {
     return _wellFormation->width();
 }
 
 //==============================================================================
 
-TFloat ADataStorage::wellHeight()
+TFloat ASceneGraph::wellHeight()
 {
     return _wellFormation->height();
 }
 
 //==============================================================================
 
-TFloat ADataStorage::wellDepth()
+TFloat ASceneGraph::wellDepth()
 {
     return _wellFormation->levelsCount();
 }
@@ -244,7 +244,7 @@ TFloat ADataStorage::wellDepth()
 
 //==============================================================================
 
-void ADataStorage::dropCurrentFormation()
+void ASceneGraph::dropCurrentFormation()
 {
     makeFormationDropped(_currentFormation);
     assignCurrentFormation(createRandomFormation());
@@ -252,7 +252,7 @@ void ADataStorage::dropCurrentFormation()
 
 //==============================================================================
 
-const TFormationList& ADataStorage::droppedFormationsList()
+const TFormationList& ASceneGraph::droppedFormationsList()
 {
     return _droppedFormationsList;
 }
@@ -263,14 +263,14 @@ const TFormationList& ADataStorage::droppedFormationsList()
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation(AFormation *formation)
+AFormation* ASceneGraph::createFormation(AFormation *formation)
 {
     return pushFormation(formation);
 }
 
 //==============================================================================
 
-AFormation* ADataStorage::pushFormation(AFormation* pushFormation)
+AFormation* ASceneGraph::pushFormation(AFormation* pushFormation)
 {
     _formationList.push_back(pushFormation);
 
@@ -279,7 +279,7 @@ AFormation* ADataStorage::pushFormation(AFormation* pushFormation)
 
 //==============================================================================
 
-void ADataStorage::destroyAllFormations()
+void ASceneGraph::destroyAllFormations()
 {
     for (TFormationListIter iter = _formationList.begin(); iter != _formationList.end(); iter++)
     {
@@ -290,7 +290,7 @@ void ADataStorage::destroyAllFormations()
 
 //==============================================================================
 
-void ADataStorage::deleteFormation(AFormation* formation)
+void ASceneGraph::deleteFormation(AFormation* formation)
 {
     if (formation == 0)
         return;
@@ -301,7 +301,7 @@ void ADataStorage::deleteFormation(AFormation* formation)
 
 //==============================================================================
 
-void ADataStorage::makeFormationDropped(AFormation *formation)
+void ASceneGraph::makeFormationDropped(AFormation *formation)
 {
     if (formation == 0)
         return;

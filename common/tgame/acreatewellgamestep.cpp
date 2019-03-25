@@ -19,7 +19,7 @@ ACreateWellGameStep::~ACreateWellGameStep()
 
 //==============================================================================
 
-void ACreateWellGameStep::executeStep(ADataStorage &dataStorage)
+void ACreateWellGameStep::executeStep(ASceneGraph &dataStorage)
 {
     dataStorage.createWellFormation(7, 7, 15);
 }

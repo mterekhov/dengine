@@ -15,20 +15,20 @@ namespace spcTGame
     
 //==============================================================================
     
-ABlockout::ABlockout() : _crafter(_dataStorage), _logic(_gameStepsController), _keyboardController(_gameStepsController)
+AGame::AGame() : _crafter(_dataStorage), _logic(_gameStepsController), _keyboardController(_gameStepsController)
 {
     init();
 }
 
 //==============================================================================
 
-ABlockout::~ABlockout()
+AGame::~AGame()
 {
 }
 
 //==============================================================================
 
-void ABlockout::init()
+void AGame::init()
 {
     //  call shared to create instance and init some OpenGL pars;
     spcTGame::AOpenGLState::create();
@@ -36,7 +36,7 @@ void ABlockout::init()
 
 //==============================================================================
 
-void ABlockout::startGame()
+void AGame::startGame()
 {
     //  creates all the formations we need
     _logic.startGame();
@@ -47,7 +47,7 @@ void ABlockout::startGame()
 
 //==============================================================================
 
-void ABlockout::processGameCycle()
+void AGame::processGameCycle()
 {
     _logic.processLogic();
     
@@ -59,14 +59,14 @@ void ABlockout::processGameCycle()
 
 //==============================================================================
     
-void ABlockout::processKeyboardEvent(const TUint buttonCode)
+void AGame::processKeyboardEvent(const TUint buttonCode)
 {
     _keyboardController.keyPressed(buttonCode);
 }
 
 //==============================================================================
 
-void ABlockout::updateScreenSize(const TDouble screenWidth, const TDouble screenHeight)
+void AGame::updateScreenSize(const TDouble screenWidth, const TDouble screenHeight)
 {
     AOpenGLState* oglState = spcTGame::AOpenGLState::shared();
     oglState->frustumSetup(screenWidth, screenHeight);

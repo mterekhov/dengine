@@ -31,7 +31,7 @@ public:
     AGameStepsController();
     ~AGameStepsController();
     void addStepToProcessQueue(AGameStepProtocol *gameStep);
-    TUint processSteps(ADataStorage& dataStorage);
+    TUint processSteps(ASceneGraph& dataStorage);
 };
 
 //==============================================================================

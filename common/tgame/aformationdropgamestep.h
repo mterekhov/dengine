@@ -21,7 +21,7 @@ public:
     AFormationDropGameStep();
     virtual ~AFormationDropGameStep();
     
-    virtual void executeStep(ADataStorage &dataStorage);
+    virtual void executeStep(ASceneGraph &dataStorage);
 };
 
 //==============================================================================

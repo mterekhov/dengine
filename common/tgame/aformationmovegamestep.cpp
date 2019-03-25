@@ -20,7 +20,7 @@ AFormationMoveGameStep::~AFormationMoveGameStep()
 
 //==============================================================================
 
-void AFormationMoveGameStep::executeStep(ADataStorage &dataStorage)
+void AFormationMoveGameStep::executeStep(ASceneGraph &dataStorage)
 {
     switch (_buttonCode)
     {
@@ -48,7 +48,7 @@ void AFormationMoveGameStep::executeStep(ADataStorage &dataStorage)
 
 //==============================================================================
 
-void AFormationMoveGameStep::moveCurrentFormationRight(ADataStorage &dataStorage)
+void AFormationMoveGameStep::moveCurrentFormationRight(ASceneGraph &dataStorage)
 {
     AFormation* currentFormation = dataStorage.currentFormation();
     APoint position = currentFormation->gridSpacePosition();
@@ -60,7 +60,7 @@ void AFormationMoveGameStep::moveCurrentFormationRight(ADataStorage &dataStorage
 
 //==============================================================================
 
-void AFormationMoveGameStep::moveCurrentFormationLeft(ADataStorage &dataStorage)
+void AFormationMoveGameStep::moveCurrentFormationLeft(ASceneGraph &dataStorage)
 {
     AFormation* currentFormation = dataStorage.currentFormation();
     APoint position = currentFormation->gridSpacePosition();
@@ -72,7 +72,7 @@ void AFormationMoveGameStep::moveCurrentFormationLeft(ADataStorage &dataStorage)
 
 //==============================================================================
 
-void AFormationMoveGameStep::moveCurrentFormationDown(ADataStorage &dataStorage)
+void AFormationMoveGameStep::moveCurrentFormationDown(ASceneGraph &dataStorage)
 {
     AFormation* currentFormation = dataStorage.currentFormation();
     APoint position = currentFormation->gridSpacePosition();
@@ -84,7 +84,7 @@ void AFormationMoveGameStep::moveCurrentFormationDown(ADataStorage &dataStorage)
 
 //==============================================================================
 
-void AFormationMoveGameStep::moveCurrentFormationUp(ADataStorage &dataStorage)
+void AFormationMoveGameStep::moveCurrentFormationUp(ASceneGraph &dataStorage)
 {
     AFormation* currentFormation = dataStorage.currentFormation();
     APoint position = currentFormation->gridSpacePosition();
@@ -96,7 +96,7 @@ void AFormationMoveGameStep::moveCurrentFormationUp(ADataStorage &dataStorage)
 
 //==============================================================================
 
-TBool AFormationMoveGameStep::isBreakingWellBound(const APoint& position, const AFormation* formation, ADataStorage &dataStorage)
+TBool AFormationMoveGameStep::isBreakingWellBound(const APoint& position, const AFormation* formation, ASceneGraph &dataStorage)
 {
     //  check top border
     if ((position.x + formation->height()) > dataStorage.wellHeight() ||

@@ -18,18 +18,18 @@ class AFormationRotateGameStep : public AGameStepProtocol
 private:
     TUint _buttonCode;
     
-    TBool isBreakingWellBound(const APoint& position, const AFormation* formation, ADataStorage &dataStorage);
+    TBool isBreakingWellBound(const APoint& position, const AFormation* formation, ASceneGraph &dataStorage);
 
-    void rotateX(ADataStorage &dataStorage);
-    void rotateY(ADataStorage &dataStorage);
-    void rotateZ(ADataStorage &dataStorage);
-    void rotate(const AMatrix& m, ADataStorage &dataStorage);
+    void rotateX(ASceneGraph &dataStorage);
+    void rotateY(ASceneGraph &dataStorage);
+    void rotateZ(ASceneGraph &dataStorage);
+    void rotate(const AMatrix& m, ASceneGraph &dataStorage);
 
 public:
     AFormationRotateGameStep(const TUint buttonCode);
     virtual ~AFormationRotateGameStep();
     
-    virtual void executeStep(ADataStorage &dataStorage);
+    virtual void executeStep(ASceneGraph &dataStorage);
 };
 
 //==============================================================================

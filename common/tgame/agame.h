@@ -17,21 +17,21 @@ namespace spcTGame
     
 //==============================================================================
 
-class ABlockout
+class AGame
 {
 private:
     void init();
     void render();
 
-    ADataStorage _dataStorage;
-    ACrafter _crafter;
+    ASceneGraph _dataStorage;
+    ARenderService _crafter;
     ALogic _logic;
     AKeyboardController _keyboardController;
     AGameStepsController _gameStepsController;
         
 public:
-    ABlockout();
-    ~ABlockout();
+    AGame();
+    ~AGame();
     
     void updateScreenSize(const TDouble screenWidth, const TDouble screenHeight);
     

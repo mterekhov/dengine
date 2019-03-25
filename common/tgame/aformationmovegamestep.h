@@ -17,18 +17,18 @@ class AFormationMoveGameStep : public AGameStepProtocol
 private:
     TUint _buttonCode;
         
-    TBool isBreakingWellBound(const APoint& position, const AFormation* formation, ADataStorage &dataStorage);
+    TBool isBreakingWellBound(const APoint& position, const AFormation* formation, ASceneGraph &dataStorage);
 
-    void moveCurrentFormationDown(ADataStorage &dataStorage);
-    void moveCurrentFormationUp(ADataStorage &dataStorage);
-    void moveCurrentFormationLeft(ADataStorage &dataStorage);
-    void moveCurrentFormationRight(ADataStorage &dataStorage);
+    void moveCurrentFormationDown(ASceneGraph &dataStorage);
+    void moveCurrentFormationUp(ASceneGraph &dataStorage);
+    void moveCurrentFormationLeft(ASceneGraph &dataStorage);
+    void moveCurrentFormationRight(ASceneGraph &dataStorage);
     
 public:
     AFormationMoveGameStep(const TUint buttonCode);
     virtual ~AFormationMoveGameStep();
     
-    virtual void executeStep(ADataStorage &dataStorage);
+    virtual void executeStep(ASceneGraph &dataStorage);
 };
 
 //==============================================================================

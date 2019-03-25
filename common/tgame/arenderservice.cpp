@@ -16,13 +16,13 @@ namespace spcTGame
 
 //==============================================================================
 
-ACrafter::ACrafter(ADataStorage& dataStorage): _dataStorage(dataStorage)
+ARenderService::ARenderService(ASceneGraph& dataStorage): _dataStorage(dataStorage)
 {
 }
 
 //==============================================================================
 
-ACrafter::~ACrafter()
+ARenderService::~ARenderService()
 {
     clearAllLists();
 }
@@ -33,7 +33,7 @@ ACrafter::~ACrafter()
 
 //==============================================================================
 
-void ACrafter::refreshRenderLists()
+void ARenderService::refreshRenderLists()
 {
     renewRenderLists();
 }
@@ -44,7 +44,7 @@ void ACrafter::refreshRenderLists()
 
 //==============================================================================
 
-void ACrafter::renewRenderLists()
+void ARenderService::renewRenderLists()
 {
     clearAllLists();
     
@@ -60,7 +60,7 @@ void ACrafter::renewRenderLists()
 
 //==============================================================================
 
-void ACrafter::createDroppedBlocks()
+void ARenderService::createDroppedBlocks()
 {
     const TFormationList& droppedFormations = _dataStorage.droppedFormationsList();
     for (TFormationListConstIter iter = droppedFormations.begin(); iter != droppedFormations.end(); iter++)
@@ -77,7 +77,7 @@ void ACrafter::createDroppedBlocks()
 
 //==============================================================================
 
-AWell* ACrafter::createWell()
+AWell* ARenderService::createWell()
 {
     AWell* well = new AWell(_dataStorage.wellFormation());
     addObjectForRender(well);
@@ -91,7 +91,7 @@ AWell* ACrafter::createWell()
 
 //==============================================================================
 
-ASolidBlock* ACrafter::createSolidBlock(AFormation* formation)
+ASolidBlock* ARenderService::createSolidBlock(AFormation* formation)
 {
     ASolidBlock* newBlock = new ASolidBlock(formation);
     addObjectForRender(newBlock);
@@ -101,7 +101,7 @@ ASolidBlock* ACrafter::createSolidBlock(AFormation* formation)
 
 //==============================================================================
 
-AColoredBlock* ACrafter::createColoredBlock(AFormation* formation)
+AColoredBlock* ARenderService::createColoredBlock(AFormation* formation)
 {
     AColoredBlock* newBlock = new AColoredBlock(formation);
     addObjectForRender(newBlock);
@@ -111,7 +111,7 @@ AColoredBlock* ACrafter::createColoredBlock(AFormation* formation)
 
 //==============================================================================
 
-ATexturedBlock* ACrafter::createTexturedBlock(AFormation* formation, const ATexture& texture)
+ATexturedBlock* ARenderService::createTexturedBlock(AFormation* formation, const ATexture& texture)
 {
     ATexturedBlock* newBlock = new ATexturedBlock(formation, texture);
     addObjectForRender(newBlock);
@@ -125,7 +125,7 @@ ATexturedBlock* ACrafter::createTexturedBlock(AFormation* formation, const AText
 
 //==============================================================================
 
-void ACrafter::generateTexturedRenderList(const TFormationList& formations, const ATexture& texture)
+void ARenderService::generateTexturedRenderList(const TFormationList& formations, const ATexture& texture)
 {
     for (TFormationListConstIter iter = formations.begin(); iter != formations.end(); iter++)
     {
@@ -135,7 +135,7 @@ void ACrafter::generateTexturedRenderList(const TFormationList& formations, cons
 
 //==============================================================================
 
-void ACrafter::clearAllLists()
+void ARenderService::clearAllLists()
 {
     clearRenderList();
     clearTextureList();
@@ -143,7 +143,7 @@ void ACrafter::clearAllLists()
 
 //==============================================================================
 
-void ACrafter::clearRenderList()
+void ARenderService::clearRenderList()
 {
     if (!clearList(_solidRenderList))
     {
@@ -153,7 +153,7 @@ void ACrafter::clearRenderList()
 
 //==============================================================================
 
-void ACrafter::clearTextureList()
+void ARenderService::clearTextureList()
 {
     if (!clearList(_texturedRenderList))
     {
@@ -163,7 +163,7 @@ void ACrafter::clearTextureList()
 
 //==============================================================================
 
-TBool ACrafter::clearList(TRObjectsList& renderList)
+TBool ARenderService::clearList(TRObjectsList& renderList)
 {
     if (renderList.size() == 0)
         return false;
@@ -180,7 +180,7 @@ TBool ACrafter::clearList(TRObjectsList& renderList)
 
 //==============================================================================
 
-TBool ACrafter::addObjectForRender(ARObject* object)
+TBool ARenderService::addObjectForRender(ARObject* object)
 {
     if (object == 0)
         return false;
@@ -208,18 +208,15 @@ TBool ACrafter::addObjectForRender(ARObject* object)
 
 //==============================================================================
 
-void ACrafter::processRender()
+void ARenderService::processRender()
 {
     AOpenGLState* oglState = AOpenGLState::shared();
     oglState->clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     oglState->pushMarices();
 
-    TFloat wWidth = _dataStorage.wellWidth();
-    TFloat wHeight = _dataStorage.wellHeight();
-    TFloat wDepth = _dataStorage.wellDepth();
-    ADrawBasics::installCamera(AVector(wHeight / 2.0f, 2.0f * wDepth, wWidth / 2.0f),
-                               AVector(wHeight / 2.0f, 0.0f, wWidth / 2.0f),
+    ADrawBasics::installCamera(AVector(5.0f, 5.0f, 5.0f),
+                               AVector(0.0f, 0.0f, 0.0f),
                                AVector(1.0f, 0.0f, 0.0f));
  
     renderContent();
@@ -229,29 +226,31 @@ void ACrafter::processRender()
 
 //==============================================================================
 
-void ACrafter::renderContent()
+void ARenderService::renderContent()
 {
     AOpenGLState* oglState = AOpenGLState::shared();
 
     //  Draw solid list
     AColor previousColor = oglState->drawColor();
-    TRObjectsList listToRender = _solidRenderList;
-    renderList(listToRender);
-    oglState->drawColor(previousColor);
-
-    //  Draw textured objects
-    previousColor = oglState->drawColor();
-    oglState->drawColor(AColor::whiteColor());
-    oglState->textureEnable();
-    listToRender = _texturedRenderList;
-    renderList(listToRender);
-    oglState->textureDisable();
+//    TRObjectsList listToRender = _solidRenderList;
+//    renderList(listToRender);
+//    oglState->drawColor(previousColor);
+//
+//    //  Draw textured objects
+//    previousColor = oglState->drawColor();
+//    oglState->drawColor(AColor::whiteColor());
+//    oglState->textureEnable();
+//    listToRender = _texturedRenderList;
+//    renderList(listToRender);
+//    oglState->textureDisable();
+    oglState->drawColor(AColor::redColor());
+    ADrawBasics::drawGrid(50, 50, 1);
     oglState->drawColor(previousColor);
 }
 
 //==============================================================================
 
-void ACrafter::renderList(const TRObjectsList& renderList)
+void ARenderService::renderList(const TRObjectsList& renderList)
 {
     if (renderList.size() == 0)
         return;

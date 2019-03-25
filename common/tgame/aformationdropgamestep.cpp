@@ -19,7 +19,7 @@ AFormationDropGameStep::~AFormationDropGameStep()
 
 //==============================================================================
 
-void AFormationDropGameStep::executeStep(ADataStorage &dataStorage)
+void AFormationDropGameStep::executeStep(ASceneGraph &dataStorage)
 {
     //  assign drop position to current formation
     AFormation *formationToDrop = dataStorage.currentFormation();

@@ -1,5 +1,5 @@
 #import "ARenderView.h"
-#import "ABlockout.h"
+#import "AGame.h"
 
 #import <Foundation/Foundation.h>
 
@@ -9,7 +9,7 @@
     @property (nonatomic, assign) NSTimeInterval animationInterval;
     @property (nonatomic, assign) NSTimeInterval animationStarted;
     @property (nonatomic, strong) NSTimer *animationTimer;
-    @property (nonatomic, assign) spcTGame::ABlockout *gameEngine;
+    @property (nonatomic, assign) spcTGame::AGame *gameEngine;
 @end
 
 //==============================================================================
@@ -30,7 +30,7 @@
         return nil;
     }
     
-    self.gameEngine = new spcTGame::ABlockout();
+    self.gameEngine = new spcTGame::AGame();
     self.animationInterval = 1.0f / 60.0f;
     [self startAnimation];
     self.gameEngine->startGame();

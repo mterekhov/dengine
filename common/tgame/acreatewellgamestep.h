@@ -21,7 +21,7 @@ public:
     ACreateWellGameStep();
     virtual ~ACreateWellGameStep();
     
-    virtual void executeStep(ADataStorage &dataStorage);
+    virtual void executeStep(ASceneGraph &dataStorage);
 };
 
 //==============================================================================

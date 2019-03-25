@@ -19,7 +19,7 @@ namespace spcTGame
 class AGameStepProtocol
 {
 public:
-    virtual void executeStep(ADataStorage &dataStorage) = 0;
+    virtual void executeStep(ASceneGraph &dataStorage) = 0;
 };
 
 //==============================================================================

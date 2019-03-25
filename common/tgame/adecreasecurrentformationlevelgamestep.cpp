@@ -19,7 +19,7 @@ ADecreaseCurrentFormationLevelGameStep::~ADecreaseCurrentFormationLevelGameStep(
 
 //==============================================================================
 
-void ADecreaseCurrentFormationLevelGameStep::executeStep(ADataStorage &dataStorage)
+void ADecreaseCurrentFormationLevelGameStep::executeStep(ASceneGraph &dataStorage)
 {
     AFormation *currentFormation = dataStorage.currentFormation();
     APoint currentFormationPosition = currentFormation->gridSpacePosition();
