@@ -221,7 +221,7 @@ void ACrafter::processRender()
     ADrawBasics::installCamera(AVector(wHeight / 2.0f, 2.0f * wDepth, wWidth / 2.0f),
                                AVector(wHeight / 2.0f, 0.0f, wWidth / 2.0f),
                                AVector(1.0f, 0.0f, 0.0f));
-
+ 
     renderContent();
 
     oglState->popMarices();
