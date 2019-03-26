@@ -38,6 +38,23 @@
 		4C3AF41B224542AB00130404 /* apoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3EE224542AB00130404 /* apoint.cpp */; };
 		4C3AF41C224542AB00130404 /* aimage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3F4224542AB00130404 /* aimage.cpp */; };
 		4C45AB3E224A8230004141E7 /* amonster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB3C224A8230004141E7 /* amonster.cpp */; };
+		4C45AB65224A88EE004141E7 /* aimagedata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB40224A88EC004141E7 /* aimagedata.cpp */; };
+		4C45AB66224A88EE004141E7 /* asprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB41224A88EC004141E7 /* asprite.cpp */; };
+		4C45AB67224A88EE004141E7 /* acolormap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB46224A88ED004141E7 /* acolormap.cpp */; };
+		4C45AB68224A88EE004141E7 /* apalete.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB4B224A88ED004141E7 /* apalete.cpp */; };
+		4C45AB69224A88EE004141E7 /* apicture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB4C224A88ED004141E7 /* apicture.cpp */; };
+		4C45AB6A224A88EE004141E7 /* alevelintegrity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB4E224A88ED004141E7 /* alevelintegrity.cpp */; };
+		4C45AB6B224A88EE004141E7 /* alump.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB4F224A88ED004141E7 /* alump.cpp */; };
+		4C45AB6C224A88EE004141E7 /* autilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB51224A88ED004141E7 /* autilities.cpp */; };
+		4C45AB6D224A88EE004141E7 /* aflat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB52224A88ED004141E7 /* aflat.cpp */; };
+		4C45AB6E224A88EE004141E7 /* awad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB54224A88ED004141E7 /* awad.cpp */; };
+		4C45AB6F224A88EE004141E7 /* ademo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB58224A88ED004141E7 /* ademo.cpp */; };
+		4C45AB70224A88EE004141E7 /* athing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB59224A88ED004141E7 /* athing.cpp */; };
+		4C45AB71224A88EE004141E7 /* atexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB5A224A88ED004141E7 /* atexture.cpp */; };
+		4C45AB72224A88EE004141E7 /* atgaexporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB5D224A88ED004141E7 /* atgaexporter.cpp */; };
+		4C45AB74224A88EE004141E7 /* ageometryreadservice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB61224A88EE004141E7 /* ageometryreadservice.cpp */; };
+		4C45AB75224A88EE004141E7 /* alevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB62224A88EE004141E7 /* alevel.cpp */; };
+		4C45AB76224A88EE004141E7 /* aendoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB63224A88EE004141E7 /* aendoom.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +123,42 @@
 		4C3AF3F6224542AB00130404 /* blockouttypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = blockouttypes.h; path = ../common/tgame/blockouttypes.h; sourceTree = "<group>"; };
 		4C45AB3C224A8230004141E7 /* amonster.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = amonster.cpp; path = ../common/tgame/amonster.cpp; sourceTree = "<group>"; };
 		4C45AB3D224A8230004141E7 /* amonster.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = amonster.h; path = ../common/tgame/amonster.h; sourceTree = "<group>"; };
+		4C45AB40224A88EC004141E7 /* aimagedata.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aimagedata.cpp; path = ../common/wad/aimagedata.cpp; sourceTree = "<group>"; };
+		4C45AB41224A88EC004141E7 /* asprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = asprite.cpp; path = ../common/wad/asprite.cpp; sourceTree = "<group>"; };
+		4C45AB42224A88ED004141E7 /* enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = enums.h; path = ../common/wad/enums.h; sourceTree = "<group>"; };
+		4C45AB43224A88ED004141E7 /* acolormap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = acolormap.h; path = ../common/wad/acolormap.h; sourceTree = "<group>"; };
+		4C45AB44224A88ED004141E7 /* atexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atexture.h; path = ../common/wad/atexture.h; sourceTree = "<group>"; };
+		4C45AB45224A88ED004141E7 /* apicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = apicture.h; path = ../common/wad/apicture.h; sourceTree = "<group>"; };
+		4C45AB46224A88ED004141E7 /* acolormap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = acolormap.cpp; path = ../common/wad/acolormap.cpp; sourceTree = "<group>"; };
+		4C45AB47224A88ED004141E7 /* ageometryreadservice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ageometryreadservice.h; path = ../common/wad/ageometryreadservice.h; sourceTree = "<group>"; };
+		4C45AB48224A88ED004141E7 /* autilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = autilities.h; path = ../common/wad/autilities.h; sourceTree = "<group>"; };
+		4C45AB49224A88ED004141E7 /* alevelintegrity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alevelintegrity.h; path = ../common/wad/alevelintegrity.h; sourceTree = "<group>"; };
+		4C45AB4A224A88ED004141E7 /* aflat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aflat.h; path = ../common/wad/aflat.h; sourceTree = "<group>"; };
+		4C45AB4B224A88ED004141E7 /* apalete.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = apalete.cpp; path = ../common/wad/apalete.cpp; sourceTree = "<group>"; };
+		4C45AB4C224A88ED004141E7 /* apicture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = apicture.cpp; path = ../common/wad/apicture.cpp; sourceTree = "<group>"; };
+		4C45AB4D224A88ED004141E7 /* apalete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = apalete.h; path = ../common/wad/apalete.h; sourceTree = "<group>"; };
+		4C45AB4E224A88ED004141E7 /* alevelintegrity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = alevelintegrity.cpp; path = ../common/wad/alevelintegrity.cpp; sourceTree = "<group>"; };
+		4C45AB4F224A88ED004141E7 /* alump.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = alump.cpp; path = ../common/wad/alump.cpp; sourceTree = "<group>"; };
+		4C45AB50224A88ED004141E7 /* aimagedata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aimagedata.h; path = ../common/wad/aimagedata.h; sourceTree = "<group>"; };
+		4C45AB51224A88ED004141E7 /* autilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = autilities.cpp; path = ../common/wad/autilities.cpp; sourceTree = "<group>"; };
+		4C45AB52224A88ED004141E7 /* aflat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aflat.cpp; path = ../common/wad/aflat.cpp; sourceTree = "<group>"; };
+		4C45AB53224A88ED004141E7 /* ademo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ademo.h; path = ../common/wad/ademo.h; sourceTree = "<group>"; };
+		4C45AB54224A88ED004141E7 /* awad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = awad.cpp; path = ../common/wad/awad.cpp; sourceTree = "<group>"; };
+		4C45AB55224A88ED004141E7 /* aendoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aendoom.h; path = ../common/wad/aendoom.h; sourceTree = "<group>"; };
+		4C45AB56224A88ED004141E7 /* atgaexporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atgaexporter.h; path = ../common/wad/atgaexporter.h; sourceTree = "<group>"; };
+		4C45AB57224A88ED004141E7 /* alevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alevel.h; path = ../common/wad/alevel.h; sourceTree = "<group>"; };
+		4C45AB58224A88ED004141E7 /* ademo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ademo.cpp; path = ../common/wad/ademo.cpp; sourceTree = "<group>"; };
+		4C45AB59224A88ED004141E7 /* athing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = athing.cpp; path = ../common/wad/athing.cpp; sourceTree = "<group>"; };
+		4C45AB5A224A88ED004141E7 /* atexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atexture.cpp; path = ../common/wad/atexture.cpp; sourceTree = "<group>"; };
+		4C45AB5B224A88ED004141E7 /* asprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = asprite.h; path = ../common/wad/asprite.h; sourceTree = "<group>"; };
+		4C45AB5C224A88ED004141E7 /* athing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = athing.h; path = ../common/wad/athing.h; sourceTree = "<group>"; };
+		4C45AB5D224A88ED004141E7 /* atgaexporter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atgaexporter.cpp; path = ../common/wad/atgaexporter.cpp; sourceTree = "<group>"; };
+		4C45AB5F224A88EE004141E7 /* awad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = awad.h; path = ../common/wad/awad.h; sourceTree = "<group>"; };
+		4C45AB60224A88EE004141E7 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = types.h; path = ../common/wad/types.h; sourceTree = "<group>"; };
+		4C45AB61224A88EE004141E7 /* ageometryreadservice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ageometryreadservice.cpp; path = ../common/wad/ageometryreadservice.cpp; sourceTree = "<group>"; };
+		4C45AB62224A88EE004141E7 /* alevel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = alevel.cpp; path = ../common/wad/alevel.cpp; sourceTree = "<group>"; };
+		4C45AB63224A88EE004141E7 /* aendoom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aendoom.cpp; path = ../common/wad/aendoom.cpp; sourceTree = "<group>"; };
+		4C45AB64224A88EE004141E7 /* alump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alump.h; path = ../common/wad/alump.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,16 +175,16 @@
 		4C1B89E922491C7E00418BE5 /* Render */ = {
 			isa = PBXGroup;
 			children = (
-				4C3AF3D4224542AA00130404 /* ascenenode.h */,
-				4C3AF3AF224542A900130404 /* ascenenode.cpp */,
 				4C45AB3D224A8230004141E7 /* amonster.h */,
 				4C45AB3C224A8230004141E7 /* amonster.cpp */,
+				4C3AF3D4224542AA00130404 /* ascenenode.h */,
+				4C3AF3AF224542A900130404 /* ascenenode.cpp */,
 				4C3AF3E4224542AB00130404 /* ascenegraph.h */,
 				4C3AF3EB224542AB00130404 /* ascenegraph.cpp */,
 				4C3AF3AB224542A900130404 /* arenderservice.h */,
 				4C3AF3E8224542AB00130404 /* arenderservice.cpp */,
-				4C3AF3B1224542A900130404 /* afrustumborder.cpp */,
 				4C3AF3E7224542AB00130404 /* afrustumborder.h */,
+				4C3AF3B1224542A900130404 /* afrustumborder.cpp */,
 			);
 			name = Render;
 			sourceTree = "<group>";
@@ -174,6 +227,7 @@
 		4C2E7AA422453AD00059E112 = {
 			isa = PBXGroup;
 			children = (
+				4C45AB3F224A88C9004141E7 /* WAD */,
 				4C2E7AC7224540D20059E112 /* GameEngine */,
 				4C2E7AAF22453AD00059E112 /* Game */,
 				4C2E7AAE22453AD00059E112 /* Products */,
@@ -232,6 +286,49 @@
 				4C3AF3A92245428C00130404 /* amacbundle.mm */,
 			);
 			name = mac;
+			sourceTree = "<group>";
+		};
+		4C45AB3F224A88C9004141E7 /* WAD */ = {
+			isa = PBXGroup;
+			children = (
+				4C45AB46224A88ED004141E7 /* acolormap.cpp */,
+				4C45AB43224A88ED004141E7 /* acolormap.h */,
+				4C45AB58224A88ED004141E7 /* ademo.cpp */,
+				4C45AB53224A88ED004141E7 /* ademo.h */,
+				4C45AB63224A88EE004141E7 /* aendoom.cpp */,
+				4C45AB55224A88ED004141E7 /* aendoom.h */,
+				4C45AB52224A88ED004141E7 /* aflat.cpp */,
+				4C45AB4A224A88ED004141E7 /* aflat.h */,
+				4C45AB61224A88EE004141E7 /* ageometryreadservice.cpp */,
+				4C45AB47224A88ED004141E7 /* ageometryreadservice.h */,
+				4C45AB40224A88EC004141E7 /* aimagedata.cpp */,
+				4C45AB50224A88ED004141E7 /* aimagedata.h */,
+				4C45AB62224A88EE004141E7 /* alevel.cpp */,
+				4C45AB57224A88ED004141E7 /* alevel.h */,
+				4C45AB4E224A88ED004141E7 /* alevelintegrity.cpp */,
+				4C45AB49224A88ED004141E7 /* alevelintegrity.h */,
+				4C45AB4F224A88ED004141E7 /* alump.cpp */,
+				4C45AB64224A88EE004141E7 /* alump.h */,
+				4C45AB4B224A88ED004141E7 /* apalete.cpp */,
+				4C45AB4D224A88ED004141E7 /* apalete.h */,
+				4C45AB4C224A88ED004141E7 /* apicture.cpp */,
+				4C45AB45224A88ED004141E7 /* apicture.h */,
+				4C45AB41224A88EC004141E7 /* asprite.cpp */,
+				4C45AB5B224A88ED004141E7 /* asprite.h */,
+				4C45AB5A224A88ED004141E7 /* atexture.cpp */,
+				4C45AB44224A88ED004141E7 /* atexture.h */,
+				4C45AB5D224A88ED004141E7 /* atgaexporter.cpp */,
+				4C45AB56224A88ED004141E7 /* atgaexporter.h */,
+				4C45AB59224A88ED004141E7 /* athing.cpp */,
+				4C45AB5C224A88ED004141E7 /* athing.h */,
+				4C45AB51224A88ED004141E7 /* autilities.cpp */,
+				4C45AB48224A88ED004141E7 /* autilities.h */,
+				4C45AB54224A88ED004141E7 /* awad.cpp */,
+				4C45AB5F224A88EE004141E7 /* awad.h */,
+				4C45AB42224A88ED004141E7 /* enums.h */,
+				4C45AB60224A88EE004141E7 /* types.h */,
+			);
+			name = WAD;
 			sourceTree = "<group>";
 		};
 		4CD08D4F22492592008963CD /* OpenGL */ = {
@@ -340,6 +437,7 @@
 				4C3AF402224542AB00130404 /* amatrix.cpp in Sources */,
 				4C3AF41B224542AB00130404 /* apoint.cpp in Sources */,
 				4C3AF3FF224542AB00130404 /* aopenglstate.cpp in Sources */,
+				4C45AB71224A88EE004141E7 /* atexture.cpp in Sources */,
 				4C3AF3AA2245428C00130404 /* amacbundle.mm in Sources */,
 				4C3AF40F224542AB00130404 /* aoglwrapper.cpp in Sources */,
 				4C3AF415224542AB00130404 /* blockoutdebug.cpp in Sources */,
@@ -347,23 +445,39 @@
 				4C2E7ABA22453AD10059E112 /* main.m in Sources */,
 				4C3AF3FB224542AB00130404 /* ascenenode.cpp in Sources */,
 				4C3AF418224542AB00130404 /* arenderservice.cpp in Sources */,
+				4C45AB76224A88EE004141E7 /* aendoom.cpp in Sources */,
+				4C45AB6A224A88EE004141E7 /* alevelintegrity.cpp in Sources */,
+				4C45AB65224A88EE004141E7 /* aimagedata.cpp in Sources */,
+				4C45AB67224A88EE004141E7 /* acolormap.cpp in Sources */,
 				4C3AF404224542AB00130404 /* alogic.cpp in Sources */,
 				4C3AF412224542AB00130404 /* atexturemanager.cpp in Sources */,
 				4C3AF41C224542AB00130404 /* aimage.cpp in Sources */,
 				4C3AF3FD224542AB00130404 /* afrustumborder.cpp in Sources */,
+				4C45AB6D224A88EE004141E7 /* aflat.cpp in Sources */,
 				4C3AF40D224542AB00130404 /* adrawbasics.cpp in Sources */,
 				4C3AF40B224542AB00130404 /* atexture.cpp in Sources */,
+				4C45AB6F224A88EE004141E7 /* ademo.cpp in Sources */,
 				4C3AF410224542AB00130404 /* agamestepscontroller.cpp in Sources */,
+				4C45AB74224A88EE004141E7 /* ageometryreadservice.cpp in Sources */,
+				4C45AB6C224A88EE004141E7 /* autilities.cpp in Sources */,
 				4C3AF417224542AB00130404 /* akeyboardcontroller.cpp in Sources */,
+				4C45AB6B224A88EE004141E7 /* alump.cpp in Sources */,
 				4C3AF3FC224542AB00130404 /* atga.cpp in Sources */,
 				4C3AF3FE224542AB00130404 /* avector.cpp in Sources */,
+				4C45AB75224A88EE004141E7 /* alevel.cpp in Sources */,
 				4C3AF406224542AB00130404 /* apoint2d.cpp in Sources */,
 				4C3AF405224542AB00130404 /* agame.cpp in Sources */,
+				4C45AB68224A88EE004141E7 /* apalete.cpp in Sources */,
 				4C3AF419224542AB00130404 /* ascenegraph.cpp in Sources */,
 				4C3AF409224542AB00130404 /* acolor.cpp in Sources */,
 				4C3AF416224542AB00130404 /* abundle.cpp in Sources */,
+				4C45AB6E224A88EE004141E7 /* awad.cpp in Sources */,
+				4C45AB69224A88EE004141E7 /* apicture.cpp in Sources */,
 				4C3AF401224542AB00130404 /* adataliner.cpp in Sources */,
 				4C45AB3E224A8230004141E7 /* amonster.cpp in Sources */,
+				4C45AB66224A88EE004141E7 /* asprite.cpp in Sources */,
+				4C45AB72224A88EE004141E7 /* atgaexporter.cpp in Sources */,
+				4C45AB70224A88EE004141E7 /* athing.cpp in Sources */,
 				4C2E7AC622453B0C0059E112 /* AAppDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
