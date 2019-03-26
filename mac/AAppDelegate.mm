@@ -5,7 +5,7 @@
 
 @interface AAppDelegate ()
 
-@property (assign) IBOutlet NSWindow* window;
+@property (nonatomic, weak) IBOutlet NSWindow *window;
 
 @end
 
@@ -17,9 +17,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    NSOpenGLPixelFormatAttribute attrs [] = {
+    NSOpenGLPixelFormatAttribute openglPixelFormatAttributes [] = {
         NSOpenGLPFANoRecovery,
-//        NSOpenGLPFAWindow,
         NSOpenGLPFAColorSize, 32,
         NSOpenGLPFADepthSize, 32,
         NSOpenGLPFAMaximumPolicy,
@@ -27,12 +26,12 @@
         NSOpenGLPFAAccelerated,
         0
     };
-    NSOpenGLPixelFormat* pixelFormat = [[NSOpenGLPixelFormat alloc] initWithAttributes: attrs];
+    NSOpenGLPixelFormat* openglPixelFormat = [[NSOpenGLPixelFormat alloc] initWithAttributes: openglPixelFormatAttributes];
+    ARenderView* openglView = [[ARenderView alloc] initWithFrame: self.window.frame
+                                                     pixelFormat: openglPixelFormat];
 
-    ARenderView* view = [[ARenderView alloc] initWithFrame: self.window.frame
-                                                pixelFormat: pixelFormat];
-    [self.window setContentView:view];
-    [self.window makeFirstResponder: view];
+    self.window.contentView = openglView;
+    [self.window makeFirstResponder: openglView];
 }
 
 //==============================================================================

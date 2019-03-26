@@ -7,7 +7,7 @@
 //
 //==============================================================================
 
-#include "adatastorage.h"
+#include "ascenegraph.h"
 
 //==============================================================================
 
@@ -19,7 +19,7 @@ namespace spcTGame
 class AGameStepProtocol
 {
 public:
-    virtual void executeStep(ASceneGraph &dataStorage) = 0;
+    virtual void executeStep(ASceneGraph &sceneGraph) = 0;
 };
 
 //==============================================================================

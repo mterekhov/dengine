@@ -3,11 +3,10 @@
 
 //==============================================================================
 
-#include "acrafter.h"
+#include "ascenegraph.h"
+#include "arenderservice.h"
 #include "alogic.h"
-#include "acolor.h"
 #include "akeyboardcontroller.h"
-#include "adatastorage.h"
 #include "agamestepscontroller.h"
 
 //==============================================================================
@@ -23,8 +22,8 @@ private:
     void init();
     void render();
 
-    ASceneGraph _dataStorage;
-    ARenderService _crafter;
+    ASceneGraph _sceneGraph;
+    ARenderService _renderService;
     ALogic _logic;
     AKeyboardController _keyboardController;
     AGameStepsController _gameStepsController;
@@ -34,7 +33,6 @@ public:
     ~AGame();
     
     void updateScreenSize(const TDouble screenWidth, const TDouble screenHeight);
-    
     void startGame();
     void processKeyboardEvent(const TUint buttonCode);
     void processGameCycle();

@@ -140,11 +140,11 @@ void ADrawBasics::drawGrid(const TFloat rowsNumber, const TFloat columnsNumber, 
     AColor color = oglInstance->drawColor();
 
     oglInstance->drawColor(AColor::whiteColor());
-    for (TFloat i = -50.0f; i < 50.0f; i+= 1.0f)
-        drawLine(APoint(-50.0f * scale, 0.0f, i * scale), APoint(50.0f * scale, 0.0f, i * scale));
+    for (TFloat i = -rowsNumber; i < rowsNumber; i+= 1.0f)
+        drawLine(APoint(-rowsNumber * scale, 0.0f, i * scale), APoint(rowsNumber * scale, 0.0f, i * scale));
 
-    for (TFloat i = -50.0f; i < 50.0f; i+= 1.0f)
-        drawLine(APoint(i * scale, 0.0f, -50.0f * scale), APoint(i * scale, 0.0f, 50.0f * scale));
+    for (TFloat i = -columnsNumber; i < columnsNumber; i+= 1.0f)
+        drawLine(APoint(i * scale, 0.0f, -columnsNumber * scale), APoint(i * scale, 0.0f, columnsNumber * scale));
 
     oglInstance->drawColor(color);
 }

@@ -6,6 +6,7 @@
 #include <vector>
 
 #include "agamestepprotocol.h"
+#include "blockouttypes.h"
 
 //==============================================================================
 
@@ -31,7 +32,7 @@ public:
     AGameStepsController();
     ~AGameStepsController();
     void addStepToProcessQueue(AGameStepProtocol *gameStep);
-    TUint processSteps(ASceneGraph& dataStorage);
+    TUint processSteps(ASceneGraph& sceneGraph);
 };
 
 //==============================================================================

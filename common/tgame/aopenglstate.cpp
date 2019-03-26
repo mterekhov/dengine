@@ -36,7 +36,7 @@ AOpenGLState* AOpenGLState::shared()
 
 //==============================================================================
 
-AOpenGLState::AOpenGLState() : _lineWidth(1.0f), _textureEnabled(false), _currentTexture(ATextureManager::zeroTexture())
+AOpenGLState::AOpenGLState() : _lineWidth(1.0f), _textureEnabled(false), _currentTexture(ATextureManager::zeroTexture()), _drawColor(AColor::whiteColor())
 {
     drawColorSetup(_drawColor);
     clearColorSetup(_clearColor);

@@ -9,12 +9,8 @@
 
 #include <list>
 
-#include "atexturedblock.h"
-#include "asolidblock.h"
-#include "ablock.h"
 #include "atexturemanager.h"
-#include "awell.h"
-#include "adatastorage.h"
+#include "ascenegraph.h"
 
 //==============================================================================
 
@@ -23,7 +19,9 @@ namespace spcTGame
     
 //==============================================================================
 
-typedef std::list<ARObject*> TRObjectsList;
+class ARObject;
+    
+typedef std::list<ARObject *> TRObjectsList;
 typedef TRObjectsList::iterator TRObjectsListIter;
 typedef TRObjectsList::const_iterator TRObjectsListConstIter;
 
@@ -33,33 +31,16 @@ class ARenderService
 {
 private:
     ATextureManager _textureManager;
-    ASceneGraph& _dataStorage;
+    ASceneGraph& _sceneGraph;
     TRObjectsList _texturedRenderList;
     TRObjectsList _solidRenderList;
 
-    void generateTexturedRenderList(const TFormationList& formations, const ATexture& texture);
-    
-    void renewRenderLists();
-    void clearAllLists();
-    void clearTextureList();
-    void clearRenderList();
-    TBool clearList(TRObjectsList& renderList);
-    
     void renderContent();
-    void renderList(const TRObjectsList& renderList);
-    
-    TBool addObjectForRender(ARObject* object);
-    ATexturedBlock* createTexturedBlock(AFormation* formation, const ATexture& texture);
-    ASolidBlock* createSolidBlock(AFormation* formation);
-    AColoredBlock* createColoredBlock(AFormation* formation);
-    AWell* createWell();
-    void createDroppedBlocks();
     
 public:
     ARenderService(ASceneGraph& dataStorage);
-    virtual ~ARenderService();
-
-    void refreshRenderLists();
+    ~ARenderService();
+    
     void processRender();
 };
 

@@ -7,7 +7,6 @@
 
 @interface ARenderView ()
     @property (nonatomic, assign) NSTimeInterval animationInterval;
-    @property (nonatomic, assign) NSTimeInterval animationStarted;
     @property (nonatomic, strong) NSTimer *animationTimer;
     @property (nonatomic, assign) spcTGame::AGame *gameEngine;
 @end
@@ -30,11 +29,16 @@
         return nil;
     }
     
-    self.gameEngine = new spcTGame::AGame();
+    self.openGLContext.view = self;
+
     self.animationInterval = 1.0f / 60.0f;
-    [self startAnimation];
+    
+    self.gameEngine = new spcTGame::AGame();
+    self.gameEngine->updateScreenSize(CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds));
     self.gameEngine->startGame();
 
+    [self startAnimation];
+    
     return self;
 }
 
@@ -50,7 +54,7 @@
 - (void)viewDidEndLiveResize
 {
 	[self stopAnimation];
-    self.gameEngine->updateScreenSize(self.frame.size.width, self.frame.size.height);
+    self.gameEngine->updateScreenSize(CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds));
     [self startAnimation];
 }
 
@@ -63,8 +67,7 @@
 - (void)animationTimerHandler
 {
     self.gameEngine->processGameCycle();
-    
-    [[NSOpenGLContext currentContext] flushBuffer];
+    [self.openGLContext flushBuffer];
 }
 
 //==============================================================================
@@ -76,7 +79,6 @@
                                                          selector: @selector(animationTimerHandler)
                                                          userInfo: nil
                                                           repeats: YES];
-	self.animationStarted = [NSDate timeIntervalSinceReferenceDate];
 }
 
 //==============================================================================

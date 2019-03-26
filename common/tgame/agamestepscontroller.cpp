@@ -1,4 +1,5 @@
 #include "agamestepscontroller.h"
+#include "blockouttypes.h"
 
 //==============================================================================
 
@@ -29,7 +30,7 @@ void AGameStepsController::addStepToProcessQueue(AGameStepProtocol *gameStep)
 
 //==============================================================================
 
-TUint AGameStepsController::processSteps(ASceneGraph& dataStorage)
+TUint AGameStepsController::processSteps(ASceneGraph& sceneGraph)
 {
     printf("start %i steps execution ... ", _stepsQueue.size());
     
@@ -37,7 +38,7 @@ TUint AGameStepsController::processSteps(ASceneGraph& dataStorage)
     for (TGameStepsQueueIter iter = _stepsQueue.begin(); iter != _stepsQueue.end(); iter++)
     {
         AGameStepProtocol *step = *iter;
-        step->executeStep(dataStorage);
+        step->executeStep(sceneGraph);
         delete step;
         stepsProcessed++;
     }

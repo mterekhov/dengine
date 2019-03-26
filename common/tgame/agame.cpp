@@ -1,10 +1,6 @@
-#include "ablockout.h"
+#include "agame.h"
 #include "adrawbasics.h"
 #include "aopenglstate.h"
-#include "awell.h"
-#include "atexturedblock.h"
-#include "asolidblock.h"
-#include "aformationfactory.h"
 #include "blockoutdebug.h"
 #include "aoglwrapper.h"
 
@@ -15,7 +11,7 @@ namespace spcTGame
     
 //==============================================================================
     
-AGame::AGame() : _crafter(_dataStorage), _logic(_gameStepsController), _keyboardController(_gameStepsController)
+AGame::AGame() : _renderService(_sceneGraph), _logic(_gameStepsController), _keyboardController(_gameStepsController)
 {
     init();
 }
@@ -40,9 +36,6 @@ void AGame::startGame()
 {
     //  creates all the formations we need
     _logic.startGame();
-    
-    //  creating all the render lists to draw
-    _crafter.refreshRenderLists();
 }
 
 //==============================================================================
@@ -51,10 +44,10 @@ void AGame::processGameCycle()
 {
     _logic.processLogic();
     
-    if (_gameStepsController.processSteps(_dataStorage) != 0)
-        _crafter.refreshRenderLists();
+//    if (_gameStepsController.processSteps(_sceneGraph) != 0)
+//        _renderService.refreshRenderLists();
         
-    _crafter.processRender();
+    _renderService.processRender();
 }
 
 //==============================================================================
