@@ -2,11 +2,9 @@
 #define SPCTGAME_ADATASTORAGE_H
 
 //==============================================================================
-//
-//  This class is responsible for creating and storing formations of any kind
-//  Also it is instance provided as a reference to all the members of application
-//  you need.
-//
+
+#include <list>
+
 //==============================================================================
 
 namespace spcTGame
@@ -14,11 +12,27 @@ namespace spcTGame
 
 //==============================================================================
 
+class ASceneNode;
+    
+//==============================================================================
+
+typedef std::list<ASceneNode> TSceneNodesList;
+typedef TSceneNodesList::iterator TSceneNodesListIter;
+typedef TSceneNodesList::const_iterator TSceneNodesListConstIter;
+
+//==============================================================================
+
 class ASceneGraph
 {
+private:
+    TSceneNodesList _texturedNodesList;
+    TSceneNodesList _solidNodesList;
+
 public:
     ASceneGraph();
     ~ASceneGraph();
+    
+    void addObject(const ASceneNode& object);
 };
 
 //==============================================================================

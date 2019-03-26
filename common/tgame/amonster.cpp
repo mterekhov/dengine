@@ -1,5 +1,4 @@
-#ifndef SPCTGAME_AROBJECT_H
-#define SPCTGAME_AROBJECT_H
+#include "amonster.h"
 
 //==============================================================================
 
@@ -7,33 +6,25 @@ namespace spcTGame
 {
     
 //==============================================================================
-    
-enum EObjectType
+
+AMonster::AMonster(const APoint& point, const ATexture& texture) : _texture(texture), _point(point)
 {
-    OBJECTTYPE_SOLID,
-    OBJECTTYPE_TEXTURED
-};
+    _nodeType = NODETYPE_TEXTURED;
+}
 
 //==============================================================================
 
-class ARObject
+AMonster::~AMonster()
 {
-protected:
-    EObjectType _objectType;
+}
+
+//==============================================================================
+
+void AMonster::renderObject()
+{
     
-public:
-    ARObject();
-    ARObject(const ARObject& object);
-    virtual ~ARObject();
-    
-    virtual void renderObject();
-    EObjectType objectType() const;
-};
+}
 
 //==============================================================================
 
 }   //  namespace spcTGame
-
-//==============================================================================
-    
-#endif  //  SPCTGAME_AROBJECT_H

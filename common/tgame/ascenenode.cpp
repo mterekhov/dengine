@@ -1,4 +1,4 @@
-#include "arobject.h"
+#include "ascenenode.h"
 
 //==============================================================================
 
@@ -7,33 +7,47 @@ namespace spcTGame
     
 //==============================================================================
     
-ARObject::ARObject() : _objectType(OBJECTTYPE_SOLID)
+ASceneNode::ASceneNode() : _nodeType(NODETYPE_SOLID)
 {
 }
 
 //==============================================================================
 
-ARObject::ARObject(const ARObject& object) : _objectType(object._objectType)
+ASceneNode::ASceneNode(const ASceneNode& object) : _nodeType(object._nodeType)
 {
 }
 
 //==============================================================================
 
-ARObject::~ARObject()
+ASceneNode::~ASceneNode()
 {
 }
 
 //==============================================================================
 
-void ARObject::renderObject()
+ASceneNode& ASceneNode::operator=(const ASceneNode& rv)
+{
+    if (this == &rv)
+    {
+        return *this;
+    }
+
+    _nodeType = rv._nodeType;
+
+    return *this;
+}
+
+//==============================================================================
+    
+void ASceneNode::renderObject()
 {
 }
 
 //==============================================================================
 
-EObjectType ARObject::objectType() const
+ENodeType ASceneNode::nodeType() const
 {
-    return _objectType;
+    return _nodeType;
 }
 
 //==============================================================================

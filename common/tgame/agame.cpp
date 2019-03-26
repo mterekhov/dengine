@@ -3,6 +3,7 @@
 #include "aopenglstate.h"
 #include "blockoutdebug.h"
 #include "aoglwrapper.h"
+#include "amonster.h"
 
 //==============================================================================
 
@@ -35,6 +36,10 @@ void AGame::init()
 void AGame::startGame()
 {
     //  creates all the formations we need
+    
+//    _sceneGraph.addObject(AMonster());
+    
+    
     _logic.startGame();
 }
 

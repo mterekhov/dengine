@@ -19,12 +19,8 @@ namespace spcTGame
     
 //==============================================================================
 
-class ARObject;
+class ASceneNode;
     
-typedef std::list<ARObject *> TRObjectsList;
-typedef TRObjectsList::iterator TRObjectsListIter;
-typedef TRObjectsList::const_iterator TRObjectsListConstIter;
-
 //==============================================================================
 
 class ARenderService
@@ -32,8 +28,6 @@ class ARenderService
 private:
     ATextureManager _textureManager;
     ASceneGraph& _sceneGraph;
-    TRObjectsList _texturedRenderList;
-    TRObjectsList _solidRenderList;
 
     void renderContent();
     
