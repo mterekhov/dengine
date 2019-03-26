@@ -5,6 +5,7 @@
 
 #include "ascenenode.h"
 #include "apoint.h"
+#include "atexture.h"
 
 //==============================================================================
 

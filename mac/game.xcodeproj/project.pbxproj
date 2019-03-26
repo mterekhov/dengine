@@ -16,7 +16,6 @@
 		4C3AF3AA2245428C00130404 /* amacbundle.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3A92245428C00130404 /* amacbundle.mm */; };
 		4C3AF3FB224542AB00130404 /* ascenenode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3AF224542A900130404 /* ascenenode.cpp */; };
 		4C3AF3FC224542AB00130404 /* atga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3B0224542A900130404 /* atga.cpp */; };
-		4C3AF3FD224542AB00130404 /* afrustumborder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3B1224542A900130404 /* afrustumborder.cpp */; };
 		4C3AF3FE224542AB00130404 /* avector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3B2224542A900130404 /* avector.cpp */; };
 		4C3AF3FF224542AB00130404 /* aopenglstate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3B3224542A900130404 /* aopenglstate.cpp */; };
 		4C3AF401224542AB00130404 /* adataliner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3B9224542A900130404 /* adataliner.cpp */; };
@@ -75,7 +74,6 @@
 		4C3AF3AC224542A900130404 /* apoint2d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = apoint2d.h; path = ../common/tgame/apoint2d.h; sourceTree = "<group>"; };
 		4C3AF3AF224542A900130404 /* ascenenode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ascenenode.cpp; path = ../common/tgame/ascenenode.cpp; sourceTree = "<group>"; };
 		4C3AF3B0224542A900130404 /* atga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atga.cpp; path = ../common/tgame/atga.cpp; sourceTree = "<group>"; };
-		4C3AF3B1224542A900130404 /* afrustumborder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = afrustumborder.cpp; path = ../common/tgame/afrustumborder.cpp; sourceTree = "<group>"; };
 		4C3AF3B2224542A900130404 /* avector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = avector.cpp; path = ../common/tgame/avector.cpp; sourceTree = "<group>"; };
 		4C3AF3B3224542A900130404 /* aopenglstate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aopenglstate.cpp; path = ../common/tgame/aopenglstate.cpp; sourceTree = "<group>"; };
 		4C3AF3B7224542A900130404 /* agamestepscontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = agamestepscontroller.h; path = ../common/tgame/agamestepscontroller.h; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 		4C3AF3E4224542AB00130404 /* ascenegraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ascenegraph.h; path = ../common/tgame/ascenegraph.h; sourceTree = "<group>"; };
 		4C3AF3E5224542AB00130404 /* abundle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = abundle.cpp; path = ../common/tgame/abundle.cpp; sourceTree = "<group>"; };
 		4C3AF3E6224542AB00130404 /* akeyboardcontroller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = akeyboardcontroller.cpp; path = ../common/tgame/akeyboardcontroller.cpp; sourceTree = "<group>"; };
-		4C3AF3E7224542AB00130404 /* afrustumborder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = afrustumborder.h; path = ../common/tgame/afrustumborder.h; sourceTree = "<group>"; };
 		4C3AF3E8224542AB00130404 /* arenderservice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = arenderservice.cpp; path = ../common/tgame/arenderservice.cpp; sourceTree = "<group>"; };
 		4C3AF3E9224542AB00130404 /* abundleprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = abundleprotocol.h; path = ../common/tgame/abundleprotocol.h; sourceTree = "<group>"; };
 		4C3AF3EA224542AB00130404 /* adrawbasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adrawbasics.h; path = ../common/tgame/adrawbasics.h; sourceTree = "<group>"; };
@@ -183,8 +180,6 @@
 				4C3AF3EB224542AB00130404 /* ascenegraph.cpp */,
 				4C3AF3AB224542A900130404 /* arenderservice.h */,
 				4C3AF3E8224542AB00130404 /* arenderservice.cpp */,
-				4C3AF3E7224542AB00130404 /* afrustumborder.h */,
-				4C3AF3B1224542A900130404 /* afrustumborder.cpp */,
 			);
 			name = Render;
 			sourceTree = "<group>";
@@ -452,7 +447,6 @@
 				4C3AF404224542AB00130404 /* alogic.cpp in Sources */,
 				4C3AF412224542AB00130404 /* atexturemanager.cpp in Sources */,
 				4C3AF41C224542AB00130404 /* aimage.cpp in Sources */,
-				4C3AF3FD224542AB00130404 /* afrustumborder.cpp in Sources */,
 				4C45AB6D224A88EE004141E7 /* aflat.cpp in Sources */,
 				4C3AF40D224542AB00130404 /* adrawbasics.cpp in Sources */,
 				4C3AF40B224542AB00130404 /* atexture.cpp in Sources */,
