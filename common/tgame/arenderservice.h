@@ -9,7 +9,6 @@
 
 #include <list>
 
-#include "atexturemanager.h"
 #include "ascenegraph.h"
 
 //==============================================================================
@@ -26,10 +25,9 @@ class ASceneNode;
 class ARenderService
 {
 private:
-    ATextureManager _textureManager;
     ASceneGraph& _sceneGraph;
 
-    void renderContent();
+    void renderTexturedObjects();
     
 public:
     ARenderService(ASceneGraph& dataStorage);

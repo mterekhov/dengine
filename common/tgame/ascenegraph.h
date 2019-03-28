@@ -4,6 +4,9 @@
 //==============================================================================
 
 #include <list>
+#include "atexturemanager.h"
+#include "anodeobject.h"
+#include "ascenenode.h"
 
 //==============================================================================
 
@@ -20,6 +23,10 @@ typedef std::list<ASceneNode> TSceneNodesList;
 typedef TSceneNodesList::iterator TSceneNodesListIter;
 typedef TSceneNodesList::const_iterator TSceneNodesListConstIter;
 
+typedef std::list<ANodeObject *> TObjectsList;
+typedef TObjectsList::iterator TObjectsListIter;
+typedef TObjectsList::const_iterator TObjectsListConstIter;
+
 //==============================================================================
 
 class ASceneGraph
@@ -27,12 +34,17 @@ class ASceneGraph
 private:
     TSceneNodesList _texturedNodesList;
     TSceneNodesList _solidNodesList;
+    
+    TObjectsList _objectsList;
 
 public:
+    ATextureManager _textureManager;
+
     ASceneGraph();
     ~ASceneGraph();
     
-    void addObject(const ASceneNode& object);
+    void addObject(ANodeObject *object, const APoint& position, const ENodeType nodeType);
+    const TSceneNodesList& texturedNodes() const;
 };
 
 //==============================================================================

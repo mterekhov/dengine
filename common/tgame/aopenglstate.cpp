@@ -146,6 +146,13 @@ void AOpenGLState::popMarices()
 
 //==============================================================================
 
+void AOpenGLState::translate(const APoint& point)
+{
+    AOGLWrapper::oglTranslatef(point.x, point.y, point.z);
+}
+
+//==============================================================================
+
 void AOpenGLState::textureEnable()
 {
     if (_textureEnabled)
@@ -183,7 +190,7 @@ TBool AOpenGLState::textureEnabled() const
 
 //==============================================================================
 
-TBool AOpenGLState::currentTexture(ATexture& texture)
+TBool AOpenGLState::currentTexture(const ATexture& texture)
 {
     if (_textureEnabled == false)
         return false;

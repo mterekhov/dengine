@@ -3,13 +3,15 @@
 
 //==============================================================================
 
-#include "ascenenode.h"
-#include "apoint.h"
+#include "anodeobject.h"
 #include "atexture.h"
+#include "apoint2d.h"
+#include "apoint.h"
 
 //==============================================================================
 
 class ATexture;
+class TPoints2DList;
 
 //==============================================================================
 
@@ -18,17 +20,19 @@ namespace spcTGame
 
 //==============================================================================
 
-class AMonster : public ASceneNode
+class AMonster : public ANodeObject
 {
 private:
     const ATexture& _texture;
-    APoint _point;
     
-public:
-    AMonster(const APoint& point, const ATexture& texture);
-    ~AMonster();
+    TPoints2DList generatePlaneUVPoints(const ATexture& texture) const;
+    TPointsList generatePlanePoints(const TFloat textureWidth, const TFloat textureHeight) const;
 
-    virtual void renderObject();
+public:
+    AMonster(ATexture& texture);
+    virtual ~AMonster();
+
+    virtual void renderObject() const;
 };
 
 //==============================================================================

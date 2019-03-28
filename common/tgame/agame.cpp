@@ -4,6 +4,7 @@
 #include "blockoutdebug.h"
 #include "aoglwrapper.h"
 #include "amonster.h"
+#include "abundle.h"
 
 //==============================================================================
 
@@ -36,9 +37,9 @@ void AGame::init()
 void AGame::startGame()
 {
     //  creates all the formations we need
-    
-//    _sceneGraph.addObject(AMonster());
-    
+    std::string textureFileName = ABundle().fullPathToResource("celtic.tga");
+    ATexture& monsterTexture = _sceneGraph._textureManager.createOrFindTextureFromTGA(textureFileName);
+    _sceneGraph.addObject(new AMonster(monsterTexture), APoint(), NODETYPE_TEXTURED);
     
     _logic.startGame();
 }

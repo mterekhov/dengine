@@ -5,6 +5,7 @@
 
 #include "acolor.h"
 #include "atexture.h"
+#include "apoint.h"
 
 //==============================================================================
 
@@ -48,13 +49,15 @@ public:
     void pushMarices();
     void popMarices();
     
+    void translate(const APoint& point);
+    
     void textureEnable();
     void textureDisable();
     TBool textureEnabled() const;
     
     void clear(GLbitfield mask);
     
-    TBool currentTexture(ATexture& texture);
+    TBool currentTexture(const ATexture& texture);
     const ATexture& currentTexture() const;
     void clearCurrentTexture();
     

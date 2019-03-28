@@ -14,6 +14,34 @@ namespace spcTGame
 
 //==============================================================================
 
+void ADrawBasics::drawTexturedPlane(const TPointsList& coordspoints, const TPoints2DList uvpoints, const ATexture& texture)
+{
+    ADataLiner dataLiner;
+    dataLiner.pushCoordPointList(coordspoints);
+    dataLiner.pushUVPointList(uvpoints);
+    
+    TFloat* line = new TFloat[dataLiner.numberOfFloatValues()];
+    memset(line, 0, dataLiner.numberOfFloatValues() * sizeof(TFloat));
+    
+    if (dataLiner.generateArray(line) == false)
+    {
+        return;
+    }
+    
+    AOpenGLState *instance = AOpenGLState::shared();
+    instance->currentTexture(texture);
+    
+    TUint strideInBytes = sizeof(TFloat) * dataLiner.arrayStride();
+    AOGLWrapper::oglTexCoordPointer(2, GL_FLOAT, strideInBytes, &line[3]);
+    ADrawBasics::drawTriangles(line, strideInBytes, dataLiner.pointsCount());
+    
+    instance->clearCurrentTexture();
+    
+    delete [] line;
+}
+
+//==============================================================================
+    
 void ADrawBasics::drawTexturedCube(const APoint& pos, const TFloat cubeSize, ATexture& texture)
 {
     TPointsList coordspoints = ADrawBasics::generateCoords(pos, cubeSize);
@@ -330,15 +358,15 @@ TPoints2DList ADrawBasics::generateUV(const ATexture& tex)
 
 TPointsList ADrawBasics::generateCoords(const APoint& location, const TFloat cubeSize)
 {
-    APoint p1 = location;
     APoint p2 = APoint(location.x + cubeSize, location.y, location.z);
     APoint p3 = APoint(location.x + cubeSize, location.y, location.z + cubeSize);
-    APoint p4 = APoint(location.x,            location.y, location.z + cubeSize);
-
-    APoint p5 = APoint(location.x,            location.y + cubeSize, location.z);
     APoint p6 = APoint(location.x + cubeSize, location.y + cubeSize, location.z);
     APoint p7 = APoint(location.x + cubeSize, location.y + cubeSize, location.z + cubeSize);
+    
+    APoint p1 = location;
+    APoint p4 = APoint(location.x,            location.y,            location.z + cubeSize);
     APoint p8 = APoint(location.x,            location.y + cubeSize, location.z + cubeSize);
+    APoint p5 = APoint(location.x,            location.y + cubeSize, location.z);
 
     TPointsList points;
     

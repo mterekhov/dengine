@@ -4,6 +4,7 @@
 #include "aoglwrapper.h"
 #include "adrawbasics.h"
 #include "abundle.h"
+#include "ascenenode.h"
 
 //==============================================================================
 
@@ -38,14 +39,37 @@ void ARenderService::processRender()
                                AVector(0.0f, 1.0f, 0.0f));
 
     ADrawBasics::drawGrid(50, 50, 1);
+
+    //  render textured objects
+    renderTexturedObjects();
     
     oglState->popMarices();
 }
 
 //==============================================================================
 
-void ARenderService::renderContent()
+void ARenderService::renderTexturedObjects()
 {
+    AOpenGLState *instance = AOpenGLState::shared();
+    AColor previousColor = instance->drawColor();
+    instance->drawColor(AColor::whiteColor());
+    instance->textureEnable();
+    
+    const TSceneNodesList& texturedObjectsList = _sceneGraph.texturedNodes();
+    TSceneNodesListConstIter iterBegin = texturedObjectsList.begin();
+    TSceneNodesListConstIter iterEnd = texturedObjectsList.end();
+    for (TSceneNodesListConstIter iter = iterBegin; iter != iterEnd; iter++)
+    {
+        instance->pushMarices();
+        instance->translate(iter->position());
+        const ASceneNode &node = *iter;
+        node.nodeObject()->renderObject();
+        instance->popMarices();
+    }
+    
+    
+    instance->textureDisable();
+    instance->drawColor(previousColor);
 }
     
 //==============================================================================
