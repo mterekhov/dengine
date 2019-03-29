@@ -26,9 +26,9 @@ TPointsList AMonster::generatePlanePoints(const TFloat textureWidth, const TFloa
 {
     TPointsList pointList;
     
-    TFloat monsterWidth = 1;
-    TFloat monsterHeight = 1;
-    if (textureWidth > textureHeight)
+    TFloat monsterWidth = 1.0f;
+    TFloat monsterHeight = 1.0f;
+    if (textureWidth >= textureHeight)
     {
         monsterHeight = textureHeight / textureWidth;
     }

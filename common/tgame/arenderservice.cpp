@@ -34,8 +34,8 @@ void ARenderService::processRender()
     AOpenGLState* oglState = AOpenGLState::shared();
     oglState->clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     oglState->pushMarices();
-    ADrawBasics::installCamera(AVector(5.0f, 5.0f, 5.0f),
-                               AVector(1.0f, 1.0f, 1.0f),
+    ADrawBasics::installCamera(AVector(-4.0f, 0.5f, 0.5f),
+                               AVector(0.0f, 0.0f, 0.0f),
                                AVector(0.0f, 1.0f, 0.0f));
 
     ADrawBasics::drawGrid(50, 50, 1);
