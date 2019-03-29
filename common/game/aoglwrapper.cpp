@@ -192,6 +192,13 @@ void AOGLWrapper::oglTexParameterf(TEnum target, TEnum pname, TFloat param)
 
 //==============================================================================
 
+void AOGLWrapper::oglBlendFunc()
+{
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+}
+
+//==============================================================================
+
 void AOGLWrapper::oglBindTexture(TEnum target, TUint texture)
 {
     glBindTexture(target, texture);

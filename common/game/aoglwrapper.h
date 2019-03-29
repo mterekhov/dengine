@@ -42,6 +42,7 @@ public:
     static TEnum oglGetError();
     static void oglShadeModel(TEnum mode);
     static void oglClearDepth(TDouble depth);
+    static void oglBlendFunc();
     static void oglDepthFunc(TEnum func);
 };
 

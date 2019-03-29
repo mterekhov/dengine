@@ -44,8 +44,8 @@ void AGame::startGame()
     spcWAD::AWAD wadResources(ABundle().fullPathToResource("doom.wad"));
     spcWAD::ALevel e1m8 = wadResources.readLevel("e1m8");
 
-    const spcWAD::ASprite& bossSprite = e1m8.findSprite("troo");
-    const spcWAD::APicture& bossPicture = bossSprite.findPicture("trooa1");
+    const spcWAD::ASprite& bossSprite = e1m8.findSprite("boss");
+    const spcWAD::APicture& bossPicture = bossSprite.findPicture("bossa2a8");
     ATexture& monsterTexture = _sceneGraph._textureManager.createOrFindTexture(bossPicture.patchName(), bossPicture.imageData);
     _sceneGraph.addObject(new AMonster(monsterTexture), APoint(), NODETYPE_TEXTURED);
     
