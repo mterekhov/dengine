@@ -26,7 +26,7 @@ private:
     const ATexture& _texture;
     
     TPoints2DList generatePlaneUVPoints(const ATexture& texture) const;
-    TPointsList generatePlanePoints(const TFloat textureWidth, const TFloat textureHeight) const;
+    TPointsList generatePlanePoints(const TFloat squarePlaneSize) const;
 
 public:
     APlane(ATexture& texture);

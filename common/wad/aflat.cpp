@@ -57,6 +57,11 @@ bool AFlat::saveFlatIntoTga(const std::string& fileName)
 
 //=============================================================================
 
+const AImageData& AFlat::imageData() const
+{
+    return _imageData;
+}
+
 #pragma mark - Private -
 
 //=============================================================================

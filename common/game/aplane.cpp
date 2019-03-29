@@ -10,7 +10,7 @@ namespace spcTGame
     
 //==============================================================================
 
-APlane::APlane(ATexture& texture) : _texture(texture)
+APlane::APlane(ATexture& texture) : _texture(texture), planeSize(1)
 {
 }
 
@@ -22,14 +22,14 @@ APlane::~APlane()
 
 //==============================================================================
     
-TPointsList APlane::generatePlanePoints(const TFloat textureWidth, const TFloat textureHeight) const
+TPointsList APlane::generatePlanePoints(const TFloat squarePlaneSize) const
 {
     TPointsList pointList;
     
     APoint p1 = APoint();
-    APoint p2 = APoint(p1.x, p1.y + planeSize, p1.z);  //p5
-    APoint p3 = APoint(p1.x, p1.y + planeSize, p1.z + planeSize);  //p8
-    APoint p4 = APoint(p1.x, p1.y,             p1.z + planeSize);  //p4
+    APoint p2 = APoint(p1.x,                   p1.y, p1.z + squarePlaneSize);  //p5
+    APoint p3 = APoint(p1.x + squarePlaneSize, p1.y, p1.z + squarePlaneSize);  //p8
+    APoint p4 = APoint(p1.x + squarePlaneSize, p1.y, p1.z);  //p4
     
     pointList.push_back(p2);
     pointList.push_back(p1);
@@ -46,14 +46,12 @@ TPointsList APlane::generatePlanePoints(const TFloat textureWidth, const TFloat 
 TPoints2DList APlane::generatePlaneUVPoints(const ATexture& texture) const
 {
     TPoints2DList uvpointList;
-    
-    TFloat xaspect = static_cast<TFloat>(texture.imageWidth()) / static_cast<TFloat>(texture.width());
-    TFloat yaspect = static_cast<TFloat>(texture.imageHeight()) / static_cast<TFloat>(texture.height());
+    TFloat aspect = texture.imageWidth() / planeSize;
     
     APoint2D t1 = APoint2D(0.0f, 0.0f);
-    APoint2D t2 = APoint2D(0.0f, yaspect);
-    APoint2D t3 = APoint2D(xaspect, yaspect);
-    APoint2D t4 = APoint2D(xaspect, 0.0f);
+    APoint2D t2 = APoint2D(0.0f, aspect);
+    APoint2D t3 = APoint2D(aspect, aspect);
+    APoint2D t4 = APoint2D(aspect, 0.0f);
 
     uvpointList.push_back(t1);
     uvpointList.push_back(t2);
@@ -70,7 +68,7 @@ TPoints2DList APlane::generatePlaneUVPoints(const ATexture& texture) const
 
 void APlane::renderObject() const
 {
-    TPointsList coordspoints = generatePlanePoints(_texture.width(), _texture.height());
+    TPointsList coordspoints = generatePlanePoints(planeSize);
     TPoints2DList uvpoints = generatePlaneUVPoints(_texture);
     ADrawBasics::drawTexturedPlane(coordspoints, uvpoints, _texture);
 }

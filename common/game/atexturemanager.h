@@ -7,6 +7,7 @@
 #include <string>
 
 #include "atexture.h"
+#include "aimagedata.h"
 
 //==============================================================================
 
@@ -35,9 +36,10 @@ public:
     ATextureManager();
     ~ATextureManager();
     
+    ATexture& createOrFindTexture(const std::string& textureName, const spcWAD::AImageData& wadImageData);
     ATexture& createOrFindTexture(const AImage& image);
-    ATexture& createTextureFromTGA(const TString& filePath);
     ATexture& createOrFindTextureFromTGA(const TString& filePath);
+    ATexture& createTextureFromTGA(const TString& filePath);
 };
 
 //==============================================================================

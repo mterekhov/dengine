@@ -52,9 +52,6 @@ AWAD::AWAD(const std::string& fileName) : _type(WADTYPE_UNKNOWN), _fileName(file
 
 	if (!readDemos(wadFile))
 		throw;
-	
-	if (!readLevel(wadFile))
-		throw;
 
 
     for (TIndexedPicturesListIter iter = _patchesList.begin(); iter != _patchesList.end(); iter++)
@@ -457,17 +454,9 @@ ALevel AWAD::readLevel(const std::string& levelName)
     
 //=============================================================================
 
-bool AWAD::readLevel(FILE* wadFile)
+const AFlat& AWAD::findFlat(const std::string& flatName) const
 {
-//    TLumpsListConstIter levelLumpIter = AUtilities::findLumpIter("e1m8", _tableOfContents);
-//    if (levelLumpIter == _tableOfContents.end())
-//    {
-//        return false;
-//    }
-//    
-//    ALevel level(wadFile, levelLumpIter, _tableOfContents, _palete);
-	
-    return true;
+    return AUtilities::findFlat(flatName, _flatsList);
 }
 
 //=============================================================================

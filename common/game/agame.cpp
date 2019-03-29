@@ -8,6 +8,8 @@
 #include "awad.h"
 #include "alevel.h"
 #include "types.h"
+#include "aplane.h"
+#include "aflat.h"
 
 //==============================================================================
 
@@ -41,14 +43,17 @@ void AGame::startGame()
 {
     spcWAD::AWAD wadResources(ABundle().fullPathToResource("doom.wad"));
     spcWAD::ALevel e1m8 = wadResources.readLevel("e1m8");
-    const spcWAD::ASprite& bossSprite = e1m8.findSprite("troo");
 
+    const spcWAD::ASprite& bossSprite = e1m8.findSprite("troo");
     const spcWAD::APicture& bossPicture = bossSprite.findPicture("trooa1");
-    spcWAD::AImageData image = bossPicture.imageData;
-    AImage gameImage(bossPicture.patchName(), image.data(), image.width(), image.height(), 24);
-    ATexture& monsterTexture = _sceneGraph._textureManager.createOrFindTexture(gameImage);
+    ATexture& monsterTexture = _sceneGraph._textureManager.createOrFindTexture(bossPicture.patchName(), bossPicture.imageData);
     _sceneGraph.addObject(new AMonster(monsterTexture), APoint(), NODETYPE_TEXTURED);
     
+    const spcWAD::AFlat& planeFlat = wadResources.findFlat("flat5");
+    APlane *floorPlane = new APlane(_sceneGraph._textureManager.createOrFindTexture(planeFlat.flatName(), planeFlat.imageData()));
+    floorPlane->planeSize = 40;
+    _sceneGraph.addObject(floorPlane, APoint(), NODETYPE_TEXTURED);
+
     _logic.startGame();
 }
 

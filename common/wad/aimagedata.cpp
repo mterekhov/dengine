@@ -89,7 +89,7 @@ bool AImageData::exportIntoTga(const std::string& fileName)
 
 //=============================================================================
 
-unsigned char* AImageData::data()
+unsigned char* AImageData::data() const
 {
     return _data;
 }

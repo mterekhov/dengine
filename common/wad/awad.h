@@ -36,6 +36,7 @@ public:
     AWAD(const std::string& fileName);
     ~AWAD();
     ALevel readLevel(const std::string& levelName);
+    const AFlat& findFlat(const std::string& flatName) const;
 
 private:
 	APalete _palete;    //  palete for every image resource
@@ -61,8 +62,6 @@ private:
 	bool readPatches(FILE* wadFile);
 	bool readTextures(FILE* wadFile);
 	ATexture generateSingleTexture(const int textureOffset, unsigned char *lumpData);
-	
-	bool readLevel(FILE* wadFile);
 };
 
 //=============================================================================

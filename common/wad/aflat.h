@@ -31,6 +31,7 @@ public:
 
 	bool saveFlatIntoTga(const std::string& fileName);
 	const std::string& flatName() const;
+    const AImageData& imageData() const;
     
 private:
     std::string _flatName;

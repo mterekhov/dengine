@@ -77,4 +77,16 @@ ATexture& ATextureManager::createOrFindTextureFromTGA(const TString& filePath)
 
 //==============================================================================
     
+ATexture& ATextureManager::createOrFindTexture(const std::string& textureName, const spcWAD::AImageData& wadImageData)
+{
+    TTexturesListIter textureIter = _textureList.find(textureName);
+    if (textureIter == _textureList.end())
+    {
+        AImage gameImage(textureName, wadImageData.data(), wadImageData.width(), wadImageData.height(), 24);
+        return createTextureFromData(gameImage);
+    }
+        
+        return textureIter->second;
+}
+
 }   //  namespace spcTGame
