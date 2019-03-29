@@ -26,12 +26,13 @@ class AImageData
 {
 public:
     AImageData();
-    AImageData(const int imageWidth, const int imageHeight);
+    AImageData(const int imageWidth, const int imageHeight, const int bytesPerPixel);
     ~AImageData();
     AImageData(const AImageData& image);
     AImageData& operator=(const AImageData& rv);
     
     unsigned char* data() const;
+    int bytesPerPixel() const;
     int height() const;
     int width() const;
     int dataSize() const;
@@ -40,9 +41,10 @@ public:
 private:
     void destroy();
     
-    unsigned char* _data;
+    unsigned char *_data;
     short _width;
     short _height;
+    short _bytesPerPixel;
 };
 
 //=============================================================================

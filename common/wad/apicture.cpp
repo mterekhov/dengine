@@ -30,7 +30,7 @@ APicture::APicture(const unsigned char* incomingData, const std::string& incomin
 		bytesOffset += 2;
 
 		bytesOffset += 4;	//	skiping offsets
-        imageData = AImageData(width, height);
+        imageData = AImageData(width, height, 4);
 		convertData(incomingData, palete, bytesOffset);
     }
 }
@@ -80,13 +80,14 @@ bool APicture::savePatchIntoTga(const std::string& fileName)
 
 void APicture::convertData(const unsigned char* incomingData, const APalete& palete, const int bytesOffset)
 {
+    const int bytesPerPixel = 4;
 	int bytesOffsetPointer = bytesOffset;
 
     int* columnOffsets = new int[imageData.width()];
-    memset(columnOffsets, 0, 4 * imageData.width());
+    memset(columnOffsets, 0, bytesPerPixel * imageData.width());
     for (int i = 0; i < imageData.width(); i++)
     {
-		memcpy(&columnOffsets[i], &incomingData[bytesOffsetPointer], 4);
+		memcpy(&columnOffsets[i], &incomingData[bytesOffsetPointer], bytesPerPixel);
 		bytesOffsetPointer += 4;
 	}
 
@@ -120,10 +121,11 @@ void APicture::convertData(const unsigned char* incomingData, const APalete& pal
 
             for (int j = 0; j < rowSize; j++)
             {
-                int index = 3 * ((imageData.height() - (rowNumber + j + 1)) * imageData.width() + i);
+                int index = bytesPerPixel * ((imageData.height() - (rowNumber + j + 1)) * imageData.width() + i);
                 convertedData[index] = palete.red(data[j]);
                 convertedData[index + 1] = palete.green(data[j]);
                 convertedData[index + 2] = palete.blue(data[j]);
+                convertedData[index + 3] = 0;
             }
             delete [] data;
 
@@ -135,12 +137,12 @@ void APicture::convertData(const unsigned char* incomingData, const APalete& pal
     }
 	delete [] columnOffsets;
 	
-    unsigned char* tmp = new unsigned char[3 * imageData.width()];
+    unsigned char* tmp = new unsigned char[bytesPerPixel * imageData.width()];
     for (int i = 0; i < imageData.height() / 2; i++)
     {
-        memcpy(tmp, &convertedData[3 * i * imageData.width()], 3 * imageData.width());
-        memcpy(&convertedData[3 * i * imageData.width()], &convertedData[3 * (imageData.height() - i - 1) * imageData.width()], 3 * imageData.width());
-        memcpy(&convertedData[3 * (imageData.height() - i - 1) * imageData.width()], tmp, 3 * imageData.width());
+        memcpy(tmp, &convertedData[bytesPerPixel * i * imageData.width()], bytesPerPixel * imageData.width());
+        memcpy(&convertedData[bytesPerPixel * i * imageData.width()], &convertedData[bytesPerPixel * (imageData.height() - i - 1) * imageData.width()], bytesPerPixel * imageData.width());
+        memcpy(&convertedData[bytesPerPixel * (imageData.height() - i - 1) * imageData.width()], tmp, bytesPerPixel * imageData.width());
     }
     
     delete [] tmp;

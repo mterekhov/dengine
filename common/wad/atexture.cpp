@@ -13,7 +13,7 @@ namespace spcWAD
 
 //=============================================================================
 
-ATexture::ATexture(const TPatchesDescriptionList& patchesDescriptionList, const std::string& incomingName, const int incomingWidth, const int incomingHeight) : _imageData(incomingWidth, incomingHeight), _textureName(incomingName)
+ATexture::ATexture(const TPatchesDescriptionList& patchesDescriptionList, const std::string& incomingName, const int incomingWidth, const int incomingHeight) : _imageData(incomingWidth, incomingHeight, 4), _textureName(incomingName)
 {
     unsigned char *textureData = _imageData.data();
 	for (TPatchesDescriptionListConstIter iter = patchesDescriptionList.begin(); iter != patchesDescriptionList.end(); iter++)
@@ -64,7 +64,11 @@ ATexture::ATexture(const TPatchesDescriptionList& patchesDescriptionList, const 
 				{
 					continue;
 				}
-				memcpy(&textureData[3 * texturePixelIndex], &flatData[3 * patchPixelIndex], 3);
+
+                textureData[_imageData.bytesPerPixel() * texturePixelIndex] = flatData[3 * patchPixelIndex];
+                textureData[_imageData.bytesPerPixel() * texturePixelIndex + 1] = flatData[3 * patchPixelIndex + 1];
+                textureData[_imageData.bytesPerPixel() * texturePixelIndex + 2] = flatData[3 * patchPixelIndex + 2];
+                textureData[_imageData.bytesPerPixel() * texturePixelIndex + 3] = 0;
 			}
 		}
 	}

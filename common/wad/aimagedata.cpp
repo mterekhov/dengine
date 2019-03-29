@@ -8,14 +8,14 @@ namespace spcWAD
 
 //=============================================================================
 
-AImageData::AImageData() : _data(0), _width(0), _height(0)
+AImageData::AImageData() : _data(0), _width(0), _height(0), _bytesPerPixel(0)
 {
     
 }
 
 //=============================================================================
 
-AImageData::AImageData(const int imageWidth, const int imageHeight) : _data(0), _width(imageWidth), _height(imageHeight)
+AImageData::AImageData(const int imageWidth, const int imageHeight, const int bytesPerPixel) : _data(0), _width(imageWidth), _height(imageHeight), _bytesPerPixel(bytesPerPixel)
 {
     if (dataSize() == 0)
     {
@@ -28,7 +28,7 @@ AImageData::AImageData(const int imageWidth, const int imageHeight) : _data(0), 
 
 //=============================================================================
 
-AImageData::AImageData(const AImageData& imageCopy) : _data(0), _width(imageCopy._width), _height(imageCopy._height)
+AImageData::AImageData(const AImageData& imageCopy) : _data(0), _width(imageCopy._width), _height(imageCopy._height), _bytesPerPixel(imageCopy._bytesPerPixel)
 {
     if (dataSize() == 0)
     {
@@ -59,6 +59,7 @@ AImageData& AImageData::operator=(const AImageData& rv)
     
     _height = rv._height;
     _width = rv._width;
+    _bytesPerPixel = rv._bytesPerPixel;
     
     _data = new unsigned char[rv.dataSize()];
     memcpy(_data, rv._data, rv.dataSize());
@@ -76,6 +77,7 @@ void AImageData::destroy()
         _data = 0;
         _height = 0;
         _width = 0;
+        _bytesPerPixel = 0;
     }
 }
 
@@ -84,7 +86,7 @@ void AImageData::destroy()
 bool AImageData::exportIntoTga(const std::string& fileName)
 {
     ATGAExporter tgaExporter;
-    return tgaExporter.exportData(fileName, _data, _width, _height);
+    return tgaExporter.exportData(fileName, _data, _width, _height, _bytesPerPixel);
 }
 
 //=============================================================================
@@ -98,7 +100,7 @@ unsigned char* AImageData::data() const
 
 int AImageData::dataSize() const
 {
-    return 3 * _width * _height;
+    return _bytesPerPixel * _width * _height;
 }
 
 //=============================================================================
@@ -106,6 +108,13 @@ int AImageData::dataSize() const
 int AImageData::height() const
 {
     return _height;
+}
+
+//=============================================================================
+
+int AImageData::bytesPerPixel() const
+{
+    return _bytesPerPixel;
 }
 
 //=============================================================================

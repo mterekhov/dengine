@@ -9,7 +9,7 @@ namespace spcWAD
 
 //=============================================================================
 
-AFlat::AFlat(unsigned char* incomingData, const std::string& incomingName, const APalete& palete) : _imageData(64, 64), _flatName(incomingName)
+AFlat::AFlat(unsigned char* incomingData, const std::string& incomingName, const APalete& palete) : _imageData(64, 64, 4), _flatName(incomingName)
 {
     convertData(incomingData, palete);
 }
@@ -62,6 +62,8 @@ const AImageData& AFlat::imageData() const
     return _imageData;
 }
 
+//=============================================================================
+
 #pragma mark - Private -
 
 //=============================================================================
@@ -72,14 +74,16 @@ void AFlat::convertData(unsigned char* incomingData, const APalete& palete)
 	const int flatHeight = _imageData.height();
 	
     unsigned char* outgoindData = _imageData.data();
+    int bytesPerPixel = _imageData.bytesPerPixel();
     for (int i = 0; i < flatHeight; i++)
     {
         for (int j = 0; j < flatWidth; j++)
         {
             int index = incomingData[flatWidth * i + j];
-            outgoindData[3 * flatWidth * i + 3 * j] = palete.red(index);
-            outgoindData[3 * flatWidth * i + 3 * j + 1] = palete.green(index);
-            outgoindData[3 * flatWidth * i + 3 * j + 2] = palete.blue(index);
+            outgoindData[bytesPerPixel * flatWidth * i + bytesPerPixel * j] = palete.red(index);
+            outgoindData[bytesPerPixel * flatWidth * i + bytesPerPixel * j + 1] = palete.green(index);
+            outgoindData[bytesPerPixel * flatWidth * i + bytesPerPixel * j + 2] = palete.blue(index);
+            outgoindData[bytesPerPixel * flatWidth * i + bytesPerPixel * j + 3] = 0;
         }
     }
 }
