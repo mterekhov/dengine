@@ -46,7 +46,7 @@ TPointsList APlane::generatePlanePoints(const TFloat squarePlaneSize) const
 TPoints2DList APlane::generatePlaneUVPoints(const ATexture& texture) const
 {
     TPoints2DList uvpointList;
-    TFloat aspect = 1.0f / 6.0f;//texture.imageWidth();
+    TFloat aspect = texture.imageWidth();
     
     APoint2D t1 = APoint2D(0.0f, 0.0f);
     APoint2D t2 = APoint2D(0.0f, aspect);
