@@ -7,36 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C1B89EF224920BF00418BE5 /* celtic.tga in Resources */ = {isa = PBXBuildFile; fileRef = 4C1B89EE224920BF00418BE5 /* celtic.tga */; };
 		4C1B89F1224920FE00418BE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C1B89F0224920FE00418BE5 /* Assets.xcassets */; };
 		4C2E7AB722453AD10059E112 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C2E7AB522453AD10059E112 /* MainMenu.xib */; };
 		4C2E7ABA22453AD10059E112 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E7AB922453AD10059E112 /* main.m */; };
 		4C2E7AC522453B0C0059E112 /* ARenderView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E7AC222453B0C0059E112 /* ARenderView.mm */; };
 		4C2E7AC622453B0C0059E112 /* AAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E7AC322453B0C0059E112 /* AAppDelegate.mm */; };
-		4C3AF3AA2245428C00130404 /* amacbundle.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3A92245428C00130404 /* amacbundle.mm */; };
-		4C3AF3FB224542AB00130404 /* ascenenode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3AF224542A900130404 /* ascenenode.cpp */; };
-		4C3AF3FC224542AB00130404 /* atga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3B0224542A900130404 /* atga.cpp */; };
-		4C3AF3FE224542AB00130404 /* avector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3B2224542A900130404 /* avector.cpp */; };
-		4C3AF3FF224542AB00130404 /* aopenglstate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3B3224542A900130404 /* aopenglstate.cpp */; };
-		4C3AF401224542AB00130404 /* adataliner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3B9224542A900130404 /* adataliner.cpp */; };
-		4C3AF402224542AB00130404 /* amatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3BB224542A900130404 /* amatrix.cpp */; };
-		4C3AF404224542AB00130404 /* alogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3BD224542A900130404 /* alogic.cpp */; };
-		4C3AF405224542AB00130404 /* agame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3C0224542A900130404 /* agame.cpp */; };
-		4C3AF406224542AB00130404 /* apoint2d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3C1224542A900130404 /* apoint2d.cpp */; };
-		4C3AF409224542AB00130404 /* acolor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3CC224542AA00130404 /* acolor.cpp */; };
-		4C3AF40B224542AB00130404 /* atexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3CE224542AA00130404 /* atexture.cpp */; };
-		4C3AF40D224542AB00130404 /* adrawbasics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3D1224542AA00130404 /* adrawbasics.cpp */; };
-		4C3AF40F224542AB00130404 /* aoglwrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3D6224542AA00130404 /* aoglwrapper.cpp */; };
-		4C3AF410224542AB00130404 /* agamestepscontroller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3D7224542AA00130404 /* agamestepscontroller.cpp */; };
-		4C3AF412224542AB00130404 /* atexturemanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3DA224542AA00130404 /* atexturemanager.cpp */; };
-		4C3AF415224542AB00130404 /* blockoutdebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3E1224542AA00130404 /* blockoutdebug.cpp */; };
-		4C3AF416224542AB00130404 /* abundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3E5224542AB00130404 /* abundle.cpp */; };
-		4C3AF417224542AB00130404 /* akeyboardcontroller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3E6224542AB00130404 /* akeyboardcontroller.cpp */; };
-		4C3AF418224542AB00130404 /* arenderservice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3E8224542AB00130404 /* arenderservice.cpp */; };
-		4C3AF419224542AB00130404 /* ascenegraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3EB224542AB00130404 /* ascenegraph.cpp */; };
-		4C3AF41B224542AB00130404 /* apoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3EE224542AB00130404 /* apoint.cpp */; };
-		4C3AF41C224542AB00130404 /* aimage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AF3F4224542AB00130404 /* aimage.cpp */; };
-		4C45AB3E224A8230004141E7 /* amonster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB3C224A8230004141E7 /* amonster.cpp */; };
 		4C45AB65224A88EE004141E7 /* aimagedata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB40224A88EC004141E7 /* aimagedata.cpp */; };
 		4C45AB66224A88EE004141E7 /* asprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB41224A88EC004141E7 /* asprite.cpp */; };
 		4C45AB67224A88EE004141E7 /* acolormap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB46224A88ED004141E7 /* acolormap.cpp */; };
@@ -54,11 +29,36 @@
 		4C45AB74224A88EE004141E7 /* ageometryreadservice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB61224A88EE004141E7 /* ageometryreadservice.cpp */; };
 		4C45AB75224A88EE004141E7 /* alevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB62224A88EE004141E7 /* alevel.cpp */; };
 		4C45AB76224A88EE004141E7 /* aendoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45AB63224A88EE004141E7 /* aendoom.cpp */; };
-		4C938AA7224D2143008D803A /* anodeobject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AA5224D2143008D803A /* anodeobject.cpp */; };
+		4C938AAA224E1718008D803A /* celtic.tga in Resources */ = {isa = PBXBuildFile; fileRef = 4C938AA8224E1718008D803A /* celtic.tga */; };
+		4C938AAB224E1718008D803A /* doom.wad in Resources */ = {isa = PBXBuildFile; fileRef = 4C938AA9224E1718008D803A /* doom.wad */; };
+		4C938AB4224E1768008D803A /* atexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AAC224E1768008D803A /* atexture.cpp */; };
+		4C938AB5224E1768008D803A /* atga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AAD224E1768008D803A /* atga.cpp */; };
+		4C938AB6224E1768008D803A /* aimage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AAE224E1768008D803A /* aimage.cpp */; };
+		4C938AB7224E1768008D803A /* atexturemanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AB2224E1768008D803A /* atexturemanager.cpp */; };
+		4C938ABE224E178D008D803A /* aopenglstate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938ABA224E178D008D803A /* aopenglstate.cpp */; };
+		4C938ABF224E178D008D803A /* aoglwrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938ABB224E178D008D803A /* aoglwrapper.cpp */; };
+		4C938AC0224E178D008D803A /* adrawbasics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938ABC224E178D008D803A /* adrawbasics.cpp */; };
+		4C938ACA224E17BC008D803A /* abundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AC1224E17BC008D803A /* abundle.cpp */; };
+		4C938ACB224E17BC008D803A /* agamestepscontroller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AC6224E17BC008D803A /* agamestepscontroller.cpp */; };
+		4C938ACC224E17BC008D803A /* akeyboardcontroller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AC9224E17BC008D803A /* akeyboardcontroller.cpp */; };
+		4C938AD9224E17D9008D803A /* avector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938ACE224E17D8008D803A /* avector.cpp */; };
+		4C938ADA224E17D9008D803A /* apoint2d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AD0224E17D8008D803A /* apoint2d.cpp */; };
+		4C938ADB224E17D9008D803A /* acolor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AD1224E17D9008D803A /* acolor.cpp */; };
+		4C938ADC224E17D9008D803A /* amatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AD2224E17D9008D803A /* amatrix.cpp */; };
+		4C938ADD224E17D9008D803A /* adataliner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AD3224E17D9008D803A /* adataliner.cpp */; };
+		4C938ADE224E17D9008D803A /* apoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AD5224E17D9008D803A /* apoint.cpp */; };
+		4C938AE9224E17F0008D803A /* anodeobject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AE0224E17F0008D803A /* anodeobject.cpp */; };
+		4C938AEA224E17F0008D803A /* arenderservice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AE2224E17F0008D803A /* arenderservice.cpp */; };
+		4C938AEB224E17F0008D803A /* amonster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AE3224E17F0008D803A /* amonster.cpp */; };
+		4C938AEC224E17F0008D803A /* ascenenode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AE4224E17F0008D803A /* ascenenode.cpp */; };
+		4C938AED224E17F0008D803A /* ascenegraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AE7224E17F0008D803A /* ascenegraph.cpp */; };
+		4C938AF5224E180A008D803A /* alogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AF0224E180A008D803A /* alogic.cpp */; };
+		4C938AF6224E180A008D803A /* agame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AF1224E180A008D803A /* agame.cpp */; };
+		4C938AF7224E180A008D803A /* blockoutdebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AF2224E180A008D803A /* blockoutdebug.cpp */; };
+		4C938AFA224E1832008D803A /* amacbundle.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AF9224E1832008D803A /* amacbundle.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4C1B89EE224920BF00418BE5 /* celtic.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = celtic.tga; sourceTree = "<group>"; };
 		4C1B89F0224920FE00418BE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C2E7AAD22453AD00059E112 /* game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2E7AB622453AD10059E112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -69,58 +69,6 @@
 		4C2E7AC222453B0C0059E112 /* ARenderView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ARenderView.mm; sourceTree = "<group>"; };
 		4C2E7AC322453B0C0059E112 /* AAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AAppDelegate.mm; sourceTree = "<group>"; };
 		4C2E7AC422453B0C0059E112 /* AAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAppDelegate.h; sourceTree = "<group>"; };
-		4C3AF3A82245428C00130404 /* amacbundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amacbundle.h; path = ../common/tgame/mac/amacbundle.h; sourceTree = "<group>"; };
-		4C3AF3A92245428C00130404 /* amacbundle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = amacbundle.mm; path = ../common/tgame/mac/amacbundle.mm; sourceTree = "<group>"; };
-		4C3AF3AB224542A900130404 /* arenderservice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = arenderservice.h; path = ../common/tgame/arenderservice.h; sourceTree = "<group>"; };
-		4C3AF3AC224542A900130404 /* apoint2d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = apoint2d.h; path = ../common/tgame/apoint2d.h; sourceTree = "<group>"; };
-		4C3AF3AF224542A900130404 /* ascenenode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ascenenode.cpp; path = ../common/tgame/ascenenode.cpp; sourceTree = "<group>"; };
-		4C3AF3B0224542A900130404 /* atga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atga.cpp; path = ../common/tgame/atga.cpp; sourceTree = "<group>"; };
-		4C3AF3B2224542A900130404 /* avector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = avector.cpp; path = ../common/tgame/avector.cpp; sourceTree = "<group>"; };
-		4C3AF3B3224542A900130404 /* aopenglstate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aopenglstate.cpp; path = ../common/tgame/aopenglstate.cpp; sourceTree = "<group>"; };
-		4C3AF3B7224542A900130404 /* agamestepscontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = agamestepscontroller.h; path = ../common/tgame/agamestepscontroller.h; sourceTree = "<group>"; };
-		4C3AF3B8224542A900130404 /* aopenglstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aopenglstate.h; path = ../common/tgame/aopenglstate.h; sourceTree = "<group>"; };
-		4C3AF3B9224542A900130404 /* adataliner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = adataliner.cpp; path = ../common/tgame/adataliner.cpp; sourceTree = "<group>"; };
-		4C3AF3BA224542A900130404 /* apoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = apoint.h; path = ../common/tgame/apoint.h; sourceTree = "<group>"; };
-		4C3AF3BB224542A900130404 /* amatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = amatrix.cpp; path = ../common/tgame/amatrix.cpp; sourceTree = "<group>"; };
-		4C3AF3BD224542A900130404 /* alogic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = alogic.cpp; path = ../common/tgame/alogic.cpp; sourceTree = "<group>"; };
-		4C3AF3C0224542A900130404 /* agame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = agame.cpp; path = ../common/tgame/agame.cpp; sourceTree = "<group>"; };
-		4C3AF3C1224542A900130404 /* apoint2d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = apoint2d.cpp; path = ../common/tgame/apoint2d.cpp; sourceTree = "<group>"; };
-		4C3AF3C2224542A900130404 /* agamestepprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = agamestepprotocol.h; path = ../common/tgame/agamestepprotocol.h; sourceTree = "<group>"; };
-		4C3AF3C4224542A900130404 /* amatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amatrix.h; path = ../common/tgame/amatrix.h; sourceTree = "<group>"; };
-		4C3AF3C7224542A900130404 /* atexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atexture.h; path = ../common/tgame/atexture.h; sourceTree = "<group>"; };
-		4C3AF3C8224542A900130404 /* abundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = abundle.h; path = ../common/tgame/abundle.h; sourceTree = "<group>"; };
-		4C3AF3C9224542A900130404 /* acolor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = acolor.h; path = ../common/tgame/acolor.h; sourceTree = "<group>"; };
-		4C3AF3CA224542A900130404 /* atexturemanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atexturemanager.h; path = ../common/tgame/atexturemanager.h; sourceTree = "<group>"; };
-		4C3AF3CB224542AA00130404 /* agame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = agame.h; path = ../common/tgame/agame.h; sourceTree = "<group>"; };
-		4C3AF3CC224542AA00130404 /* acolor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = acolor.cpp; path = ../common/tgame/acolor.cpp; sourceTree = "<group>"; };
-		4C3AF3CE224542AA00130404 /* atexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atexture.cpp; path = ../common/tgame/atexture.cpp; sourceTree = "<group>"; };
-		4C3AF3CF224542AA00130404 /* blockoutdebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = blockoutdebug.h; path = ../common/tgame/blockoutdebug.h; sourceTree = "<group>"; };
-		4C3AF3D1224542AA00130404 /* adrawbasics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = adrawbasics.cpp; path = ../common/tgame/adrawbasics.cpp; sourceTree = "<group>"; };
-		4C3AF3D4224542AA00130404 /* ascenenode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ascenenode.h; path = ../common/tgame/ascenenode.h; sourceTree = "<group>"; };
-		4C3AF3D6224542AA00130404 /* aoglwrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aoglwrapper.cpp; path = ../common/tgame/aoglwrapper.cpp; sourceTree = "<group>"; };
-		4C3AF3D7224542AA00130404 /* agamestepscontroller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = agamestepscontroller.cpp; path = ../common/tgame/agamestepscontroller.cpp; sourceTree = "<group>"; };
-		4C3AF3D8224542AA00130404 /* aoglwrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aoglwrapper.h; path = ../common/tgame/aoglwrapper.h; sourceTree = "<group>"; };
-		4C3AF3DA224542AA00130404 /* atexturemanager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atexturemanager.cpp; path = ../common/tgame/atexturemanager.cpp; sourceTree = "<group>"; };
-		4C3AF3DF224542AA00130404 /* akeyboardcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = akeyboardcontroller.h; path = ../common/tgame/akeyboardcontroller.h; sourceTree = "<group>"; };
-		4C3AF3E0224542AA00130404 /* atga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atga.h; path = ../common/tgame/atga.h; sourceTree = "<group>"; };
-		4C3AF3E1224542AA00130404 /* blockoutdebug.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = blockoutdebug.cpp; path = ../common/tgame/blockoutdebug.cpp; sourceTree = "<group>"; };
-		4C3AF3E3224542AA00130404 /* avector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = avector.h; path = ../common/tgame/avector.h; sourceTree = "<group>"; };
-		4C3AF3E4224542AB00130404 /* ascenegraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ascenegraph.h; path = ../common/tgame/ascenegraph.h; sourceTree = "<group>"; };
-		4C3AF3E5224542AB00130404 /* abundle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = abundle.cpp; path = ../common/tgame/abundle.cpp; sourceTree = "<group>"; };
-		4C3AF3E6224542AB00130404 /* akeyboardcontroller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = akeyboardcontroller.cpp; path = ../common/tgame/akeyboardcontroller.cpp; sourceTree = "<group>"; };
-		4C3AF3E8224542AB00130404 /* arenderservice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = arenderservice.cpp; path = ../common/tgame/arenderservice.cpp; sourceTree = "<group>"; };
-		4C3AF3E9224542AB00130404 /* abundleprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = abundleprotocol.h; path = ../common/tgame/abundleprotocol.h; sourceTree = "<group>"; };
-		4C3AF3EA224542AB00130404 /* adrawbasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adrawbasics.h; path = ../common/tgame/adrawbasics.h; sourceTree = "<group>"; };
-		4C3AF3EB224542AB00130404 /* ascenegraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ascenegraph.cpp; path = ../common/tgame/ascenegraph.cpp; sourceTree = "<group>"; };
-		4C3AF3EE224542AB00130404 /* apoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = apoint.cpp; path = ../common/tgame/apoint.cpp; sourceTree = "<group>"; };
-		4C3AF3F0224542AB00130404 /* keymaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = keymaps.h; path = ../common/tgame/keymaps.h; sourceTree = "<group>"; };
-		4C3AF3F1224542AB00130404 /* aimage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aimage.h; path = ../common/tgame/aimage.h; sourceTree = "<group>"; };
-		4C3AF3F2224542AB00130404 /* alogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alogic.h; path = ../common/tgame/alogic.h; sourceTree = "<group>"; };
-		4C3AF3F4224542AB00130404 /* aimage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aimage.cpp; path = ../common/tgame/aimage.cpp; sourceTree = "<group>"; };
-		4C3AF3F5224542AB00130404 /* adataliner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adataliner.h; path = ../common/tgame/adataliner.h; sourceTree = "<group>"; };
-		4C3AF3F6224542AB00130404 /* blockouttypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = blockouttypes.h; path = ../common/tgame/blockouttypes.h; sourceTree = "<group>"; };
-		4C45AB3C224A8230004141E7 /* amonster.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = amonster.cpp; path = ../common/tgame/amonster.cpp; sourceTree = "<group>"; };
-		4C45AB3D224A8230004141E7 /* amonster.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = amonster.h; path = ../common/tgame/amonster.h; sourceTree = "<group>"; };
 		4C45AB40224A88EC004141E7 /* aimagedata.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aimagedata.cpp; path = ../common/wad/aimagedata.cpp; sourceTree = "<group>"; };
 		4C45AB41224A88EC004141E7 /* asprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = asprite.cpp; path = ../common/wad/asprite.cpp; sourceTree = "<group>"; };
 		4C45AB42224A88ED004141E7 /* enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = enums.h; path = ../common/wad/enums.h; sourceTree = "<group>"; };
@@ -157,8 +105,62 @@
 		4C45AB62224A88EE004141E7 /* alevel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = alevel.cpp; path = ../common/wad/alevel.cpp; sourceTree = "<group>"; };
 		4C45AB63224A88EE004141E7 /* aendoom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aendoom.cpp; path = ../common/wad/aendoom.cpp; sourceTree = "<group>"; };
 		4C45AB64224A88EE004141E7 /* alump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alump.h; path = ../common/wad/alump.h; sourceTree = "<group>"; };
-		4C938AA5224D2143008D803A /* anodeobject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = anodeobject.cpp; path = ../common/tgame/anodeobject.cpp; sourceTree = "<group>"; };
-		4C938AA6224D2143008D803A /* anodeobject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = anodeobject.h; path = ../common/tgame/anodeobject.h; sourceTree = "<group>"; };
+		4C938AA8224E1718008D803A /* celtic.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = celtic.tga; path = ../resources/celtic.tga; sourceTree = "<group>"; };
+		4C938AA9224E1718008D803A /* doom.wad */ = {isa = PBXFileReference; lastKnownFileType = file; name = doom.wad; path = ../resources/doom.wad; sourceTree = "<group>"; };
+		4C938AAC224E1768008D803A /* atexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atexture.cpp; path = ../common/game/atexture.cpp; sourceTree = "<group>"; };
+		4C938AAD224E1768008D803A /* atga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atga.cpp; path = ../common/game/atga.cpp; sourceTree = "<group>"; };
+		4C938AAE224E1768008D803A /* aimage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aimage.cpp; path = ../common/game/aimage.cpp; sourceTree = "<group>"; };
+		4C938AAF224E1768008D803A /* atga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atga.h; path = ../common/game/atga.h; sourceTree = "<group>"; };
+		4C938AB0224E1768008D803A /* atexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atexture.h; path = ../common/game/atexture.h; sourceTree = "<group>"; };
+		4C938AB1224E1768008D803A /* aimage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aimage.h; path = ../common/game/aimage.h; sourceTree = "<group>"; };
+		4C938AB2224E1768008D803A /* atexturemanager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atexturemanager.cpp; path = ../common/game/atexturemanager.cpp; sourceTree = "<group>"; };
+		4C938AB3224E1768008D803A /* atexturemanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atexturemanager.h; path = ../common/game/atexturemanager.h; sourceTree = "<group>"; };
+		4C938AB8224E178D008D803A /* aoglwrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aoglwrapper.h; path = ../common/game/aoglwrapper.h; sourceTree = "<group>"; };
+		4C938AB9224E178D008D803A /* adrawbasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adrawbasics.h; path = ../common/game/adrawbasics.h; sourceTree = "<group>"; };
+		4C938ABA224E178D008D803A /* aopenglstate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aopenglstate.cpp; path = ../common/game/aopenglstate.cpp; sourceTree = "<group>"; };
+		4C938ABB224E178D008D803A /* aoglwrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aoglwrapper.cpp; path = ../common/game/aoglwrapper.cpp; sourceTree = "<group>"; };
+		4C938ABC224E178D008D803A /* adrawbasics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = adrawbasics.cpp; path = ../common/game/adrawbasics.cpp; sourceTree = "<group>"; };
+		4C938ABD224E178D008D803A /* aopenglstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aopenglstate.h; path = ../common/game/aopenglstate.h; sourceTree = "<group>"; };
+		4C938AC1224E17BC008D803A /* abundle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = abundle.cpp; path = ../common/game/abundle.cpp; sourceTree = "<group>"; };
+		4C938AC2224E17BC008D803A /* abundleprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = abundleprotocol.h; path = ../common/game/abundleprotocol.h; sourceTree = "<group>"; };
+		4C938AC3224E17BC008D803A /* agamestepscontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = agamestepscontroller.h; path = ../common/game/agamestepscontroller.h; sourceTree = "<group>"; };
+		4C938AC4224E17BC008D803A /* abundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = abundle.h; path = ../common/game/abundle.h; sourceTree = "<group>"; };
+		4C938AC5224E17BC008D803A /* agamestepprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = agamestepprotocol.h; path = ../common/game/agamestepprotocol.h; sourceTree = "<group>"; };
+		4C938AC6224E17BC008D803A /* agamestepscontroller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = agamestepscontroller.cpp; path = ../common/game/agamestepscontroller.cpp; sourceTree = "<group>"; };
+		4C938AC7224E17BC008D803A /* akeyboardcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = akeyboardcontroller.h; path = ../common/game/akeyboardcontroller.h; sourceTree = "<group>"; };
+		4C938AC8224E17BC008D803A /* keymaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = keymaps.h; path = ../common/game/keymaps.h; sourceTree = "<group>"; };
+		4C938AC9224E17BC008D803A /* akeyboardcontroller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = akeyboardcontroller.cpp; path = ../common/game/akeyboardcontroller.cpp; sourceTree = "<group>"; };
+		4C938ACD224E17D8008D803A /* apoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = apoint.h; path = ../common/game/apoint.h; sourceTree = "<group>"; };
+		4C938ACE224E17D8008D803A /* avector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = avector.cpp; path = ../common/game/avector.cpp; sourceTree = "<group>"; };
+		4C938ACF224E17D8008D803A /* apoint2d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = apoint2d.h; path = ../common/game/apoint2d.h; sourceTree = "<group>"; };
+		4C938AD0224E17D8008D803A /* apoint2d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = apoint2d.cpp; path = ../common/game/apoint2d.cpp; sourceTree = "<group>"; };
+		4C938AD1224E17D9008D803A /* acolor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = acolor.cpp; path = ../common/game/acolor.cpp; sourceTree = "<group>"; };
+		4C938AD2224E17D9008D803A /* amatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = amatrix.cpp; path = ../common/game/amatrix.cpp; sourceTree = "<group>"; };
+		4C938AD3224E17D9008D803A /* adataliner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = adataliner.cpp; path = ../common/game/adataliner.cpp; sourceTree = "<group>"; };
+		4C938AD4224E17D9008D803A /* amatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amatrix.h; path = ../common/game/amatrix.h; sourceTree = "<group>"; };
+		4C938AD5224E17D9008D803A /* apoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = apoint.cpp; path = ../common/game/apoint.cpp; sourceTree = "<group>"; };
+		4C938AD6224E17D9008D803A /* avector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = avector.h; path = ../common/game/avector.h; sourceTree = "<group>"; };
+		4C938AD7224E17D9008D803A /* acolor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = acolor.h; path = ../common/game/acolor.h; sourceTree = "<group>"; };
+		4C938AD8224E17D9008D803A /* adataliner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adataliner.h; path = ../common/game/adataliner.h; sourceTree = "<group>"; };
+		4C938ADF224E17F0008D803A /* anodeobject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = anodeobject.h; path = ../common/game/anodeobject.h; sourceTree = "<group>"; };
+		4C938AE0224E17F0008D803A /* anodeobject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = anodeobject.cpp; path = ../common/game/anodeobject.cpp; sourceTree = "<group>"; };
+		4C938AE1224E17F0008D803A /* arenderservice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = arenderservice.h; path = ../common/game/arenderservice.h; sourceTree = "<group>"; };
+		4C938AE2224E17F0008D803A /* arenderservice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = arenderservice.cpp; path = ../common/game/arenderservice.cpp; sourceTree = "<group>"; };
+		4C938AE3224E17F0008D803A /* amonster.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = amonster.cpp; path = ../common/game/amonster.cpp; sourceTree = "<group>"; };
+		4C938AE4224E17F0008D803A /* ascenenode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ascenenode.cpp; path = ../common/game/ascenenode.cpp; sourceTree = "<group>"; };
+		4C938AE5224E17F0008D803A /* amonster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amonster.h; path = ../common/game/amonster.h; sourceTree = "<group>"; };
+		4C938AE6224E17F0008D803A /* ascenegraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ascenegraph.h; path = ../common/game/ascenegraph.h; sourceTree = "<group>"; };
+		4C938AE7224E17F0008D803A /* ascenegraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ascenegraph.cpp; path = ../common/game/ascenegraph.cpp; sourceTree = "<group>"; };
+		4C938AE8224E17F0008D803A /* ascenenode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ascenenode.h; path = ../common/game/ascenenode.h; sourceTree = "<group>"; };
+		4C938AEE224E180A008D803A /* blockoutdebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = blockoutdebug.h; path = ../common/game/blockoutdebug.h; sourceTree = "<group>"; };
+		4C938AEF224E180A008D803A /* blockouttypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = blockouttypes.h; path = ../common/game/blockouttypes.h; sourceTree = "<group>"; };
+		4C938AF0224E180A008D803A /* alogic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = alogic.cpp; path = ../common/game/alogic.cpp; sourceTree = "<group>"; };
+		4C938AF1224E180A008D803A /* agame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = agame.cpp; path = ../common/game/agame.cpp; sourceTree = "<group>"; };
+		4C938AF2224E180A008D803A /* blockoutdebug.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = blockoutdebug.cpp; path = ../common/game/blockoutdebug.cpp; sourceTree = "<group>"; };
+		4C938AF3224E180A008D803A /* agame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = agame.h; path = ../common/game/agame.h; sourceTree = "<group>"; };
+		4C938AF4224E180A008D803A /* alogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alogic.h; path = ../common/game/alogic.h; sourceTree = "<group>"; };
+		4C938AF8224E1832008D803A /* amacbundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amacbundle.h; path = ../common/game/mac/amacbundle.h; sourceTree = "<group>"; };
+		4C938AF9224E1832008D803A /* amacbundle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = amacbundle.mm; path = ../common/game/mac/amacbundle.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,16 +177,16 @@
 		4C1B89E922491C7E00418BE5 /* Render */ = {
 			isa = PBXGroup;
 			children = (
-				4C938AA6224D2143008D803A /* anodeobject.h */,
-				4C938AA5224D2143008D803A /* anodeobject.cpp */,
-				4C45AB3D224A8230004141E7 /* amonster.h */,
-				4C45AB3C224A8230004141E7 /* amonster.cpp */,
-				4C3AF3D4224542AA00130404 /* ascenenode.h */,
-				4C3AF3AF224542A900130404 /* ascenenode.cpp */,
-				4C3AF3E4224542AB00130404 /* ascenegraph.h */,
-				4C3AF3EB224542AB00130404 /* ascenegraph.cpp */,
-				4C3AF3AB224542A900130404 /* arenderservice.h */,
-				4C3AF3E8224542AB00130404 /* arenderservice.cpp */,
+				4C938AE3224E17F0008D803A /* amonster.cpp */,
+				4C938AE5224E17F0008D803A /* amonster.h */,
+				4C938AE0224E17F0008D803A /* anodeobject.cpp */,
+				4C938ADF224E17F0008D803A /* anodeobject.h */,
+				4C938AE2224E17F0008D803A /* arenderservice.cpp */,
+				4C938AE1224E17F0008D803A /* arenderservice.h */,
+				4C938AE7224E17F0008D803A /* ascenegraph.cpp */,
+				4C938AE6224E17F0008D803A /* ascenegraph.h */,
+				4C938AE4224E17F0008D803A /* ascenenode.cpp */,
+				4C938AE8224E17F0008D803A /* ascenenode.h */,
 			);
 			name = Render;
 			sourceTree = "<group>";
@@ -192,18 +194,18 @@
 		4C1B89EA22491CE800418BE5 /* Geometry */ = {
 			isa = PBXGroup;
 			children = (
-				4C3AF3B9224542A900130404 /* adataliner.cpp */,
-				4C3AF3F5224542AB00130404 /* adataliner.h */,
-				4C3AF3CC224542AA00130404 /* acolor.cpp */,
-				4C3AF3C9224542A900130404 /* acolor.h */,
-				4C3AF3BB224542A900130404 /* amatrix.cpp */,
-				4C3AF3C4224542A900130404 /* amatrix.h */,
-				4C3AF3EE224542AB00130404 /* apoint.cpp */,
-				4C3AF3BA224542A900130404 /* apoint.h */,
-				4C3AF3C1224542A900130404 /* apoint2d.cpp */,
-				4C3AF3AC224542A900130404 /* apoint2d.h */,
-				4C3AF3B2224542A900130404 /* avector.cpp */,
-				4C3AF3E3224542AA00130404 /* avector.h */,
+				4C938AD1224E17D9008D803A /* acolor.cpp */,
+				4C938AD7224E17D9008D803A /* acolor.h */,
+				4C938AD3224E17D9008D803A /* adataliner.cpp */,
+				4C938AD8224E17D9008D803A /* adataliner.h */,
+				4C938AD2224E17D9008D803A /* amatrix.cpp */,
+				4C938AD4224E17D9008D803A /* amatrix.h */,
+				4C938AD5224E17D9008D803A /* apoint.cpp */,
+				4C938ACD224E17D8008D803A /* apoint.h */,
+				4C938AD0224E17D8008D803A /* apoint2d.cpp */,
+				4C938ACF224E17D8008D803A /* apoint2d.h */,
+				4C938ACE224E17D8008D803A /* avector.cpp */,
+				4C938AD6224E17D9008D803A /* avector.h */,
 			);
 			name = Geometry;
 			sourceTree = "<group>";
@@ -211,15 +213,15 @@
 		4C1B89EC22491D3100418BE5 /* System */ = {
 			isa = PBXGroup;
 			children = (
-				4C3AF3F0224542AB00130404 /* keymaps.h */,
-				4C3AF3DF224542AA00130404 /* akeyboardcontroller.h */,
-				4C3AF3E6224542AB00130404 /* akeyboardcontroller.cpp */,
-				4C3AF3E5224542AB00130404 /* abundle.cpp */,
-				4C3AF3C8224542A900130404 /* abundle.h */,
-				4C3AF3E9224542AB00130404 /* abundleprotocol.h */,
-				4C3AF3C2224542A900130404 /* agamestepprotocol.h */,
-				4C3AF3B7224542A900130404 /* agamestepscontroller.h */,
-				4C3AF3D7224542AA00130404 /* agamestepscontroller.cpp */,
+				4C938AC1224E17BC008D803A /* abundle.cpp */,
+				4C938AC4224E17BC008D803A /* abundle.h */,
+				4C938AC2224E17BC008D803A /* abundleprotocol.h */,
+				4C938AC5224E17BC008D803A /* agamestepprotocol.h */,
+				4C938AC6224E17BC008D803A /* agamestepscontroller.cpp */,
+				4C938AC3224E17BC008D803A /* agamestepscontroller.h */,
+				4C938AC9224E17BC008D803A /* akeyboardcontroller.cpp */,
+				4C938AC7224E17BC008D803A /* akeyboardcontroller.h */,
+				4C938AC8224E17BC008D803A /* keymaps.h */,
 			);
 			name = System;
 			sourceTree = "<group>";
@@ -245,8 +247,9 @@
 		4C2E7AAF22453AD00059E112 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				4C938AA8224E1718008D803A /* celtic.tga */,
+				4C938AA9224E1718008D803A /* doom.wad */,
 				4C1B89F0224920FE00418BE5 /* Assets.xcassets */,
-				4C1B89EE224920BF00418BE5 /* celtic.tga */,
 				4C2E7AC422453B0C0059E112 /* AAppDelegate.h */,
 				4C2E7AC322453B0C0059E112 /* AAppDelegate.mm */,
 				4C2E7AC122453B0C0059E112 /* ARenderView.h */,
@@ -262,18 +265,18 @@
 		4C2E7AC7224540D20059E112 /* GameEngine */ = {
 			isa = PBXGroup;
 			children = (
+				4C938AF1224E180A008D803A /* agame.cpp */,
+				4C938AF3224E180A008D803A /* agame.h */,
+				4C938AF0224E180A008D803A /* alogic.cpp */,
+				4C938AF4224E180A008D803A /* alogic.h */,
+				4C938AF2224E180A008D803A /* blockoutdebug.cpp */,
+				4C938AEE224E180A008D803A /* blockoutdebug.h */,
+				4C938AEF224E180A008D803A /* blockouttypes.h */,
 				4CD08D502249259A008963CD /* Image */,
 				4CD08D4F22492592008963CD /* OpenGL */,
 				4C1B89EC22491D3100418BE5 /* System */,
 				4C1B89EA22491CE800418BE5 /* Geometry */,
 				4C1B89E922491C7E00418BE5 /* Render */,
-				4C3AF3CB224542AA00130404 /* agame.h */,
-				4C3AF3C0224542A900130404 /* agame.cpp */,
-				4C3AF3BD224542A900130404 /* alogic.cpp */,
-				4C3AF3F2224542AB00130404 /* alogic.h */,
-				4C3AF3E1224542AA00130404 /* blockoutdebug.cpp */,
-				4C3AF3CF224542AA00130404 /* blockoutdebug.h */,
-				4C3AF3F6224542AB00130404 /* blockouttypes.h */,
 				4C2E7AF7224540D20059E112 /* mac */,
 			);
 			name = GameEngine;
@@ -282,8 +285,8 @@
 		4C2E7AF7224540D20059E112 /* mac */ = {
 			isa = PBXGroup;
 			children = (
-				4C3AF3A82245428C00130404 /* amacbundle.h */,
-				4C3AF3A92245428C00130404 /* amacbundle.mm */,
+				4C938AF8224E1832008D803A /* amacbundle.h */,
+				4C938AF9224E1832008D803A /* amacbundle.mm */,
 			);
 			name = mac;
 			sourceTree = "<group>";
@@ -334,12 +337,12 @@
 		4CD08D4F22492592008963CD /* OpenGL */ = {
 			isa = PBXGroup;
 			children = (
-				4C3AF3EA224542AB00130404 /* adrawbasics.h */,
-				4C3AF3D1224542AA00130404 /* adrawbasics.cpp */,
-				4C3AF3D8224542AA00130404 /* aoglwrapper.h */,
-				4C3AF3D6224542AA00130404 /* aoglwrapper.cpp */,
-				4C3AF3B8224542A900130404 /* aopenglstate.h */,
-				4C3AF3B3224542A900130404 /* aopenglstate.cpp */,
+				4C938ABC224E178D008D803A /* adrawbasics.cpp */,
+				4C938AB9224E178D008D803A /* adrawbasics.h */,
+				4C938ABB224E178D008D803A /* aoglwrapper.cpp */,
+				4C938AB8224E178D008D803A /* aoglwrapper.h */,
+				4C938ABA224E178D008D803A /* aopenglstate.cpp */,
+				4C938ABD224E178D008D803A /* aopenglstate.h */,
 			);
 			name = OpenGL;
 			sourceTree = "<group>";
@@ -347,14 +350,14 @@
 		4CD08D502249259A008963CD /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				4C3AF3F4224542AB00130404 /* aimage.cpp */,
-				4C3AF3F1224542AB00130404 /* aimage.h */,
-				4C3AF3CE224542AA00130404 /* atexture.cpp */,
-				4C3AF3C7224542A900130404 /* atexture.h */,
-				4C3AF3DA224542AA00130404 /* atexturemanager.cpp */,
-				4C3AF3CA224542A900130404 /* atexturemanager.h */,
-				4C3AF3B0224542A900130404 /* atga.cpp */,
-				4C3AF3E0224542AA00130404 /* atga.h */,
+				4C938AAE224E1768008D803A /* aimage.cpp */,
+				4C938AB1224E1768008D803A /* aimage.h */,
+				4C938AAC224E1768008D803A /* atexture.cpp */,
+				4C938AB0224E1768008D803A /* atexture.h */,
+				4C938AB2224E1768008D803A /* atexturemanager.cpp */,
+				4C938AB3224E1768008D803A /* atexturemanager.h */,
+				4C938AAD224E1768008D803A /* atga.cpp */,
+				4C938AAF224E1768008D803A /* atga.h */,
 			);
 			name = Image;
 			sourceTree = "<group>";
@@ -421,7 +424,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C1B89EF224920BF00418BE5 /* celtic.tga in Resources */,
+				4C938AAA224E1718008D803A /* celtic.tga in Resources */,
+				4C938AAB224E1718008D803A /* doom.wad in Resources */,
 				4C1B89F1224920FE00418BE5 /* Assets.xcassets in Resources */,
 				4C2E7AB722453AD10059E112 /* MainMenu.xib in Resources */,
 			);
@@ -434,49 +438,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C3AF402224542AB00130404 /* amatrix.cpp in Sources */,
-				4C3AF41B224542AB00130404 /* apoint.cpp in Sources */,
-				4C3AF3FF224542AB00130404 /* aopenglstate.cpp in Sources */,
+				4C938ABF224E178D008D803A /* aoglwrapper.cpp in Sources */,
+				4C938ACB224E17BC008D803A /* agamestepscontroller.cpp in Sources */,
+				4C938AB6224E1768008D803A /* aimage.cpp in Sources */,
 				4C45AB71224A88EE004141E7 /* atexture.cpp in Sources */,
-				4C3AF3AA2245428C00130404 /* amacbundle.mm in Sources */,
-				4C3AF40F224542AB00130404 /* aoglwrapper.cpp in Sources */,
-				4C3AF415224542AB00130404 /* blockoutdebug.cpp in Sources */,
+				4C938AFA224E1832008D803A /* amacbundle.mm in Sources */,
+				4C938AC0224E178D008D803A /* adrawbasics.cpp in Sources */,
+				4C938ABE224E178D008D803A /* aopenglstate.cpp in Sources */,
+				4C938AD9224E17D9008D803A /* avector.cpp in Sources */,
+				4C938AEB224E17F0008D803A /* amonster.cpp in Sources */,
 				4C2E7AC522453B0C0059E112 /* ARenderView.mm in Sources */,
 				4C2E7ABA22453AD10059E112 /* main.m in Sources */,
-				4C3AF3FB224542AB00130404 /* ascenenode.cpp in Sources */,
-				4C3AF418224542AB00130404 /* arenderservice.cpp in Sources */,
 				4C45AB76224A88EE004141E7 /* aendoom.cpp in Sources */,
 				4C45AB6A224A88EE004141E7 /* alevelintegrity.cpp in Sources */,
 				4C45AB65224A88EE004141E7 /* aimagedata.cpp in Sources */,
 				4C45AB67224A88EE004141E7 /* acolormap.cpp in Sources */,
-				4C3AF404224542AB00130404 /* alogic.cpp in Sources */,
-				4C3AF412224542AB00130404 /* atexturemanager.cpp in Sources */,
-				4C3AF41C224542AB00130404 /* aimage.cpp in Sources */,
-				4C938AA7224D2143008D803A /* anodeobject.cpp in Sources */,
+				4C938ACA224E17BC008D803A /* abundle.cpp in Sources */,
 				4C45AB6D224A88EE004141E7 /* aflat.cpp in Sources */,
-				4C3AF40D224542AB00130404 /* adrawbasics.cpp in Sources */,
-				4C3AF40B224542AB00130404 /* atexture.cpp in Sources */,
+				4C938AE9224E17F0008D803A /* anodeobject.cpp in Sources */,
 				4C45AB6F224A88EE004141E7 /* ademo.cpp in Sources */,
-				4C3AF410224542AB00130404 /* agamestepscontroller.cpp in Sources */,
 				4C45AB74224A88EE004141E7 /* ageometryreadservice.cpp in Sources */,
+				4C938AF7224E180A008D803A /* blockoutdebug.cpp in Sources */,
+				4C938ACC224E17BC008D803A /* akeyboardcontroller.cpp in Sources */,
+				4C938AF6224E180A008D803A /* agame.cpp in Sources */,
 				4C45AB6C224A88EE004141E7 /* autilities.cpp in Sources */,
-				4C3AF417224542AB00130404 /* akeyboardcontroller.cpp in Sources */,
+				4C938AB5224E1768008D803A /* atga.cpp in Sources */,
 				4C45AB6B224A88EE004141E7 /* alump.cpp in Sources */,
-				4C3AF3FC224542AB00130404 /* atga.cpp in Sources */,
-				4C3AF3FE224542AB00130404 /* avector.cpp in Sources */,
+				4C938ADA224E17D9008D803A /* apoint2d.cpp in Sources */,
 				4C45AB75224A88EE004141E7 /* alevel.cpp in Sources */,
-				4C3AF406224542AB00130404 /* apoint2d.cpp in Sources */,
-				4C3AF405224542AB00130404 /* agame.cpp in Sources */,
 				4C45AB68224A88EE004141E7 /* apalete.cpp in Sources */,
-				4C3AF419224542AB00130404 /* ascenegraph.cpp in Sources */,
-				4C3AF409224542AB00130404 /* acolor.cpp in Sources */,
-				4C3AF416224542AB00130404 /* abundle.cpp in Sources */,
+				4C938AB7224E1768008D803A /* atexturemanager.cpp in Sources */,
+				4C938ADE224E17D9008D803A /* apoint.cpp in Sources */,
+				4C938AEC224E17F0008D803A /* ascenenode.cpp in Sources */,
+				4C938AF5224E180A008D803A /* alogic.cpp in Sources */,
+				4C938AB4224E1768008D803A /* atexture.cpp in Sources */,
 				4C45AB6E224A88EE004141E7 /* awad.cpp in Sources */,
+				4C938AED224E17F0008D803A /* ascenegraph.cpp in Sources */,
 				4C45AB69224A88EE004141E7 /* apicture.cpp in Sources */,
-				4C3AF401224542AB00130404 /* adataliner.cpp in Sources */,
-				4C45AB3E224A8230004141E7 /* amonster.cpp in Sources */,
 				4C45AB66224A88EE004141E7 /* asprite.cpp in Sources */,
+				4C938AEA224E17F0008D803A /* arenderservice.cpp in Sources */,
+				4C938ADC224E17D9008D803A /* amatrix.cpp in Sources */,
 				4C45AB72224A88EE004141E7 /* atgaexporter.cpp in Sources */,
+				4C938ADD224E17D9008D803A /* adataliner.cpp in Sources */,
+				4C938ADB224E17D9008D803A /* acolor.cpp in Sources */,
 				4C45AB70224A88EE004141E7 /* athing.cpp in Sources */,
 				4C2E7AC622453B0C0059E112 /* AAppDelegate.mm in Sources */,
 			);
