@@ -83,7 +83,7 @@ void AFlat::convertData(unsigned char* incomingData, const APalete& palete)
             outgoindData[bytesPerPixel * flatWidth * i + bytesPerPixel * j] = palete.red(index);
             outgoindData[bytesPerPixel * flatWidth * i + bytesPerPixel * j + 1] = palete.green(index);
             outgoindData[bytesPerPixel * flatWidth * i + bytesPerPixel * j + 2] = palete.blue(index);
-            outgoindData[bytesPerPixel * flatWidth * i + bytesPerPixel * j + 3] = 0;
+            outgoindData[bytesPerPixel * flatWidth * i + bytesPerPixel * j + 3] = TransparentPixel;
         }
     }
 }

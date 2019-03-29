@@ -23,7 +23,7 @@ AImageData::AImageData(const int imageWidth, const int imageHeight, const int by
     }
     
     _data = new unsigned char[dataSize()];
-    memset(_data, 0, dataSize());
+    memset(_data, TransparentPixel, dataSize());
 }
 
 //=============================================================================

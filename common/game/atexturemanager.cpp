@@ -82,7 +82,7 @@ ATexture& ATextureManager::createOrFindTexture(const std::string& textureName, c
     TTexturesListIter textureIter = _textureList.find(textureName);
     if (textureIter == _textureList.end())
     {
-        AImage gameImage(textureName, wadImageData.data(), wadImageData.width(), wadImageData.height(), 24);
+        AImage gameImage(textureName, wadImageData.data(), wadImageData.width(), wadImageData.height(), 32);
         return createTextureFromData(gameImage);
     }
         

@@ -18,6 +18,10 @@ namespace spcWAD
 {
 
 //=============================================================================
+    
+static const int TransparentPixel = 255;
+    
+//=============================================================================
 
 /**
  This class is a storage for any picture. Such storage is a raw pixel in rgb-format

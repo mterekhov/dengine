@@ -52,6 +52,7 @@ ATexture::ATexture(const TPatchesDescriptionList& patchesDescriptionList, const 
 		}
 
 		const unsigned char* flatData = patchDescription.patch.imageData.data();
+        const int flatDataBytesPerPixel = patchDescription.patch.imageData.bytesPerPixel();
 		for (int y = injectionY; y < injectionY + patchChunkHeight; y++)
 		{
 			for (int x = injectionX; x < injectionX + patchChunkWidth; x++)
@@ -60,15 +61,15 @@ ATexture::ATexture(const TPatchesDescriptionList& patchesDescriptionList, const 
 				int patchPixelIndexY = patchY + y - injectionY;
 				int patchPixelIndex = patchPixelIndexY * patchDescription.patch.imageData.width() + patchPixelIndexX;
 				int texturePixelIndex = _imageData.width() * y + x;
-				if (flatData[3 * patchPixelIndex] == PIXEL_TRANSPARENCY_MARKER)
+				if (flatData[patchDescription.patch.imageData.bytesPerPixel() * patchPixelIndex] == PIXEL_TRANSPARENCY_MARKER)
 				{
 					continue;
 				}
 
-                textureData[_imageData.bytesPerPixel() * texturePixelIndex] = flatData[3 * patchPixelIndex];
-                textureData[_imageData.bytesPerPixel() * texturePixelIndex + 1] = flatData[3 * patchPixelIndex + 1];
-                textureData[_imageData.bytesPerPixel() * texturePixelIndex + 2] = flatData[3 * patchPixelIndex + 2];
-                textureData[_imageData.bytesPerPixel() * texturePixelIndex + 3] = 0;
+                textureData[_imageData.bytesPerPixel() * texturePixelIndex] = flatData[flatDataBytesPerPixel * patchPixelIndex];
+                textureData[_imageData.bytesPerPixel() * texturePixelIndex + 1] = flatData[flatDataBytesPerPixel * patchPixelIndex + 1];
+                textureData[_imageData.bytesPerPixel() * texturePixelIndex + 2] = flatData[flatDataBytesPerPixel * patchPixelIndex + 2];
+                textureData[_imageData.bytesPerPixel() * texturePixelIndex + 3] = flatData[flatDataBytesPerPixel * patchPixelIndex + 3];
 			}
 		}
 	}

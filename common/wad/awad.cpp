@@ -38,6 +38,21 @@ AWAD::AWAD(const std::string& fileName) : _type(WADTYPE_UNKNOWN), _fileName(file
     if (!readFlats(wadFile))
         throw;
 
+    if (!readPatches(wadFile))
+        throw;
+
+    if (!readTextures(wadFile))
+        throw;
+
+    if (!readColorMap(wadFile))
+        throw;
+
+    if (!readEndDoom(wadFile))
+        throw;
+
+    if (!readDemos(wadFile))
+        throw;
+
     for (TFlatsListIter iter = _flatsList.begin(); iter != _flatsList.end(); iter++)
     {
         AFlat& flat = *iter;
@@ -47,40 +62,23 @@ AWAD::AWAD(const std::string& fileName) : _type(WADTYPE_UNKNOWN), _fileName(file
         flat.saveFlatIntoTga(path);
     }
 
-//    if (!readPatches(wadFile))
-//        throw;
-//
-//    if (!readTextures(wadFile))
-//        throw;
-//
-//    if (!readColorMap(wadFile))
-//        throw;
-//
-//    if (!readEndDoom(wadFile))
-//        throw;
-//
-//    if (!readDemos(wadFile))
-//        throw;
-//
-//
-//    for (TIndexedPicturesListIter iter = _patchesList.begin(); iter != _patchesList.end(); iter++)
-//    {
-//        APicture& patch = *iter;
-//        std::string path = "/Users/michael/Pictures/patch/";
-//        path += patch.patchName();
-//        path += ".tga";
-//        patch.savePatchIntoTga(path);
-//    }
-//
-//    for (TTexturesListIter iter = _texturesList.begin(); iter != _texturesList.end(); iter++)
-//    {
-//        ATexture& texture = *iter;
-//        std::string path = "/Users/michael/Pictures/texture/";
-//        path += texture.textureName();
-//        path += ".tga";
-//        texture.saveTextureIntoTga(path);
-//    }
-//
+    for (TIndexedPicturesListIter iter = _patchesList.begin(); iter != _patchesList.end(); iter++)
+    {
+        APicture& patch = *iter;
+        std::string path = "/Users/michael/Pictures/patch/";
+        path += patch.patchName();
+        path += ".tga";
+        patch.savePatchIntoTga(path);
+    }
+
+    for (TTexturesListIter iter = _texturesList.begin(); iter != _texturesList.end(); iter++)
+    {
+        ATexture& texture = *iter;
+        std::string path = "/Users/michael/Pictures/texture/";
+        path += texture.textureName();
+        path += ".tga";
+        texture.saveTextureIntoTga(path);
+    }
 
     fclose(wadFile);
 }

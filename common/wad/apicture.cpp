@@ -92,7 +92,7 @@ void APicture::convertData(const unsigned char* incomingData, const APalete& pal
 	}
 
 	unsigned char* convertedData = imageData.data();
-    memset(convertedData, PIXEL_TRANSPARENCY_MARKER, imageData.dataSize());
+    memset(convertedData, 0, imageData.dataSize());
     for (int i = 0; i < imageData.width(); i++)
     {
     	int currentColumnDataOffset = columnOffsets[i];
@@ -125,7 +125,7 @@ void APicture::convertData(const unsigned char* incomingData, const APalete& pal
                 convertedData[index] = palete.red(data[j]);
                 convertedData[index + 1] = palete.green(data[j]);
                 convertedData[index + 2] = palete.blue(data[j]);
-                convertedData[index + 3] = 0;
+                convertedData[index + 3] = TransparentPixel;
             }
             delete [] data;
 
