@@ -42,12 +42,12 @@ TPointsList AMonster::generatePlanePoints(const TFloat textureWidth, const TFloa
     APoint p3 = APoint(p1.x, p1.y + monsterWidth, p1.z + monsterHeight);  //p8
     APoint p4 = APoint(p1.x, p1.y,                p1.z + monsterHeight);  //p4
     
+    pointList.push_back(p3);
+    pointList.push_back(p1);
     pointList.push_back(p2);
-    pointList.push_back(p1);
     pointList.push_back(p3);
-    pointList.push_back(p3);
-    pointList.push_back(p1);
     pointList.push_back(p4);
+    pointList.push_back(p1);
     
     return pointList;
 }
@@ -66,13 +66,13 @@ TPoints2DList AMonster::generatePlaneUVPoints(const ATexture& texture) const
     APoint2D t3 = APoint2D(xaspect, yaspect);
     APoint2D t4 = APoint2D(xaspect, 0.0f);
 
-    uvpointList.push_back(t1);
-    uvpointList.push_back(t2);
     uvpointList.push_back(t4);
+    uvpointList.push_back(t2);
+    uvpointList.push_back(t1);
 
     uvpointList.push_back(t4);
-    uvpointList.push_back(t2);
     uvpointList.push_back(t3);
+    uvpointList.push_back(t2);
     
     return uvpointList;
 }

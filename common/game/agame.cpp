@@ -52,7 +52,7 @@ void AGame::startGame()
     const spcWAD::AFlat& planeFlat = wadResources.findFlat("flat5");
     APlane *floorPlane = new APlane(_sceneGraph._textureManager.createOrFindTexture(planeFlat.flatName(), planeFlat.imageData()));
     floorPlane->planeSize = 40;
-    _sceneGraph.addObject(floorPlane, APoint(), NODETYPE_TEXTURED);
+    _sceneGraph.addObject(floorPlane, APoint(-floorPlane->planeSize / 2.0f, 0.0f, -floorPlane->planeSize / 2.0f), NODETYPE_TEXTURED);
 
     _logic.startGame();
 }

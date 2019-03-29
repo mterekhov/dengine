@@ -43,7 +43,7 @@ const AFlat& AUtilities::findFlat(const std::string& flatNameToFind, const TFlat
 {
 	for (TFlatsListConstIter iter = flatList.begin(); iter != flatList.end(); iter++)
 	{
-	    if (!strncmp(iter->flatName().c_str(), flatNameToFind.c_str(), iter->flatName().length()))
+	    if (stringCompare(iter->flatName(), flatNameToFind))
 		{
 			return (*iter);
 		}
