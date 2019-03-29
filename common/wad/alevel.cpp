@@ -58,7 +58,14 @@ ALevel& ALevel::operator=(const ALevel& rv)
 
 const ASprite& ALevel::findSprite(const AThing& thing)
 {
-    return *std::find(_spritesList.begin(), _spritesList.end(), ASprite(thing.spritePrefix()));
+    return findSprite(thing.spritePrefix());
+}
+
+//=============================================================================
+
+const ASprite& ALevel::findSprite(const std::string& spritePrefix)
+{
+    return *std::find(_spritesList.begin(), _spritesList.end(), ASprite(spritePrefix));
 }
 
 //=============================================================================
@@ -162,7 +169,7 @@ ASprite ALevel::readThingSpritesList(FILE* wadFile, const AThing& thing, const T
         AUtilities::readLumpData(wadFile, spriteLump, spriteData);
 
         APicture newSpritePicture(spriteData, spriteLump.lumpName, palete);
-        newSprite.picturesList[spriteLump.lumpName] = newSpritePicture;
+        newSprite.addPicture(newSpritePicture);
         std::string path = "/Users/michael/Pictures/level/";
         path += spriteLump.lumpName;
         path += ".tga";

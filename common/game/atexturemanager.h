@@ -24,6 +24,8 @@ typedef TTexturesList::const_iterator TTexturesListConstIter;
 class ATextureManager
 {
 private:
+    ATexture& createTextureFromData(const AImage& image);
+    
     TTexturesList _textureList;
     static ATexture _zeroTexture;
 
@@ -33,6 +35,7 @@ public:
     ATextureManager();
     ~ATextureManager();
     
+    ATexture& createOrFindTexture(const AImage& image);
     ATexture& createTextureFromTGA(const TString& filePath);
     ATexture& createOrFindTextureFromTGA(const TString& filePath);
 };

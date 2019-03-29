@@ -71,9 +71,9 @@ typedef std::list<ASprite> TSpriteList;
 typedef TSpriteList::iterator TSpriteListIter;
 typedef TSpriteList::const_iterator TSpriteListConstIter;
 
-typedef std::map<std::string, APicture> TPicturesMap;
-typedef TPicturesMap::iterator TPicturesMapIter;
-typedef TPicturesMap::const_iterator TPicturesMapConstIter;
+typedef std::list<APicture> TPicturesList;
+typedef TPicturesList::iterator TPicturesListIter;
+typedef TPicturesList::const_iterator TPicturesListConstIter;
 
 //=============================================================================
 

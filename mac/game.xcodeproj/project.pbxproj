@@ -56,6 +56,7 @@
 		4C938AF6224E180A008D803A /* agame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AF1224E180A008D803A /* agame.cpp */; };
 		4C938AF7224E180A008D803A /* blockoutdebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AF2224E180A008D803A /* blockoutdebug.cpp */; };
 		4C938AFA224E1832008D803A /* amacbundle.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AF9224E1832008D803A /* amacbundle.mm */; };
+		4C938AFD224E2BE8008D803A /* aplane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AFB224E2BE8008D803A /* aplane.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,6 +162,8 @@
 		4C938AF4224E180A008D803A /* alogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alogic.h; path = ../common/game/alogic.h; sourceTree = "<group>"; };
 		4C938AF8224E1832008D803A /* amacbundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amacbundle.h; path = ../common/game/mac/amacbundle.h; sourceTree = "<group>"; };
 		4C938AF9224E1832008D803A /* amacbundle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = amacbundle.mm; path = ../common/game/mac/amacbundle.mm; sourceTree = "<group>"; };
+		4C938AFB224E2BE8008D803A /* aplane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aplane.cpp; path = ../common/game/aplane.cpp; sourceTree = "<group>"; };
+		4C938AFC224E2BE8008D803A /* aplane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aplane.h; path = ../common/game/aplane.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +180,8 @@
 		4C1B89E922491C7E00418BE5 /* Render */ = {
 			isa = PBXGroup;
 			children = (
+				4C938AFC224E2BE8008D803A /* aplane.h */,
+				4C938AFB224E2BE8008D803A /* aplane.cpp */,
 				4C938AE3224E17F0008D803A /* amonster.cpp */,
 				4C938AE5224E17F0008D803A /* amonster.h */,
 				4C938AE0224E17F0008D803A /* anodeobject.cpp */,
@@ -442,6 +447,7 @@
 				4C938ACB224E17BC008D803A /* agamestepscontroller.cpp in Sources */,
 				4C938AB6224E1768008D803A /* aimage.cpp in Sources */,
 				4C45AB71224A88EE004141E7 /* atexture.cpp in Sources */,
+				4C938AFD224E2BE8008D803A /* aplane.cpp in Sources */,
 				4C938AFA224E1832008D803A /* amacbundle.mm in Sources */,
 				4C938AC0224E178D008D803A /* adrawbasics.cpp in Sources */,
 				4C938ABE224E178D008D803A /* aopenglstate.cpp in Sources */,

@@ -34,6 +34,7 @@ public:
 	ALevel& operator=(const ALevel& rv);
     const TThingList& levelItemsList() const;
     const ASprite& findSprite(const AThing& thing);
+    const ASprite& findSprite(const std::string& spritePrefix);
 
 private:
 	TThingList _thingsList;

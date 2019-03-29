@@ -24,6 +24,9 @@ namespace spcWAD
  */
 class ASprite
 {
+private:
+    TPicturesList _picturesList;
+    
 public:
 	ASprite(const std::string& prefix);
 	ASprite(const ASprite& sprite);
@@ -31,8 +34,10 @@ public:
 	ASprite& operator=(const ASprite& rv);
     bool operator ==(const ASprite & obj) const;
 
+    const APicture& findPicture(const std::string& pictureName) const;
+    void addPicture(const APicture& newPicture);
+
 	std::string spritesPrefix;
-	TPicturesMap picturesList;
 };
 
 //=============================================================================

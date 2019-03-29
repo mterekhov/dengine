@@ -6,6 +6,8 @@
 #include "amonster.h"
 #include "abundle.h"
 #include "awad.h"
+#include "alevel.h"
+#include "types.h"
 
 //==============================================================================
 
@@ -37,11 +39,14 @@ void AGame::init()
 
 void AGame::startGame()
 {
-    spcWAD::AWAD wadResources("doom.wad");
-    
-    //  creates all the formations we need
-    std::string textureFileName = ABundle().fullPathToResource("celtic.tga");
-    ATexture& monsterTexture = _sceneGraph._textureManager.createOrFindTextureFromTGA(textureFileName);
+    spcWAD::AWAD wadResources(ABundle().fullPathToResource("doom.wad"));
+    spcWAD::ALevel e1m8 = wadResources.readLevel("e1m8");
+    const spcWAD::ASprite& bossSprite = e1m8.findSprite("troo");
+
+    const spcWAD::APicture& bossPicture = bossSprite.findPicture("trooa1");
+    spcWAD::AImageData image = bossPicture.imageData;
+    AImage gameImage(bossPicture.patchName(), image.data(), image.width(), image.height(), 24);
+    ATexture& monsterTexture = _sceneGraph._textureManager.createOrFindTexture(gameImage);
     _sceneGraph.addObject(new AMonster(monsterTexture), APoint(), NODETYPE_TEXTURED);
     
     _logic.startGame();

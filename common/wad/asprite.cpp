@@ -17,7 +17,7 @@ ASprite::ASprite(const std::string& prefix) : spritesPrefix(prefix)
 
 //=============================================================================
 
-ASprite::ASprite(const ASprite& sprite) : picturesList(sprite.picturesList), spritesPrefix(sprite.spritesPrefix)
+ASprite::ASprite(const ASprite& sprite) : _picturesList(sprite._picturesList), spritesPrefix(sprite.spritesPrefix)
 {
 
 }
@@ -50,9 +50,31 @@ ASprite& ASprite::operator=(const ASprite& rv)
 	}
 
 	spritesPrefix = rv.spritesPrefix;
-	picturesList = rv.picturesList;
+	_picturesList = rv._picturesList;
 
 	return *this;
+}
+
+//=============================================================================
+
+void ASprite::addPicture(const APicture& newPicture)
+{
+    _picturesList.push_back(newPicture);
+}
+
+//=============================================================================
+
+const APicture& ASprite::findPicture(const std::string& pictureName) const
+{
+    for (TPicturesListConstIter iter = _picturesList.begin(); iter != _picturesList.end(); iter++)
+    {
+        if (AUtilities::stringCompare(iter->patchName(), pictureName))
+        {
+            return *iter;
+        }
+    }
+    
+    return *_picturesList.end();
 }
 
 //=============================================================================
