@@ -3,9 +3,21 @@
 
 //==============================================================================
 
-#include <OpenGL/gl.h>
+#if defined(__APPLE__)
+    # include "TargetConditionals.h"
+    # if defined(TARGET_IPHONE_SIMULATOR) && (TARGET_IPHONE_SIMULATOR != 0)
+        #define APPLE_IPHONE_SIMULATOR 1
+    # elif defined(TARGET_OS_IPHONE) && (TARGET_OS_IPHONE != 0)
+        #define APPLE_IPHONE_DEVICE 1
+    # elif defined(TARGET_OS_MAC)
+        #define APPLE_MACOSX 1
+    # endif
+#endif /* Apple */
+
 #include <math.h>
-#import <string>
+#include <string>
+
+#include "aopengl.h"
 
 //==============================================================================
 
@@ -25,7 +37,6 @@ typedef GLint TInt;
 typedef GLubyte TData;
 typedef GLushort TUShort;
 typedef GLfloat TFloat;
-typedef GLdouble TDouble;
 typedef GLenum TEnum;
 typedef GLsizei TSize;
 typedef GLvoid TVoid;

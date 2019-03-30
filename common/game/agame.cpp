@@ -44,13 +44,13 @@ void AGame::startGame()
     spcWAD::AWAD wadResources(ABundle().fullPathToResource("doom.wad"));
     spcWAD::ALevel e1m8 = wadResources.readLevel("e1m8");
 
-    const spcWAD::AFlat& planeFlat = wadResources.findFlat("nukage3");
+    const spcWAD::AFlat& planeFlat = wadResources.findFlat("CEIL3_5");
     APlane *floorPlane = new APlane(_sceneGraph._textureManager.createOrFindTexture(planeFlat.flatName(), planeFlat.imageData()));
     floorPlane->planeSize = 40;
     _sceneGraph.addObject(floorPlane, APoint(-floorPlane->planeSize / 2.0f, 0.0f, -floorPlane->planeSize / 2.0f), NODETYPE_TEXTURED);
 
     const spcWAD::ASprite& bossSprite = e1m8.findSprite("boss");
-    const spcWAD::APicture& bossPicture = bossSprite.findPicture("bossa2a8");
+    const spcWAD::APicture& bossPicture = bossSprite.findPicture("BOSSE1");
     ATexture& monsterTexture = _sceneGraph._textureManager.createOrFindTexture(bossPicture.patchName(), bossPicture.imageData);
     _sceneGraph.addObject(new AMonster(monsterTexture), APoint(), NODETYPE_TEXTURED);
 
@@ -78,7 +78,7 @@ void AGame::processKeyboardEvent(const TUint buttonCode)
 
 //==============================================================================
 
-void AGame::updateScreenSize(const TDouble screenWidth, const TDouble screenHeight)
+void AGame::updateScreenSize(const TFloat screenWidth, const TFloat screenHeight)
 {
     AOpenGLState* oglState = spcTGame::AOpenGLState::shared();
     oglState->frustumSetup(screenWidth, screenHeight);

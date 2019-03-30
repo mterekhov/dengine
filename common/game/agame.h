@@ -32,7 +32,7 @@ public:
     AGame();
     ~AGame();
     
-    void updateScreenSize(const TDouble screenWidth, const TDouble screenHeight);
+    void updateScreenSize(const TFloat screenWidth, const TFloat screenHeight);
     void startGame();
     void processKeyboardEvent(const TUint buttonCode);
     void processGameCycle();
