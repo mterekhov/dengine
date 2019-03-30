@@ -52,24 +52,39 @@ void ARenderService::renderTexturedObjects()
     AColor previousColor = instance->drawColor();
     instance->drawColor(AColor::whiteColor());
     instance->textureEnable();
+
+    renderObjectWithTransparency(ESCENENODETRANSPARENCY_NONE);
+    renderObjectWithTransparency(ESCENENODETRANSPARENCY_HALF);
+    renderObjectWithTransparency(ESCENENODETRANSPARENCY_FULL);
+
+    instance->textureDisable();
+    instance->drawColor(previousColor);
+}
     
+//==============================================================================
+
+void ARenderService::renderObjectWithTransparency(const ESceneNodeTrasnsparency nodeTransparency)
+{
+    AOpenGLState *instance = AOpenGLState::shared();
     const TSceneNodesList& texturedObjectsList = _sceneGraph.texturedNodes();
     TSceneNodesListConstIter iterBegin = texturedObjectsList.begin();
     TSceneNodesListConstIter iterEnd = texturedObjectsList.end();
     for (TSceneNodesListConstIter iter = iterBegin; iter != iterEnd; iter++)
     {
+        const ASceneNode &node = *iter;
+        if (node.transparencyType() != nodeTransparency)
+        {
+            continue;
+        }
+        
         instance->pushMarices();
         instance->translate(iter->position());
-        const ASceneNode &node = *iter;
         node.nodeObject()->renderObject();
         instance->popMarices();
     }
-    
-    
-    instance->textureDisable();
-    instance->drawColor(previousColor);
+
 }
-    
+
 //==============================================================================
 
 }   //  namespace spcTGame

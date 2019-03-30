@@ -20,17 +20,17 @@ ASceneGraph::~ASceneGraph()
 
 //==============================================================================
 
-void ASceneGraph::addObject(ANodeObject* object, const APoint& position, const ENodeType nodeType)
+void ASceneGraph::addObject(ANodeObject* object, const APoint& position, const ESceneNodeType nodeType, const ESceneNodeTrasnsparency nodeTransparency)
 {
     _objectsList.push_back(object);
-    ASceneNode newNode(object, position, nodeType);
+    ASceneNode newNode(object, position, nodeType, nodeTransparency);
     switch (nodeType)
     {
-        case NODETYPE_TEXTURED:
+        case ESCENENODETYPE_TEXTURED:
             _texturedNodesList.push_back(newNode);
         break;
             
-        case NODETYPE_SOLID:
+        case ESCENENODETYPE_SOLID:
             _solidNodesList.push_back(newNode);
         break;
     }

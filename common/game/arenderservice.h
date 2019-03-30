@@ -28,7 +28,8 @@ private:
     ASceneGraph& _sceneGraph;
 
     void renderTexturedObjects();
-    
+    void renderObjectWithTransparency(const ESceneNodeTrasnsparency nodeTransparency);
+
 public:
     ARenderService(ASceneGraph& dataStorage);
     ~ARenderService();

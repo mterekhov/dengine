@@ -33,11 +33,6 @@ void ADrawBasics::drawTexturedPlane(const TPointsList& coordspoints, const TPoin
     
     TUint strideInBytes = sizeof(TFloat) * dataLiner.arrayStride();
     
-    for (TInt i = 0; i < dataLiner.pointsCount(); i++)
-    {
-        printf("%i. %.3f\t%.3f\t%.3f\t%.3f\t%.3f\t\n", i + 1, line[5 * i], line[5 * i + 1], line[5 * i + 2], line[5 * i + 3], line[5 * i + 4]);
-    }
-    
     AOGLWrapper::oglTexCoordPointer(2, GL_FLOAT, strideInBytes, &line[3]);
     ADrawBasics::drawTriangles(line, strideInBytes, dataLiner.pointsCount());
     

@@ -8,20 +8,20 @@ namespace spcTGame
     
 //==============================================================================
     
-ASceneNode::ASceneNode() : _nodeType(NODETYPE_SOLID), _position(APoint()), _nodeObject(0)
+ASceneNode::ASceneNode() : _nodeType(ESCENENODETYPE_SOLID), _position(APoint()), _nodeObject(0), _transparencyType(ESCENENODETRANSPARENCY_NONE)
 {
 }
 
 //==============================================================================
 
-ASceneNode::ASceneNode(const ASceneNode& sceneNode) : _nodeType(sceneNode._nodeType), _nodeObject(sceneNode._nodeObject), _position(sceneNode._position)
+ASceneNode::ASceneNode(const ASceneNode& sceneNode) : _nodeType(sceneNode._nodeType), _nodeObject(sceneNode._nodeObject), _position(sceneNode._position), _transparencyType(sceneNode._transparencyType)
 {
     
 }
     
 //==============================================================================
     
-ASceneNode::ASceneNode(ANodeObject* object, const APoint& position, const ENodeType nodeType) : _nodeObject(object), _nodeType(nodeType), _position(position)
+ASceneNode::ASceneNode(ANodeObject* object, const APoint& position, const ESceneNodeType nodeType, const ESceneNodeTrasnsparency nodeTransparency) : _nodeObject(object), _nodeType(nodeType), _position(position), _transparencyType(nodeTransparency)
 {
 }
 
@@ -43,6 +43,7 @@ ASceneNode& ASceneNode::operator=(const ASceneNode& rv)
     _nodeType = rv._nodeType;
     _position = rv._position;
     _nodeObject = rv._nodeObject;
+    _transparencyType = rv._transparencyType;
 
     return *this;
 }
@@ -69,12 +70,19 @@ const ANodeObject* ASceneNode::nodeObject() const
 
 //==============================================================================
 
-ENodeType ASceneNode::nodeType() const
+ESceneNodeType ASceneNode::nodeType() const
 {
     return _nodeType;
 }
 
 //==============================================================================
-    
+
+ESceneNodeTrasnsparency ASceneNode::transparencyType() const
+{
+    return _transparencyType;
+}
+
+//==============================================================================
+
 }   //  namespace spcTGame
 

@@ -14,10 +14,17 @@ namespace spcTGame
 
 class ANodeObject;
     
-enum ENodeType
+enum ESceneNodeType
 {
-    NODETYPE_SOLID,
-    NODETYPE_TEXTURED
+    ESCENENODETYPE_SOLID,
+    ESCENENODETYPE_TEXTURED
+};
+
+enum ESceneNodeTrasnsparency
+{
+    ESCENENODETRANSPARENCY_FULL,    //  full transparent object
+    ESCENENODETRANSPARENCY_HALF,    //  half transparent object
+    ESCENENODETRANSPARENCY_NONE //  non transparntr object
 };
 
 //==============================================================================
@@ -25,20 +32,22 @@ enum ENodeType
 class ASceneNode
 {
 protected:
-    ENodeType _nodeType;
+    ESceneNodeType _nodeType;
+    ESceneNodeTrasnsparency _transparencyType;
     APoint _position;
     ANodeObject *_nodeObject;
 
 public:
     ASceneNode();
     ASceneNode(const ASceneNode& sceneNode);
-    ASceneNode(ANodeObject* object, const APoint& position, const ENodeType nodeType);
+    ASceneNode(ANodeObject* object, const APoint& position, const ESceneNodeType nodeType, const ESceneNodeTrasnsparency nodeTransparency);
     ~ASceneNode();
     ASceneNode& operator=(const ASceneNode& rv);
 
     virtual void renderObject() const;
     
-    ENodeType nodeType() const;
+    ESceneNodeTrasnsparency transparencyType() const;
+    ESceneNodeType nodeType() const;
     const APoint& position() const;
     const ANodeObject* nodeObject() const;
 };

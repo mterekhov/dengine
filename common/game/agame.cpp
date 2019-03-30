@@ -44,16 +44,16 @@ void AGame::startGame()
     spcWAD::AWAD wadResources(ABundle().fullPathToResource("doom.wad"));
     spcWAD::ALevel e1m8 = wadResources.readLevel("e1m8");
 
-    const spcWAD::AFlat& planeFlat = wadResources.findFlat("CEIL3_5");
-    APlane *floorPlane = new APlane(_sceneGraph._textureManager.createOrFindTexture(planeFlat.flatName(), planeFlat.imageData()));
-    floorPlane->planeSize = 40;
-    _sceneGraph.addObject(floorPlane, APoint(-floorPlane->planeSize / 2.0f, 0.0f, -floorPlane->planeSize / 2.0f), NODETYPE_TEXTURED);
-
     const spcWAD::ASprite& bossSprite = e1m8.findSprite("boss");
     const spcWAD::APicture& bossPicture = bossSprite.findPicture("BOSSE1");
     ATexture& monsterTexture = _sceneGraph._textureManager.createOrFindTexture(bossPicture.patchName(), bossPicture.imageData);
-    _sceneGraph.addObject(new AMonster(monsterTexture), APoint(), NODETYPE_TEXTURED);
+    _sceneGraph.addObject(new AMonster(monsterTexture), APoint(), ESCENENODETYPE_TEXTURED, ESCENENODETRANSPARENCY_FULL);
 
+    const spcWAD::AFlat& planeFlat = wadResources.findFlat("CEIL3_5");
+    APlane *floorPlane = new APlane(_sceneGraph._textureManager.createOrFindTexture(planeFlat.flatName(), planeFlat.imageData()));
+    floorPlane->planeSize = 40;
+    _sceneGraph.addObject(floorPlane, APoint(-floorPlane->planeSize / 2.0f, 0.0f, -floorPlane->planeSize / 2.0f), ESCENENODETYPE_TEXTURED, ESCENENODETRANSPARENCY_NONE);
+    
     _logic.startGame();
 }
 
