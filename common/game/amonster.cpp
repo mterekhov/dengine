@@ -10,7 +10,7 @@ namespace spcTGame
     
 //==============================================================================
 
-AMonster::AMonster(ATexture& texture) : _texture(texture)
+AMonster::AMonster(AOpenGLTexture& texture) : _texture(texture)
 {
 }
 
@@ -54,7 +54,7 @@ TPointsList AMonster::generatePlanePoints(const TFloat textureWidth, const TFloa
 
 //==============================================================================
 
-TPoints2DList AMonster::generatePlaneUVPoints(const ATexture& texture) const
+TPoints2DList AMonster::generatePlaneUVPoints(const AOpenGLTexture& texture) const
 {
     TPoints2DList uvpointList;
     

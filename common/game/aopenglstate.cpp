@@ -192,7 +192,7 @@ TBool AOpenGLState::textureEnabled() const
 
 //==============================================================================
 
-TBool AOpenGLState::currentTexture(const ATexture& texture)
+TBool AOpenGLState::currentTexture(const AOpenGLTexture& texture)
 {
     if (_textureEnabled == false)
         return false;
@@ -205,7 +205,7 @@ TBool AOpenGLState::currentTexture(const ATexture& texture)
 
 //==============================================================================
 
-const ATexture& AOpenGLState::currentTexture() const
+const AOpenGLTexture& AOpenGLState::currentTexture() const
 {
     return _currentTexture;
 }

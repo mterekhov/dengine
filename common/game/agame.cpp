@@ -46,7 +46,7 @@ void AGame::startGame()
 
     const spcWAD::ASprite& bossSprite = e1m8.findSprite("boss");
     const spcWAD::APicture& bossPicture = bossSprite.findPicture("BOSSE1");
-    ATexture& monsterTexture = _sceneGraph._textureManager.createOrFindTexture(bossPicture.patchName(), bossPicture.imageData);
+    AOpenGLTexture& monsterTexture = _sceneGraph._textureManager.createOrFindTexture(bossPicture.patchName(), bossPicture.imageData);
     _sceneGraph.addObject(new AMonster(monsterTexture), APoint(), ESCENENODETYPE_TEXTURED, ESCENENODETRANSPARENCY_FULL);
 
     const spcWAD::AFlat& planeFlat = wadResources.findFlat("CEIL3_5");

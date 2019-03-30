@@ -1,5 +1,5 @@
-#ifndef SPCTGAME_ATEXTURE_H
-#define SPCTGAME_ATEXTURE_H
+#ifndef SPCTGAME_AOPENGLTEXTURE_H
+#define SPCTGAME_AOPENGLTEXTURE_H
 
 //=============================================================================
 
@@ -15,23 +15,23 @@ namespace spcTGame
 //==============================================================================
     
 /**
-    @class ATexture
+    @class AOpenGLTexture
     Class for texture holding and all it's attributes
 */
-class ATexture
+class AOpenGLTexture
 {
 public:
     /// Default Constructor
-    ATexture();
+    AOpenGLTexture();
     
-    ATexture(const ATexture& tex);
+    AOpenGLTexture(const AOpenGLTexture& tex);
 
     /// Constructor
     /// @param const AImage& - image for initialization of texture
-    ATexture(const AImage& image);
+    AOpenGLTexture(const AImage& image);
     
     /// Default destructor
-    ~ATexture();
+    ~AOpenGLTexture();
     
     /// Bind texture
     void bind() const;
@@ -154,4 +154,4 @@ private:
 
 //==============================================================================
     
-#endif  //  SPCTGAME_ATEXTURE_H
+#endif  //  SPCTGAME_AOPENGLTEXTURE_H

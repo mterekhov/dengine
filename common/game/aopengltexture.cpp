@@ -1,4 +1,4 @@
-#include "atexture.h"
+#include "aopengltexture.h"
 #include "aopenglstate.h"
 #include "atga.h"
 #include "aoglwrapper.h"
@@ -10,7 +10,7 @@ namespace spcTGame
     
 //==============================================================================
     
-ATexture::ATexture() : _id(0), _type(GL_RGBA), _minFilter(GL_LINEAR), _magFilter(GL_LINEAR),
+AOpenGLTexture::AOpenGLTexture() : _id(0), _type(GL_RGBA), _minFilter(GL_LINEAR), _magFilter(GL_LINEAR),
                        _pixelSize(GL_UNSIGNED_BYTE), _width(0), _height(0), _repeat(true),
                        _mipMaping(false), _name("undefined"), _imageWidth(0), _imageHeight(0)
 {
@@ -18,7 +18,7 @@ ATexture::ATexture() : _id(0), _type(GL_RGBA), _minFilter(GL_LINEAR), _magFilter
 
 //=============================================================================
 
-ATexture::ATexture(const ATexture& tex) : _id(tex._id), _type(tex._type), _minFilter(tex._minFilter),
+AOpenGLTexture::AOpenGLTexture(const AOpenGLTexture& tex) : _id(tex._id), _type(tex._type), _minFilter(tex._minFilter),
                                         _magFilter(tex._magFilter), _pixelSize(tex._pixelSize),
                                         _width(tex._width), _height(tex._height), _repeat(tex._repeat),
                                         _mipMaping(tex._mipMaping), _name(tex._name), _imageWidth(tex._imageWidth),
@@ -28,7 +28,7 @@ ATexture::ATexture(const ATexture& tex) : _id(tex._id), _type(tex._type), _minFi
 
 //=============================================================================
 
-ATexture::ATexture(const AImage& image) : _id(0), _type(GL_RGBA), _minFilter(GL_LINEAR), _magFilter(GL_LINEAR),
+AOpenGLTexture::AOpenGLTexture(const AImage& image) : _id(0), _type(GL_RGBA), _minFilter(GL_LINEAR), _magFilter(GL_LINEAR),
                        _pixelSize(GL_UNSIGNED_BYTE), _width(0), _height(0), _repeat(true),
                        _mipMaping(false), _name("undefined"), _imageWidth(0), _imageHeight(0)
 {
@@ -38,13 +38,13 @@ ATexture::ATexture(const AImage& image) : _id(0), _type(GL_RGBA), _minFilter(GL_
 
 //=============================================================================
 
-ATexture::~ATexture()
+AOpenGLTexture::~AOpenGLTexture()
 {
 }
 
 //=============================================================================
 
-void ATexture::destroy()
+void AOpenGLTexture::destroy()
 {
     if (_id)
     {
@@ -55,7 +55,7 @@ void ATexture::destroy()
 
 //=============================================================================
 
-void ATexture::defineImageType(const int bytePP)
+void AOpenGLTexture::defineImageType(const int bytePP)
 {
     switch (bytePP)
     {
@@ -72,7 +72,7 @@ void ATexture::defineImageType(const int bytePP)
 
 //=============================================================================
 
-TBool ATexture::init(const AImage& image)
+TBool AOpenGLTexture::init(const AImage& image)
 {
     defineImageType(image.bytePerPixel());
     
@@ -100,7 +100,7 @@ TBool ATexture::init(const AImage& image)
 
 //=============================================================================
 
-void ATexture::defineFilters()
+void AOpenGLTexture::defineFilters()
 {
     if (!_repeat)
     {
@@ -122,7 +122,7 @@ void ATexture::defineFilters()
     
 //=============================================================================
 
-void ATexture::locateSize(const TWidth width, const THeight height)
+void AOpenGLTexture::locateSize(const TWidth width, const THeight height)
 {
     THeight correctHeight = 1;
     TWidth correctWidth = 1;
@@ -148,49 +148,49 @@ void ATexture::locateSize(const TWidth width, const THeight height)
 
 //=============================================================================
 
-void ATexture::bind() const
+void AOpenGLTexture::bind() const
 {
     AOGLWrapper::oglBindTexture(GL_TEXTURE_2D, _id);
 }
 
 //=============================================================================
 
-void ATexture::unBind() const
+void AOpenGLTexture::unBind() const
 {
     AOGLWrapper::oglBindTexture(GL_TEXTURE_2D, 0);
 }
 
 //=============================================================================
 
-const TWidth ATexture::imageWidth() const
+const TWidth AOpenGLTexture::imageWidth() const
 {
     return _imageWidth;
 }
 
 //=============================================================================
 
-const THeight ATexture::imageHeight() const
+const THeight AOpenGLTexture::imageHeight() const
 {
     return _imageHeight;
 }
     
 //=============================================================================
 
-const TWidth ATexture::width() const
+const TWidth AOpenGLTexture::width() const
 {
     return _width;
 }
 
 //=============================================================================
 
-const THeight ATexture::height() const
+const THeight AOpenGLTexture::height() const
 {
     return _height;
 }
     
 //=============================================================================
 
-void ATexture::correctData(const AImage& image, TData* data)
+void AOpenGLTexture::correctData(const AImage& image, TData* data)
 {
     const TData* originalData = image.data();
     TUShort bytepp = image.bytePerPixel();
@@ -215,49 +215,49 @@ void ATexture::correctData(const AImage& image, TData* data)
 
 //=============================================================================
 
-const GLenum ATexture::type() const
+const GLenum AOpenGLTexture::type() const
 {
     return _type;
 }
 
 //=============================================================================
 
-const TString& ATexture::name() const
+const TString& AOpenGLTexture::name() const
 {
     return _name;
 }
 
 //=============================================================================
 
-void ATexture::minFilter(const GLuint min)
+void AOpenGLTexture::minFilter(const GLuint min)
 {
     _minFilter = min;
 }
 
 //=============================================================================
 
-void ATexture::magFilter(const GLuint mag)
+void AOpenGLTexture::magFilter(const GLuint mag)
 {
     _magFilter = mag;
 }
 
 //=============================================================================
 
-void ATexture::repeat(const TBool r)
+void AOpenGLTexture::repeat(const TBool r)
 {
     _repeat = r;
 }
 
 //=============================================================================
 
-void ATexture::mipMapping(const TBool m)
+void AOpenGLTexture::mipMapping(const TBool m)
 {
     _mipMaping = m;
 }
 
 //=============================================================================
 
-void ATexture::name(const TString& name)
+void AOpenGLTexture::name(const TString& name)
 {
     _name = name;
 }

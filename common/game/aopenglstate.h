@@ -4,7 +4,7 @@
 //==============================================================================
 
 #include "acolor.h"
-#include "atexture.h"
+#include "aopengltexture.h"
 #include "apoint.h"
 
 //==============================================================================
@@ -19,7 +19,7 @@ class AOpenGLState
 private:
     static AOpenGLState* instance;
     
-    ATexture _currentTexture;
+    AOpenGLTexture _currentTexture;
     AColor _clearColor;
     AColor _drawColor;
     TFloat _lineWidth;
@@ -57,8 +57,8 @@ public:
     
     void clear(GLbitfield mask);
     
-    TBool currentTexture(const ATexture& texture);
-    const ATexture& currentTexture() const;
+    TBool currentTexture(const AOpenGLTexture& texture);
+    const AOpenGLTexture& currentTexture() const;
     void clearCurrentTexture();
     
     TString lastError();

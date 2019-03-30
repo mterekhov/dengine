@@ -10,7 +10,7 @@ namespace spcTGame
     
 //==============================================================================
 
-APlane::APlane(ATexture& texture) : _texture(texture), planeSize(1)
+APlane::APlane(AOpenGLTexture& texture) : _texture(texture), planeSize(1)
 {
 }
 
@@ -43,7 +43,7 @@ TPointsList APlane::generatePlanePoints(const TFloat squarePlaneSize) const
 
 //==============================================================================
 
-TPoints2DList APlane::generatePlaneUVPoints(const ATexture& texture) const
+TPoints2DList APlane::generatePlaneUVPoints(const AOpenGLTexture& texture) const
 {
     TPoints2DList uvpointList;
     TFloat aspect = texture.imageWidth();

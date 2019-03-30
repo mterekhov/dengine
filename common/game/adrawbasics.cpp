@@ -14,7 +14,7 @@ namespace spcTGame
 
 //==============================================================================
 
-void ADrawBasics::drawTexturedPlane(const TPointsList& coordspoints, const TPoints2DList uvpoints, const ATexture& texture)
+void ADrawBasics::drawTexturedPlane(const TPointsList& coordspoints, const TPoints2DList uvpoints, const AOpenGLTexture& texture)
 {
     ADataLiner dataLiner;
     dataLiner.pushCoordPointList(coordspoints);
@@ -43,7 +43,7 @@ void ADrawBasics::drawTexturedPlane(const TPointsList& coordspoints, const TPoin
 
 //==============================================================================
     
-void ADrawBasics::drawTexturedCube(const APoint& pos, const TFloat cubeSize, ATexture& texture)
+void ADrawBasics::drawTexturedCube(const APoint& pos, const TFloat cubeSize, AOpenGLTexture& texture)
 {
     TPointsList coordspoints = ADrawBasics::generateCoords(pos, cubeSize);
     TPoints2DList uvpoints = ADrawBasics::generateUV(texture);
@@ -298,7 +298,7 @@ void ADrawBasics::drawTriangles(const ADataLiner& dataLiner)
 //==============================================================================
 
 
-TPoints2DList ADrawBasics::generateUV(const ATexture& tex)
+TPoints2DList ADrawBasics::generateUV(const AOpenGLTexture& tex)
 {
     TPoints2DList points;
     

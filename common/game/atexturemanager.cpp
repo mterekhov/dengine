@@ -9,11 +9,11 @@ namespace spcTGame
     
 //==============================================================================
     
-ATexture ATextureManager::_zeroTexture;
+AOpenGLTexture ATextureManager::_zeroTexture;
 
 //==============================================================================
 
-ATexture& ATextureManager::zeroTexture()
+AOpenGLTexture& ATextureManager::zeroTexture()
 {
     return _zeroTexture;
 }
@@ -32,12 +32,12 @@ ATextureManager::~ATextureManager()
 
 //==============================================================================
 
-ATexture& ATextureManager::createTextureFromData(const AImage& image)
+AOpenGLTexture& ATextureManager::createTextureFromData(const AImage& image)
 {
     AOpenGLState* oglState = AOpenGLState::shared();
     oglState->textureEnable();
     
-    ATexture newTexture(image);
+    AOpenGLTexture newTexture(image);
     _textureList[newTexture.name()] = newTexture;
     
     oglState->textureDisable();
@@ -47,7 +47,7 @@ ATexture& ATextureManager::createTextureFromData(const AImage& image)
     
 //==============================================================================
 
-ATexture& ATextureManager::createTextureFromTGA(const TString& filePath)
+AOpenGLTexture& ATextureManager::createTextureFromTGA(const TString& filePath)
 {
     ATga tgaFile(filePath);
     return createTextureFromData(tgaFile.image());
@@ -55,7 +55,7 @@ ATexture& ATextureManager::createTextureFromTGA(const TString& filePath)
 
 //==============================================================================
 
-ATexture& ATextureManager::createOrFindTexture(const AImage& image)
+AOpenGLTexture& ATextureManager::createOrFindTexture(const AImage& image)
 {
     TTexturesListIter textureIter = _textureList.find(image.name());
     if (textureIter == _textureList.end())
@@ -66,7 +66,7 @@ ATexture& ATextureManager::createOrFindTexture(const AImage& image)
     
 //==============================================================================
 
-ATexture& ATextureManager::createOrFindTextureFromTGA(const TString& filePath)
+AOpenGLTexture& ATextureManager::createOrFindTextureFromTGA(const TString& filePath)
 {
     TTexturesListIter textureIter = _textureList.find(filePath);
     if (textureIter == _textureList.end())
@@ -77,7 +77,7 @@ ATexture& ATextureManager::createOrFindTextureFromTGA(const TString& filePath)
 
 //==============================================================================
     
-ATexture& ATextureManager::createOrFindTexture(const std::string& textureName, const spcWAD::AImageData& wadImageData)
+AOpenGLTexture& ATextureManager::createOrFindTexture(const std::string& textureName, const spcWAD::AImageData& wadImageData)
 {
     TTexturesListIter textureIter = _textureList.find(textureName);
     if (textureIter == _textureList.end())

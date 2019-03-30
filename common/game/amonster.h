@@ -4,13 +4,12 @@
 //==============================================================================
 
 #include "anodeobject.h"
-#include "atexture.h"
+#include "aopengltexture.h"
 #include "apoint2d.h"
 #include "apoint.h"
 
 //==============================================================================
 
-class ATexture;
 class TPoints2DList;
 
 //==============================================================================
@@ -23,13 +22,13 @@ namespace spcTGame
 class AMonster : public ANodeObject
 {
 private:
-    const ATexture& _texture;
+    const AOpenGLTexture& _texture;
     
-    TPoints2DList generatePlaneUVPoints(const ATexture& texture) const;
+    TPoints2DList generatePlaneUVPoints(const AOpenGLTexture& texture) const;
     TPointsList generatePlanePoints(const TFloat textureWidth, const TFloat textureHeight) const;
 
 public:
-    AMonster(ATexture& texture);
+    AMonster(AOpenGLTexture& texture);
     virtual ~AMonster();
 
     virtual void renderObject() const;
