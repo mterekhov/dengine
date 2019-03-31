@@ -4,6 +4,9 @@
 //==============================================================================
 
 #include "apoint.h"
+#include "avector.h"
+#include "aquaternion.h"
+#include "aanimation.h"
 
 //==============================================================================
 
@@ -31,25 +34,36 @@ enum ESceneNodeTrasnsparency
 
 class ASceneNode
 {
-protected:
+private:
     ESceneNodeType _nodeType;
     ESceneNodeTrasnsparency _transparencyType;
     APoint _position;
+    AVector _scale;
+    AQuaternion _rotation;
     ANodeObject *_nodeObject;
+    AAnimation _animation;
 
 public:
     ASceneNode();
     ASceneNode(const ASceneNode& sceneNode);
-    ASceneNode(ANodeObject* object, const APoint& position, const ESceneNodeType nodeType, const ESceneNodeTrasnsparency nodeTransparency);
+    ASceneNode(ANodeObject* object, const AVector& scale, const AVector& rotationVector, const TFloat rotationAngle, const APoint& position, const ESceneNodeType nodeType, const ESceneNodeTrasnsparency nodeTransparency);
     ~ASceneNode();
     ASceneNode& operator=(const ASceneNode& rv);
 
     virtual void renderObject() const;
+    virtual void applyAnimation();
     
+    void attachAnimation(const AAnimation& newAnimation);
+
     ESceneNodeTrasnsparency transparencyType() const;
     ESceneNodeType nodeType() const;
     const APoint& position() const;
-    const ANodeObject* nodeObject() const;
+    const AQuaternion& rotation() const;
+    const AVector& scale() const;
+    
+    void changePosition(const APoint& newPoint);
+    void changeRotation(const AQuaternion& newRotation);
+    void changeScale(const AVector& newScale);
 };
 
 //==============================================================================

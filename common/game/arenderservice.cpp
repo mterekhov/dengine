@@ -66,20 +66,23 @@ void ARenderService::renderTexturedObjects()
 void ARenderService::renderObjectWithTransparency(const ESceneNodeTrasnsparency nodeTransparency)
 {
     AOpenGLState *instance = AOpenGLState::shared();
-    const TSceneNodesList& texturedObjectsList = _sceneGraph.texturedNodes();
-    TSceneNodesListConstIter iterBegin = texturedObjectsList.begin();
-    TSceneNodesListConstIter iterEnd = texturedObjectsList.end();
-    for (TSceneNodesListConstIter iter = iterBegin; iter != iterEnd; iter++)
+    TSceneNodesList& texturedObjectsList = _sceneGraph.texturedNodes();
+    TSceneNodesListIter iterBegin = texturedObjectsList.begin();
+    TSceneNodesListIter iterEnd = texturedObjectsList.end();
+    for (TSceneNodesListIter iter = iterBegin; iter != iterEnd; iter++)
     {
-        const ASceneNode &node = *iter;
+        ASceneNode &node = *iter;
         if (node.transparencyType() != nodeTransparency)
         {
             continue;
         }
         
         instance->pushMarices();
-        instance->translate(iter->position());
-        node.nodeObject()->renderObject();
+        instance->translate(node.position());
+        instance->scale(node.scale());
+        instance->rotation(node.rotation());
+        node.applyAnimation();
+        node.renderObject();
         instance->popMarices();
     }
 

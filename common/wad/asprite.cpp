@@ -64,6 +64,13 @@ void ASprite::addPicture(const APicture& newPicture)
 
 //=============================================================================
 
+const TPicturesList& ASprite::picturesList() const
+{
+    return _picturesList;
+}
+
+//=============================================================================
+
 const APicture& ASprite::findPicture(const std::string& pictureName) const
 {
     for (TPicturesListConstIter iter = _picturesList.begin(); iter != _picturesList.end(); iter++)

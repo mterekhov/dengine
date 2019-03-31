@@ -148,6 +148,23 @@ void AOpenGLState::popMarices()
 
 //==============================================================================
 
+void AOpenGLState::scale(const AVector& newScale)
+{
+    glScalef(newScale.x, newScale.y, newScale.z);
+}
+
+//==============================================================================
+
+void AOpenGLState::rotation(const AQuaternion& quaternion)
+{
+    AVector rotationVector;
+    TFloat rotationAngle;
+    quaternion.findVectorAndAngle(rotationVector, rotationAngle);
+    glRotatef(rotationAngle, rotationVector.x, rotationVector.y, rotationVector.z);
+}
+
+//==============================================================================
+
 void AOpenGLState::translate(const APoint& point)
 {
     AOGLWrapper::oglTranslatef(point.x, point.y, point.z);

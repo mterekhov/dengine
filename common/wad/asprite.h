@@ -34,6 +34,7 @@ public:
 	ASprite& operator=(const ASprite& rv);
     bool operator ==(const ASprite & obj) const;
 
+    const TPicturesList& picturesList() const;
     const APicture& findPicture(const std::string& pictureName) const;
     void addPicture(const APicture& newPicture);
 

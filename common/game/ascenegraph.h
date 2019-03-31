@@ -43,8 +43,8 @@ public:
     ASceneGraph();
     ~ASceneGraph();
     
-    void addObject(ANodeObject *object, const APoint& position, const ESceneNodeType nodeType, const ESceneNodeTrasnsparency nodeTransparency = ESCENENODETRANSPARENCY_NONE);
-    const TSceneNodesList& texturedNodes() const;
+    ASceneNode& addObject(ANodeObject *object, const ESceneNodeType nodeType, const ESceneNodeTrasnsparency nodeTransparency = ESCENENODETRANSPARENCY_NONE);
+    TSceneNodesList& texturedNodes();
 };
 
 //==============================================================================

@@ -89,4 +89,11 @@ void AMonster::renderObject() const
 
 //==============================================================================
 
+void AMonster::applyTexture(AOpenGLTexture& texture)
+{
+    _texture = texture;
+}
+
+//==============================================================================
+
 }   //  namespace spcTGame

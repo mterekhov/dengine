@@ -1,5 +1,5 @@
-#ifndef SPCTGAME_AANIMATIONBUILDER_H
-#define SPCTGAME_AANIMATIONBUILDER_H
+#ifndef SPCTGAME_AANIMATION_H
+#define SPCTGAME_AANIMATION_H
 
 //==============================================================================
 
@@ -23,16 +23,19 @@ typedef TAnimationFramesList::const_iterator TAnimationFramesListConstIter;
 
 //==============================================================================
 
-class AAnimationBuilder
+class AAnimation
 {
 private:
-    std::list<std::string> shouldbeMirrored(const std::string& pictureName, const std::string& spritePrefix) const;
+    void animateTexture();
+    void animateTranslation();
+    void animateScale();
+    void animateRotation();
     
 public:
-    AAnimationBuilder();
-    ~AAnimationBuilder();
+    AAnimation();
+    ~AAnimation();
     
-    TAnimationFramesList buildAnimation(const spcWAD::ASprite& wadSprite) const;
+    void animate();
     
 };
 

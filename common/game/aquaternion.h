@@ -1,10 +1,10 @@
-#ifndef SPCTGAME_ANODEOBJECT
-#define SPCTGAME_ANODEOBJECT
+#ifndef SPCTGAME_AQUATERNION_H
+#define SPCTGAME_AQUATERNION_H
 
 //==============================================================================
 
 #include "blockouttypes.h"
-#include "aopengltexture.h"
+#include "avector.h"
 
 //==============================================================================
 
@@ -13,14 +13,22 @@ namespace spcTGame
     
 //==============================================================================
 
-class ANodeObject
+class AQuaternion
 {
+private:
+    TFloat _x;
+    TFloat _y;
+    TFloat _z;
+    TFloat _w;
+
 public:
-    ANodeObject();
-    virtual ~ANodeObject();
-    
-    virtual void renderObject() const;
-    virtual void applyTexture(AOpenGLTexture& texture);
+    AQuaternion();
+    AQuaternion(const AVector& vector, const TFloat angle);
+    AQuaternion(const AQuaternion& quaternion);
+    AQuaternion& operator=(const AQuaternion& rv);
+    ~AQuaternion();
+
+    void findVectorAndAngle(AVector& axis, TFloat& angle) const;
 };
 
 //==============================================================================
@@ -29,5 +37,4 @@ public:
 
 //==============================================================================
 
-#endif  //  SPCTGAME_ANODEOBJECT
-
+#endif  //  SPCTGAME_ACOLOR_H

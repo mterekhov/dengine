@@ -13,7 +13,7 @@ TLumpsList AUtilities::findLumpsList(const std::string& lumpsNameMask, const TLu
 	TLumpsList founded;
 	for (TLumpsListConstIter iter = lumpsList.begin(); iter != lumpsList.end(); iter++)
 	{
-		if (AUtilities::stringPrefixCompare(lumpsNameMask, iter->lumpName))
+		if (stringPrefixCompare(lumpsNameMask, iter->lumpName))
 		{
 			founded.push_back(*iter);
 		}
@@ -28,7 +28,7 @@ TLumpsListConstIter AUtilities::findLumpIter(const std::string& lumpNameToFind, 
 {
 	for (TLumpsListConstIter iter = lumpsList.begin(); iter != lumpsList.end(); iter++)
 	{
-		if (AUtilities::stringCompare(iter->lumpName, lumpNameToFind))
+		if (stringCompare(iter->lumpName, lumpNameToFind))
 		{
 			return iter;
 		}

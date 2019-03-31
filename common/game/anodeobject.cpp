@@ -24,5 +24,12 @@ void ANodeObject::renderObject() const
 }
 
 //==============================================================================
+
+void ANodeObject::applyTexture(AOpenGLTexture& texture)
+{
     
+}
+
+//==============================================================================
+
 }   //  namespace spcTGame

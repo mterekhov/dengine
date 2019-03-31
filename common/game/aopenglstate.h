@@ -6,6 +6,8 @@
 #include "acolor.h"
 #include "aopengltexture.h"
 #include "apoint.h"
+#include "avector.h"
+#include "aquaternion.h"
 
 //==============================================================================
 
@@ -50,7 +52,9 @@ public:
     void popMarices();
     
     void translate(const APoint& point);
-    
+    void scale(const AVector& newScale);
+    void rotation(const AQuaternion& quaternion);
+
     void textureEnable();
     void textureDisable();
     TBool textureEnabled() const;

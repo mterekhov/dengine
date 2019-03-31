@@ -10,6 +10,7 @@
 #include "types.h"
 #include "aplane.h"
 #include "aflat.h"
+#include "aanimationbuilder.h"
 
 //==============================================================================
 
@@ -45,14 +46,22 @@ void AGame::startGame()
     spcWAD::ALevel e1m8 = wadResources.readLevel("e1m8");
 
     const spcWAD::ASprite& bossSprite = e1m8.findSprite("boss");
+
+    AAnimationBuilder animationBuilder;
+    TAnimationFramesList animationsList = animationBuilder.buildAnimation(bossSprite);
+    
     const spcWAD::APicture& bossPicture = bossSprite.findPicture("BOSSE1");
     AOpenGLTexture& monsterTexture = _sceneGraph._textureManager.createOrFindTexture(bossPicture.patchName(), bossPicture.imageData);
-    _sceneGraph.addObject(new AMonster(monsterTexture), APoint(), ESCENENODETYPE_TEXTURED, ESCENENODETRANSPARENCY_FULL);
+    ASceneNode& newNode = _sceneGraph.addObject(new AMonster(monsterTexture), ESCENENODETYPE_TEXTURED, ESCENENODETRANSPARENCY_FULL);
+    newNode.changePosition(APoint(0, 0, -0.5));
+    newNode.changeScale(AVector(0.5, 0.5, 0.5));
+    newNode.changeRotation(AQuaternion(AVector(0.0f, 1.0f, 0.0f), (M_PI / 180.0f) * 180.0f));
 
     const spcWAD::AFlat& planeFlat = wadResources.findFlat("CEIL3_5");
     APlane *floorPlane = new APlane(_sceneGraph._textureManager.createOrFindTexture(planeFlat.flatName(), planeFlat.imageData()));
     floorPlane->planeSize = 40;
-    _sceneGraph.addObject(floorPlane, APoint(-floorPlane->planeSize / 2.0f, 0.0f, -floorPlane->planeSize / 2.0f), ESCENENODETYPE_TEXTURED, ESCENENODETRANSPARENCY_NONE);
+    ASceneNode& newNode2 = _sceneGraph.addObject(floorPlane, ESCENENODETYPE_TEXTURED, ESCENENODETRANSPARENCY_NONE);
+    newNode2.changePosition(APoint(-floorPlane->planeSize / 2.0f, 0.0f, -floorPlane->planeSize / 2.0f));
     
     _logic.startGame();
 }
