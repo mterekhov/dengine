@@ -54,10 +54,10 @@ void AGame::startGame()
     AOpenGLTexture& monsterTexture = _sceneGraph._textureManager.createOrFindTexture(bossPicture.patchName(), bossPicture.imageData);
     ASceneNode& newNode = _sceneGraph.addObject(new AMonster(monsterTexture), ESCENENODETYPE_TEXTURED, ESCENENODETRANSPARENCY_FULL);
     newNode.changePosition(APoint(0, 0, -0.5));
-    newNode.changeScale(AVector(0.5, 0.5, 0.5));
-    newNode.changeRotation(AQuaternion(AVector(0.0f, 1.0f, 0.0f), (M_PI / 180.0f) * 180.0f));
+    newNode.changeRotation(AQuaternion(AVector(0.0f, 1.0f, 0.0f), 45));
+    
 
-    const spcWAD::AFlat& planeFlat = wadResources.findFlat("CEIL3_5");
+    const spcWAD::AFlat& planeFlat = wadResources.findFlat("floor4_8");
     APlane *floorPlane = new APlane(_sceneGraph._textureManager.createOrFindTexture(planeFlat.flatName(), planeFlat.imageData()));
     floorPlane->planeSize = 40;
     ASceneNode& newNode2 = _sceneGraph.addObject(floorPlane, ESCENENODETYPE_TEXTURED, ESCENENODETRANSPARENCY_NONE);

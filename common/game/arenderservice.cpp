@@ -78,9 +78,9 @@ void ARenderService::renderObjectWithTransparency(const ESceneNodeTrasnsparency 
         }
         
         instance->pushMarices();
-        instance->translate(node.position());
         instance->scale(node.scale());
         instance->rotation(node.rotation());
+        instance->translate(node.position());
         node.applyAnimation();
         node.renderObject();
         instance->popMarices();

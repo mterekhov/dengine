@@ -18,7 +18,8 @@ AQuaternion::AQuaternion(const AVector& vector, const TFloat angle)
     AVector v(vector);
     v.normalize();
     
-    TFloat half_angle = angle * 0.5f;
+    //  taske half of angle in radians
+    TFloat half_angle = M_PI / 180.0f * angle * 0.5f;
     TFloat sin_a = sinf(half_angle);
     _x = v.x * sin_a;
     _y = v.y * sin_a;
@@ -63,12 +64,12 @@ void AQuaternion::findVectorAndAngle(AVector& axis, TFloat& angle) const
     
     if (vectorLength > FLOAT_PRECISION)
     {
-        TFloat invertedVectorLength = 1.0 / vectorLength;
+        TFloat invertedVectorLength = 1.0f / vectorLength;
         axis.x = _x * invertedVectorLength;
         axis.y = _y * invertedVectorLength;
         axis.z = _z * invertedVectorLength;
         
-        if(_w < 0)
+        if (_w < 0)
         {
             angle = 2.0f * atan2f(-vectorLength, -_w); //-PI,0
         }
@@ -84,6 +85,9 @@ void AQuaternion::findVectorAndAngle(AVector& axis, TFloat& angle) const
         axis.z = 0;
         angle = 0;
     }
+    
+    //  return angle in degrees
+    angle *= 180.0f / M_PI;
 }
 
 //==============================================================================
