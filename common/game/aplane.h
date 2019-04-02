@@ -22,7 +22,7 @@ namespace spcTGame
 class APlane : public ANodeObject
 {
 private:
-    const AOpenGLTexture& _texture;
+    AOpenGLTexture& _texture;
     
     TPoints2DList generatePlaneUVPoints(const AOpenGLTexture& texture) const;
     TPointsList generatePlanePoints(const TFloat squarePlaneSize) const;
@@ -33,6 +33,7 @@ public:
 
     virtual void renderObject() const;
     virtual void applyTexture();
+    virtual void applyTexture(AOpenGLTexture& texture);
 
     TFloat planeSize;
 };

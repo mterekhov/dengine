@@ -86,4 +86,11 @@ void APlane::applyTexture()
 
 //==============================================================================
 
+void APlane::applyTexture(AOpenGLTexture& texture)
+{
+    _texture = texture;
+}
+
+//==============================================================================
+
 }   //  namespace spcTGame

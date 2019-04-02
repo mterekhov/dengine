@@ -14,14 +14,14 @@ ASceneNode::ASceneNode() : _nodeType(ESCENENODETYPE_SOLID), _rotation(AQuaternio
 
 //==============================================================================
 
-ASceneNode::ASceneNode(const ASceneNode& sceneNode) : _animation(sceneNode._animation), _scale(sceneNode._scale), _rotation(sceneNode._rotation), _nodeType(sceneNode._nodeType), _nodeObject(sceneNode._nodeObject), _position(sceneNode._position), _transparencyType(sceneNode._transparencyType)
+ASceneNode::ASceneNode(const ASceneNode& sceneNode) : _animation(sceneNode._animation), _position(sceneNode._position), _scale(sceneNode._scale), _rotation(sceneNode._rotation), _nodeType(sceneNode._nodeType), _nodeObject(sceneNode._nodeObject), _transparencyType(sceneNode._transparencyType)
 {
     
 }
     
 //==============================================================================
     
-ASceneNode::ASceneNode(ANodeObject* object, const AVector& scale, const AVector& rotationVector, const TFloat rotationAngle, const APoint& position, const ESceneNodeType nodeType, const ESceneNodeTrasnsparency nodeTransparency) : _nodeObject(object), _nodeType(nodeType), _position(position), _transparencyType(nodeTransparency), _rotation(AQuaternion(rotationVector, rotationAngle)), _scale(scale)
+ASceneNode::ASceneNode(ANodeObject* object, const AVector& scale, const AVector& rotationVector, const TFloat rotationAngle, const APoint& position, const ESceneNodeType nodeType, const ESceneNodeTrasnsparency nodeTransparency) : _nodeObject(object), _scale(scale), _rotation(AQuaternion(rotationVector, rotationAngle)), _position(position), _nodeType(nodeType), _transparencyType(nodeTransparency)
 {
 }
 
@@ -40,12 +40,12 @@ ASceneNode& ASceneNode::operator=(const ASceneNode& rv)
         return *this;
     }
 
-    _nodeType = rv._nodeType;
     _position = rv._position;
-    _rotation = rv._rotation;
     _scale = rv._scale;
-    _nodeObject = rv._nodeObject;
+    _rotation = rv._rotation;
+    _nodeType = rv._nodeType;
     _transparencyType = rv._transparencyType;
+    _nodeObject = rv._nodeObject;
     _animation = rv._animation;
 
     return *this;

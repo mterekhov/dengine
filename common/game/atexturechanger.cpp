@@ -13,9 +13,6 @@ ATextureChanger::ATextureChanger(const spcWAD::ASprite& wadSprite, ATextureManag
 {
     TAnimationFramesList framesList = AAnimationBuilder().buildAnimation(wadSprite);
     TAnimationFramesListIter iter = framesList.begin();
-    iter++;
-    iter++;
-    iter++;
     _texturesList = *iter;
     
     _texturesIter = 0;
