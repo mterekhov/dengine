@@ -61,6 +61,8 @@
 		4C938AF7224E180A008D803A /* blockoutdebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AF2224E180A008D803A /* blockoutdebug.cpp */; };
 		4C938AFA224E1832008D803A /* amacbundle.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AF9224E1832008D803A /* amacbundle.mm */; };
 		4C938AFD224E2BE8008D803A /* aplane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AFB224E2BE8008D803A /* aplane.cpp */; };
+		4CA20CB02253559B000FA833 /* achanger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CA20CAE2253559B000FA833 /* achanger.cpp */; };
+		4CA20CB3225357A7000FA833 /* atexturechanger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CA20CB1225357A7000FA833 /* atexturechanger.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,6 +177,10 @@
 		4C938AF9224E1832008D803A /* amacbundle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = amacbundle.mm; path = ../common/game/mac/amacbundle.mm; sourceTree = "<group>"; };
 		4C938AFB224E2BE8008D803A /* aplane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aplane.cpp; path = ../common/game/aplane.cpp; sourceTree = "<group>"; };
 		4C938AFC224E2BE8008D803A /* aplane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aplane.h; path = ../common/game/aplane.h; sourceTree = "<group>"; };
+		4CA20CAE2253559B000FA833 /* achanger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = achanger.cpp; path = ../common/game/achanger.cpp; sourceTree = "<group>"; };
+		4CA20CAF2253559B000FA833 /* achanger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = achanger.h; path = ../common/game/achanger.h; sourceTree = "<group>"; };
+		4CA20CB1225357A7000FA833 /* atexturechanger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = atexturechanger.cpp; path = ../common/game/atexturechanger.cpp; sourceTree = "<group>"; };
+		4CA20CB2225357A7000FA833 /* atexturechanger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = atexturechanger.h; path = ../common/game/atexturechanger.h; sourceTree = "<group>"; };
 		4CA55EEF224EAA2A006249BF /* aopengl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = aopengl.h; path = ../common/game/aopengl.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,10 +202,10 @@
 				4C938AFB224E2BE8008D803A /* aplane.cpp */,
 				4C938AE5224E17F0008D803A /* amonster.h */,
 				4C938AE3224E17F0008D803A /* amonster.cpp */,
-				4C938AE0224E17F0008D803A /* anodeobject.cpp */,
 				4C938ADF224E17F0008D803A /* anodeobject.h */,
-				4C938AE2224E17F0008D803A /* arenderservice.cpp */,
+				4C938AE0224E17F0008D803A /* anodeobject.cpp */,
 				4C938AE1224E17F0008D803A /* arenderservice.h */,
+				4C938AE2224E17F0008D803A /* arenderservice.cpp */,
 				4C938AE7224E17F0008D803A /* ascenegraph.cpp */,
 				4C938AE6224E17F0008D803A /* ascenegraph.h */,
 				4C938AE8224E17F0008D803A /* ascenenode.h */,
@@ -297,6 +303,7 @@
 				4CD08D4F22492592008963CD /* OpenGL */,
 				4C1B89EC22491D3100418BE5 /* System */,
 				4C1B89EA22491CE800418BE5 /* Geometry */,
+				4CA20CB4225357AF000FA833 /* AnimationChangers */,
 				4C4F80142250FFC1000F842A /* Animation */,
 				4C1B89E922491C7E00418BE5 /* Render */,
 				4C2E7AF7224540D20059E112 /* mac */,
@@ -361,10 +368,21 @@
 			children = (
 				4C4F80122250FFB3000F842A /* aanimation.h */,
 				4C4F80112250FFB3000F842A /* aanimation.cpp */,
-				4C4F800E224F946E000F842A /* aanimationbuilder.cpp */,
 				4C4F800F224F946E000F842A /* aanimationbuilder.h */,
+				4C4F800E224F946E000F842A /* aanimationbuilder.cpp */,
 			);
 			name = Animation;
+			sourceTree = "<group>";
+		};
+		4CA20CB4225357AF000FA833 /* AnimationChangers */ = {
+			isa = PBXGroup;
+			children = (
+				4CA20CB2225357A7000FA833 /* atexturechanger.h */,
+				4CA20CB1225357A7000FA833 /* atexturechanger.cpp */,
+				4CA20CAF2253559B000FA833 /* achanger.h */,
+				4CA20CAE2253559B000FA833 /* achanger.cpp */,
+			);
+			name = AnimationChangers;
 			sourceTree = "<group>";
 		};
 		4CD08D4F22492592008963CD /* OpenGL */ = {
@@ -486,6 +504,7 @@
 				4C2E7ABA22453AD10059E112 /* main.m in Sources */,
 				4C45AB76224A88EE004141E7 /* aendoom.cpp in Sources */,
 				4C45AB6A224A88EE004141E7 /* alevelintegrity.cpp in Sources */,
+				4CA20CB02253559B000FA833 /* achanger.cpp in Sources */,
 				4C45AB65224A88EE004141E7 /* aimagedata.cpp in Sources */,
 				4C45AB67224A88EE004141E7 /* acolormap.cpp in Sources */,
 				4C4F801722510992000F842A /* aquaternion.cpp in Sources */,
@@ -513,6 +532,7 @@
 				4C45AB6E224A88EE004141E7 /* awad.cpp in Sources */,
 				4C938AED224E17F0008D803A /* ascenegraph.cpp in Sources */,
 				4C45AB69224A88EE004141E7 /* apicture.cpp in Sources */,
+				4CA20CB3225357A7000FA833 /* atexturechanger.cpp in Sources */,
 				4C45AB66224A88EE004141E7 /* asprite.cpp in Sources */,
 				4C938AEA224E17F0008D803A /* arenderservice.cpp in Sources */,
 				4C938ADC224E17D9008D803A /* amatrix.cpp in Sources */,

@@ -5,12 +5,17 @@
 
 #include "aopengltexture.h"
 #include "asprite.h"
+#include "achanger.h"
 
 //==============================================================================
 
 namespace spcTGame
 {
+    
+//==============================================================================
 
+class ANodeObject;
+    
 //==============================================================================
 
 typedef std::vector<spcWAD::APicture> TFrameProjectionsList;
@@ -21,22 +26,26 @@ typedef std::list<TFrameProjectionsList> TAnimationFramesList;
 typedef TAnimationFramesList::iterator TAnimationFramesListIter;
 typedef TAnimationFramesList::const_iterator TAnimationFramesListConstIter;
 
+typedef std::list<AChanger *> TChangersList;
+typedef TChangersList::iterator TChangersListIter;
+typedef TChangersList::const_iterator TChangersListConstIter;
+    
 //==============================================================================
 
 class AAnimation
 {
 private:
-    void animateTexture();
-    void animateTranslation();
-    void animateScale();
-    void animateRotation();
+    TInt _currentFramesCount;
+    TChangersList _changersList;
     
 public:
     AAnimation();
     ~AAnimation();
     
-    void animate();
+    void appendChanger(AChanger *newChanger);
+    void animate(ANodeObject *nodeObject);
     
+    TInt _animationTrigger;
 };
 
 //==============================================================================
@@ -45,4 +54,4 @@ public:
 
 //==============================================================================
 
-#endif  //  SPCTGAME_AANIMATIONBUILDER_H
+#endif  //  SPCTGAME_AANIMATION_H

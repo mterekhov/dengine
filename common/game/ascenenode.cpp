@@ -73,7 +73,7 @@ void ASceneNode::renderObject() const
 
 void ASceneNode::applyAnimation()
 {
-    _animation.animate();
+    _animation.animate(_nodeObject);
 }
 
 //==============================================================================

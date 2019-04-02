@@ -11,6 +11,7 @@
 #include "aplane.h"
 #include "aflat.h"
 #include "aanimationbuilder.h"
+#include "atexturechanger.h"
 
 //==============================================================================
 
@@ -50,13 +51,22 @@ void AGame::startGame()
     AAnimationBuilder animationBuilder;
     TAnimationFramesList animationsList = animationBuilder.buildAnimation(bossSprite);
     
+    //  create mosnter node
     const spcWAD::APicture& bossPicture = bossSprite.findPicture("BOSSE1");
     AOpenGLTexture& monsterTexture = _sceneGraph._textureManager.createOrFindTexture(bossPicture.patchName(), bossPicture.imageData);
     ASceneNode& newNode = _sceneGraph.addObject(new AMonster(monsterTexture), ESCENENODETYPE_TEXTURED, ESCENENODETRANSPARENCY_FULL);
+    
+    //  tune position and scale
     newNode.changePosition(APoint(0, 0, -0.5));
     newNode.changeRotation(AQuaternion(AVector(0.0f, 1.0f, 0.0f), 45));
     
+    //  attach animation
+    AAnimation monsterTextureAnimation;
+    monsterTextureAnimation._animationTrigger = 10;
+    monsterTextureAnimation.appendChanger(new ATextureChanger(bossSprite));
+    newNode.attachAnimation(monsterTextureAnimation);
 
+    //  create floor
     const spcWAD::AFlat& planeFlat = wadResources.findFlat("floor4_8");
     APlane *floorPlane = new APlane(_sceneGraph._textureManager.createOrFindTexture(planeFlat.flatName(), planeFlat.imageData()));
     floorPlane->planeSize = 40;

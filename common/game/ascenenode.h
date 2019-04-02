@@ -35,11 +35,12 @@ enum ESceneNodeTrasnsparency
 class ASceneNode
 {
 private:
-    ESceneNodeType _nodeType;
-    ESceneNodeTrasnsparency _transparencyType;
     APoint _position;
     AVector _scale;
     AQuaternion _rotation;
+
+    ESceneNodeType _nodeType;
+    ESceneNodeTrasnsparency _transparencyType;
     ANodeObject *_nodeObject;
     AAnimation _animation;
 
