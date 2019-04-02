@@ -12,14 +12,24 @@
 namespace spcTGame
 {
 
+typedef std::vector<AOpenGLTexture> TProjectionsList;
+typedef TProjectionsList::iterator TProjectionsListIter;
+typedef TProjectionsList::const_iterator TProjectionsListConstIter;
+
+typedef std::list<TProjectionsList> TFramesList;
+typedef TFramesList::iterator TFramesListIter;
+typedef TFramesList::const_iterator TFramesListConstIter;
+
+
 //==============================================================================
 
 class ATextureChanger : public AChanger
 {
 private:
     ATextureManager& _textureManager;
-    TFrameProjectionsList _texturesList;
-    TInt _texturesIter;
+
+    TFramesList _framesList;
+    TFramesListIter _framesListIter;
 public:
     ATextureChanger(const spcWAD::ASprite& wadSprite, ATextureManager& textureManager);
     virtual ~ATextureChanger();

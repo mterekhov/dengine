@@ -48,18 +48,11 @@ void AGame::startGame()
 
     const spcWAD::ASprite& bossSprite = e1m8.findSprite("boss");
 
-    AAnimationBuilder animationBuilder;
-    TAnimationFramesList animationsList = animationBuilder.buildAnimation(bossSprite);
-    
     //  create mosnter node
-    const spcWAD::APicture& bossPicture = bossSprite.findPicture("BOSSE1");
+    const spcWAD::APicture& bossPicture = bossSprite.findPicture("bossa1");
     AOpenGLTexture& monsterTexture = _sceneGraph._textureManager.createOrFindTexture(bossPicture.patchName(), bossPicture.imageData);
     ASceneNode& newNode = _sceneGraph.addObject(new AMonster(monsterTexture), ESCENENODETYPE_TEXTURED, ESCENENODETRANSPARENCY_FULL);
-    
-    //  tune position and scale
-    newNode.changePosition(APoint(0, 0, -0.5));
-    newNode.changeRotation(AQuaternion(AVector(0.0f, 1.0f, 0.0f), 45));
-    
+
     //  attach animation
     AAnimation monsterTextureAnimation;
     monsterTextureAnimation._animationTrigger = 10;
