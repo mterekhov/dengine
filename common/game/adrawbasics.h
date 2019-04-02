@@ -29,6 +29,7 @@ public:
     static void installCamera(const AVector& eyePosition3D, const AVector& center3D, const AVector& upVector3D);
     static void drawLine(const APoint& p1, const APoint& p2);
 
+    static void drawDataLiner(const ADataLiner& dataLiner);
     static void drawTexturedPlane(const TPointsList& coordspoints, const TPoints2DList uvpoints, const AOpenGLTexture& texture);
     static void drawTexturedCube(const APoint& pos, const TFloat cubeSize, AOpenGLTexture& texture);
     static void drawSolidCube(const APoint& pos, const TFloat cubeSize);

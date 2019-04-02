@@ -62,6 +62,7 @@ public:
     const AQuaternion& rotation() const;
     const AVector& scale() const;
     
+    void bindTexture();
     void changePosition(const APoint& newPoint);
     void changeRotation(const AQuaternion& newRotation);
     void changeScale(const AVector& newScale);

@@ -63,7 +63,7 @@ void AGame::startGame()
     //  attach animation
     AAnimation monsterTextureAnimation;
     monsterTextureAnimation._animationTrigger = 10;
-    monsterTextureAnimation.appendChanger(new ATextureChanger(bossSprite));
+    monsterTextureAnimation.appendChanger(new ATextureChanger(bossSprite, _sceneGraph._textureManager));
     newNode.attachAnimation(monsterTextureAnimation);
 
     //  create floor

@@ -13,6 +13,27 @@ namespace spcTGame
 #pragma mark - render basics -
 
 //==============================================================================
+    
+void ADrawBasics::drawDataLiner(const ADataLiner& dataLiner)
+{
+    TFloat* line = new TFloat[dataLiner.numberOfFloatValues()];
+    memset(line, 0, dataLiner.numberOfFloatValues() * sizeof(TFloat));
+    
+    if (dataLiner.generateArray(line) == false)
+    {
+        return;
+    }
+    
+    TUint strideInBytes = sizeof(TFloat) * dataLiner.arrayStride();
+    
+    AOGLWrapper::oglTexCoordPointer(2, GL_FLOAT, strideInBytes, &line[3]);
+    ADrawBasics::drawTriangles(line, strideInBytes, dataLiner.pointsCount());
+
+    delete [] line;
+
+}
+
+//==============================================================================
 
 void ADrawBasics::drawTexturedPlane(const TPointsList& coordspoints, const TPoints2DList uvpoints, const AOpenGLTexture& texture)
 {

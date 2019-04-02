@@ -14,7 +14,7 @@ ASceneNode::ASceneNode() : _nodeType(ESCENENODETYPE_SOLID), _rotation(AQuaternio
 
 //==============================================================================
 
-ASceneNode::ASceneNode(const ASceneNode& sceneNode) : _scale(sceneNode._scale), _rotation(sceneNode._rotation), _nodeType(sceneNode._nodeType), _nodeObject(sceneNode._nodeObject), _position(sceneNode._position), _transparencyType(sceneNode._transparencyType)
+ASceneNode::ASceneNode(const ASceneNode& sceneNode) : _animation(sceneNode._animation), _scale(sceneNode._scale), _rotation(sceneNode._rotation), _nodeType(sceneNode._nodeType), _nodeObject(sceneNode._nodeObject), _position(sceneNode._position), _transparencyType(sceneNode._transparencyType)
 {
     
 }
@@ -46,6 +46,7 @@ ASceneNode& ASceneNode::operator=(const ASceneNode& rv)
     _scale = rv._scale;
     _nodeObject = rv._nodeObject;
     _transparencyType = rv._transparencyType;
+    _animation = rv._animation;
 
     return *this;
 }
@@ -74,6 +75,18 @@ void ASceneNode::renderObject() const
 void ASceneNode::applyAnimation()
 {
     _animation.animate(_nodeObject);
+}
+
+//==============================================================================
+
+void ASceneNode::bindTexture()
+{
+    if (_nodeObject == 0)
+    {
+        return;
+    }
+    
+    _nodeObject->applyTexture();
 }
 
 //==============================================================================

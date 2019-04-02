@@ -1,5 +1,6 @@
 #include "atexturechanger.h"
 #include "anodeobject.h"
+#include "aopengltexture.h"
 
 //==============================================================================
 
@@ -8,9 +9,16 @@ namespace spcTGame
 
 //==============================================================================
 
-ATextureChanger::ATextureChanger(const spcWAD::ASprite& wadSprite)
+ATextureChanger::ATextureChanger(const spcWAD::ASprite& wadSprite, ATextureManager& textureManager) : _textureManager(textureManager)
 {
-    _texturesList = AAnimationBuilder().buildAnimation(wadSprite);
+    TAnimationFramesList framesList = AAnimationBuilder().buildAnimation(wadSprite);
+    TAnimationFramesListIter iter = framesList.begin();
+    iter++;
+    iter++;
+    iter++;
+    _texturesList = *iter;
+    
+    _texturesIter = 0;
 }
 
 //==============================================================================
@@ -21,9 +29,16 @@ ATextureChanger::~ATextureChanger()
 
 //==============================================================================
 
-void ATextureChanger::make(ANodeObject *object)  const
+void ATextureChanger::make(ANodeObject *object)
 {
-    printf("texture changers\n");
+    const spcWAD::APicture& pic = _texturesList[_texturesIter];
+    AOpenGLTexture& newTexture = _textureManager.createOrFindTexture(pic.patchName(), pic.imageData);
+    object->applyTexture(newTexture);
+    _texturesIter++;
+    if (_texturesIter >= _texturesList.size())
+    {
+        _texturesIter = 0;
+    }
 }
 
 //==============================================================================

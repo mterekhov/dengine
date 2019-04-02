@@ -70,7 +70,18 @@ void APlane::renderObject() const
 {
     TPointsList coordspoints = generatePlanePoints(planeSize);
     TPoints2DList uvpoints = generatePlaneUVPoints(_texture);
-    ADrawBasics::drawTexturedPlane(coordspoints, uvpoints, _texture);
+    
+    ADataLiner dataLiner;
+    dataLiner.pushCoordPointList(coordspoints);
+    dataLiner.pushUVPointList(uvpoints);
+    ADrawBasics::drawDataLiner(dataLiner);
+}
+
+//==============================================================================
+
+void APlane::applyTexture()
+{
+    _texture.bind();
 }
 
 //==============================================================================

@@ -32,7 +32,8 @@ public:
     virtual ~APlane();
 
     virtual void renderObject() const;
-    
+    virtual void applyTexture();
+
     TFloat planeSize;
 };
 

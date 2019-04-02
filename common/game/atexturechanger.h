@@ -5,6 +5,7 @@
 
 #include "achanger.h"
 #include "aanimationbuilder.h"
+#include "atexturemanager.h"
 
 //==============================================================================
 
@@ -16,13 +17,14 @@ namespace spcTGame
 class ATextureChanger : public AChanger
 {
 private:
-    TAnimationFramesList _texturesList;
-    
+    ATextureManager& _textureManager;
+    TFrameProjectionsList _texturesList;
+    TInt _texturesIter;
 public:
-    ATextureChanger(const spcWAD::ASprite& wadSprite);
+    ATextureChanger(const spcWAD::ASprite& wadSprite, ATextureManager& textureManager);
     virtual ~ATextureChanger();
     
-    virtual void make(ANodeObject *object) const;
+    virtual void make(ANodeObject *object);
 };
 
 //==============================================================================

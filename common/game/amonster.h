@@ -33,6 +33,7 @@ public:
 
     virtual void renderObject() const;
     virtual void applyTexture(AOpenGLTexture& texture);
+    virtual void applyTexture();
 };
 
 //==============================================================================

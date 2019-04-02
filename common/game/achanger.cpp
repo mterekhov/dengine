@@ -20,7 +20,7 @@ AChanger::~AChanger()
 
 //==============================================================================
 
-void AChanger::make(ANodeObject *object)  const
+void AChanger::make(ANodeObject *object)
 {
     
 }

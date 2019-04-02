@@ -18,7 +18,7 @@ public:
     AChanger();
     virtual ~AChanger();
     
-    virtual void make(ANodeObject *object) const;
+    virtual void make(ANodeObject *object);
 };
 
 //==============================================================================

@@ -84,7 +84,10 @@ void AMonster::renderObject() const
     TPointsList coordspoints = generatePlanePoints(_texture.width(), _texture.height());
     TPoints2DList uvpoints = generatePlaneUVPoints(_texture);
     
-    ADrawBasics::drawTexturedPlane(coordspoints, uvpoints, _texture);
+    ADataLiner dataLiner;
+    dataLiner.pushCoordPointList(coordspoints);
+    dataLiner.pushUVPointList(uvpoints);
+    ADrawBasics::drawDataLiner(dataLiner);
 }
 
 //==============================================================================
@@ -92,6 +95,13 @@ void AMonster::renderObject() const
 void AMonster::applyTexture(AOpenGLTexture& texture)
 {
     _texture = texture;
+}
+
+//==============================================================================
+
+void AMonster::applyTexture()
+{
+    _texture.bind();
 }
 
 //==============================================================================
