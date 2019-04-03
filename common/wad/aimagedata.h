@@ -40,6 +40,8 @@ public:
     int height() const;
     int width() const;
     int dataSize() const;
+    
+    AImageData mirrorImage() const;
     bool exportIntoTga(const std::string& fileName);
     
 private:

@@ -61,8 +61,8 @@ AImageData& AImageData::operator=(const AImageData& rv)
     _width = rv._width;
     _bytesPerPixel = rv._bytesPerPixel;
     
-    _data = new unsigned char[rv.dataSize()];
-    memcpy(_data, rv._data, rv.dataSize());
+    _data = new unsigned char[dataSize()];
+    memcpy(_data, rv._data, dataSize());
     
     return *this;
 }
@@ -86,7 +86,7 @@ void AImageData::destroy()
 bool AImageData::exportIntoTga(const std::string& fileName)
 {
     ATGAExporter tgaExporter;
-    return tgaExporter.exportData(fileName, _data, _width, _height, _bytesPerPixel);
+    return tgaExporter.exportData(fileName, mirrorImage().data(), _width, _height, _bytesPerPixel);
 }
 
 //=============================================================================
@@ -122,6 +122,29 @@ int AImageData::bytesPerPixel() const
 int AImageData::width() const
 {
     return _width;
+}
+
+//=============================================================================
+
+AImageData AImageData::mirrorImage() const
+{
+    AImageData mirroredData(width(), height(), bytesPerPixel());
+    unsigned char *dstData = mirroredData._data;
+    unsigned char *srcData = _data;
+    for (int columnIndex = 0; columnIndex < width(); columnIndex++)
+    {
+        for (int i = 0; i < height(); i++)
+        {
+            int colorIndex = columnIndex + i * width();
+            int dstIndex = width() * (i + 1) - columnIndex - 1;
+            for (int bpp = 0; bpp < bytesPerPixel(); bpp++)
+            {
+                dstData[bytesPerPixel() * dstIndex + bpp] = srcData[bytesPerPixel() * colorIndex + bpp];
+            }
+        }
+    }
+    
+    return mirroredData;
 }
 
 //=============================================================================

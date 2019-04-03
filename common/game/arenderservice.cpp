@@ -34,10 +34,11 @@ void ARenderService::processRender()
     AOpenGLState* oglState = AOpenGLState::shared();
     oglState->clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     oglState->pushMarices();
-    ADrawBasics::installCamera(AVector(2.0f, 2.f, 0.5f),
-                               AVector(0.0f, 0.0f, 0.0f),
-                               AVector(0.0f, 1.0f, 0.0f));
+    ADrawBasics::installCamera(AVector(5, 1, 0),
+                               AVector(0, 0, 0),
+                               AVector(0, 1.0f, 0));
 
+    ADrawBasics::drawGrid(50, 50, 1);
     //  render textured objects
     renderTexturedObjects();
     

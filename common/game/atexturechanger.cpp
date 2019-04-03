@@ -13,6 +13,10 @@ ATextureChanger::ATextureChanger(const spcWAD::ASprite& wadSprite, ATextureManag
 {
     TFramesList animationsList;
     
+    //  ABCD is walking
+    //  EFGH is striking
+    //  IJKLMNO die
+    
     TAnimationFramesList picturesList = AAnimationBuilder().buildAnimation(wadSprite);
     for (TAnimationFramesListIter iter = picturesList.begin(); iter != picturesList.end(); iter++)
     {
@@ -21,7 +25,7 @@ ATextureChanger::ATextureChanger(const spcWAD::ASprite& wadSprite, ATextureManag
         for (TFrameProjectionsListIter pictureIter = pictureProjectionsList.begin(); pictureIter != pictureProjectionsList.end(); pictureIter++)
         {
             spcWAD::APicture picture = *pictureIter;
-            AOpenGLTexture& newTexture = _textureManager.createOrFindTexture(picture.patchName(), picture.imageData);
+            AOpenGLTexture& newTexture = _textureManager.createOrFindTexture(picture.patchName(), picture.imageData.mirrorImage());
             textureProjections.push_back(newTexture);
         }
         animationsList.push_back(textureProjections);
