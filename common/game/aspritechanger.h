@@ -42,7 +42,7 @@ public:
     ASpriteChanger(const spcWAD::ASprite& wadSprite, ATextureManager& textureManager);
     virtual ~ASpriteChanger();
     
-    virtual void make(ANodeObject *object);
+    virtual void make(ASceneNode& sceneNode);
 };
 
 //==============================================================================

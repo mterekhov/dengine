@@ -1,5 +1,5 @@
 #include "achanger.h"
-#include "anodeobject.h"
+#include "ascenenode.h"
 
 //==============================================================================
 
@@ -20,7 +20,7 @@ AChanger::~AChanger()
 
 //==============================================================================
 
-void AChanger::make(ANodeObject *object)
+void AChanger::make(ASceneNode& sceneNode)
 {
     
 }

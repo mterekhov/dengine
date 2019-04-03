@@ -5,6 +5,9 @@
 
 #include "blockouttypes.h"
 #include "aopengltexture.h"
+#include "apoint.h"
+#include "avector.h"
+#include "aquaternion.h"
 
 //==============================================================================
 
@@ -20,7 +23,7 @@ public:
     virtual ~ANodeObject();
     
     virtual void renderObject() const;
-    virtual void applyTexture(AOpenGLTexture& texture);
+    virtual void assignTexture(AOpenGLTexture& texture);
     virtual void applyTexture();
 };
 

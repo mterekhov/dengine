@@ -33,7 +33,7 @@ public:
 
     virtual void renderObject() const;
     virtual void applyTexture();
-    virtual void applyTexture(AOpenGLTexture& texture);
+    virtual void assignTexture(AOpenGLTexture& texture);
 
     TFloat planeSize;
 };

@@ -32,7 +32,7 @@ public:
     virtual ~AMonster();
 
     virtual void renderObject() const;
-    virtual void applyTexture(AOpenGLTexture& texture);
+    virtual void assignTexture(AOpenGLTexture& texture);
     virtual void applyTexture();
 };
 

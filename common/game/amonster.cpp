@@ -62,14 +62,12 @@ void AMonster::renderObject() const
     ADataLiner dataLiner;
     dataLiner.pushCoordPointList(coordspoints);
     dataLiner.pushUVPointList(uvpoints);
-//    AOpenGLState *instance = AOpenGLState::shared();
-//    instance->scale(AVector(1, 1, 0.1));
     ADrawBasics::drawDataLiner(dataLiner);
 }
 
 //==============================================================================
 
-void AMonster::applyTexture(AOpenGLTexture& texture)
+void AMonster::assignTexture(AOpenGLTexture& texture)
 {
     _texture = texture;
 }

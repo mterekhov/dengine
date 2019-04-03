@@ -86,7 +86,7 @@ void APlane::applyTexture()
 
 //==============================================================================
 
-void APlane::applyTexture(AOpenGLTexture& texture)
+void APlane::assignTexture(AOpenGLTexture& texture)
 {
     _texture = texture;
 }

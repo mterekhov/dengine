@@ -72,9 +72,16 @@ void ASceneNode::renderObject() const
 
 //==============================================================================
 
+ANodeObject *ASceneNode::nodeObject()
+{
+    return _nodeObject;
+}
+
+//==============================================================================
+
 void ASceneNode::applyAnimation()
 {
-    _animation.animate(_nodeObject);
+    _animation.animate(*this);
 }
 
 //==============================================================================

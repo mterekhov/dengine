@@ -54,6 +54,8 @@ public:
     virtual void renderObject() const;
     virtual void applyAnimation();
     
+    ANodeObject *nodeObject();
+    
     void attachAnimation(const AAnimation& newAnimation);
 
     ESceneNodeTrasnsparency transparencyType() const;

@@ -2,6 +2,7 @@
 #include "anodeobject.h"
 #include "aopengltexture.h"
 #include "aopenglstate.h"
+#include "ascenenode.h"
 
 //==============================================================================
 
@@ -31,8 +32,8 @@ ASpriteChanger::ASpriteChanger(const spcWAD::ASprite& wadSprite, ATextureManager
             TSpriteAnimationFrame newFrame;
             AOpenGLTexture& frameTexture = _textureManager.createOrFindTexture(picture.patchName(), picture.imageData);
             newFrame.texture = frameTexture;
-//            newFrame.scale = AVector(1, static_cast<TFloat>(maxWidth) / static_cast<TFloat>(picture.imageData.width()), static_cast<TFloat>(maxHeight) / static_cast<TFloat>(picture.imageData.height()));
-            newFrame.scale = AVector(1,1,0.1);
+            newFrame.scale = AVector(1, static_cast<TFloat>(maxWidth) / static_cast<TFloat>(picture.imageData.width()), static_cast<TFloat>(maxHeight) / static_cast<TFloat>(picture.imageData.height()));
+//            newFrame.scale = AVector(1, static_cast<TFloat>(picture.imageData.width()) / static_cast<TFloat>(maxWidth), static_cast<TFloat>(picture.imageData.height()) / static_cast<TFloat>(maxHeight));
             textureProjections.push_back(newFrame);
         }
         animationsList.push_back(textureProjections);
@@ -50,12 +51,11 @@ ASpriteChanger::~ASpriteChanger()
 
 //==============================================================================
 
-void ASpriteChanger::make(ANodeObject *object)
+void ASpriteChanger::make(ASceneNode& sceneNode)
 {
     TProjectionsList projections = *_framesListIter;
-    object->applyTexture(projections[0].texture);
-    AOpenGLState *instance = AOpenGLState::shared();
-    instance->scale(projections[0].scale);
+    sceneNode.nodeObject()->assignTexture(projections[0].texture);
+    sceneNode.changeScale(projections[0].scale);
 
     _framesListIter++;
     if (_framesListIter == _framesList.end())

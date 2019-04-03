@@ -8,7 +8,7 @@ namespace spcTGame
 
 //==============================================================================
 
-class ANodeObject;
+class ASceneNode;
 
 //==============================================================================
 
@@ -18,7 +18,7 @@ public:
     AChanger();
     virtual ~AChanger();
     
-    virtual void make(ANodeObject *object);
+    virtual void make(ASceneNode& sceneNode);
 };
 
 //==============================================================================

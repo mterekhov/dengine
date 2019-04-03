@@ -1,4 +1,5 @@
 #include "aanimation.h"
+#include "ascenenode.h"
 
 //==============================================================================
 
@@ -31,7 +32,7 @@ void AAnimation::appendChanger(AChanger *newChanger)
 
 //==============================================================================
 
-void AAnimation::animate(ANodeObject *nodeObject)
+void AAnimation::animate(ASceneNode& sceneNode)
 {
     if (_animationTrigger <= 0)
     {
@@ -46,7 +47,7 @@ void AAnimation::animate(ANodeObject *nodeObject)
 
     for (TChangersListConstIter iter = _changersList.begin(); iter != _changersList.end(); iter++)
     {
-        (*iter)->make(nodeObject);
+        (*iter)->make(sceneNode);
     }
 
     _currentFramesCount = 0;

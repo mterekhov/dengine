@@ -11,11 +11,11 @@
 
 namespace spcTGame
 {
-    
+
 //==============================================================================
 
-class ANodeObject;
-    
+class ASceneNode;
+
 //==============================================================================
 
 typedef std::vector<spcWAD::APicture> TFrameProjectionsList;
@@ -43,7 +43,7 @@ public:
     ~AAnimation();
     
     void appendChanger(AChanger *newChanger);
-    void animate(ANodeObject *nodeObject);
+    void animate(ASceneNode& sceneNode);
     
     TInt _animationTrigger;
 };
