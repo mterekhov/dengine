@@ -45,6 +45,8 @@ public:
     static void oglPopMatrix();
     static void oglTexCoordPointer(TInt size, TEnum type, TSize stride, const TVoid* pointer);
     static void oglVertexPointer(TInt size, TEnum type, TSize stride, const TVoid* pointer);
+    static void oglScale(TFloat x, TFloat y, TFloat z);
+    static void oglRotate(TFloat angle, TFloat x, TFloat y, TFloat z);
 };
 
 //==============================================================================

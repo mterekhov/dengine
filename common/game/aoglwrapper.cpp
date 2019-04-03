@@ -210,4 +210,19 @@ void AOGLWrapper::oglVertexPointer(TInt size, TEnum type, TSize stride, const TV
 
 //==============================================================================
 
+void AOGLWrapper::oglScale(TFloat x, TFloat y, TFloat z)
+{
+    glScalef(x, y, z);
+    printf("scaling\n");
+}
+
+//==============================================================================
+    
+void AOGLWrapper::oglRotate(TFloat angle, TFloat x, TFloat y, TFloat z)
+{
+    glRotatef(angle, x, y, z);
+}
+
+//==============================================================================
+
 }   //  namespace spcTGame
