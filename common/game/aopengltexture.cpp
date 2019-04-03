@@ -191,6 +191,31 @@ const THeight AOpenGLTexture::height() const
     
 //=============================================================================
 
+TPoints2DList AOpenGLTexture::generatePlaneUVPoints() const
+{
+    TPoints2DList uvpointList;
+    
+    TFloat xaspect = static_cast<TFloat>(_imageWidth) / static_cast<TFloat>(_width);
+    TFloat yaspect = static_cast<TFloat>(_imageHeight) / static_cast<TFloat>(_height);
+    
+    APoint2D t1 = APoint2D(0.0f, 0.0f);
+    APoint2D t2 = APoint2D(0.0f, yaspect);
+    APoint2D t3 = APoint2D(xaspect, yaspect);
+    APoint2D t4 = APoint2D(xaspect, 0.0f);
+    
+    uvpointList.push_back(t4);
+    uvpointList.push_back(t2);
+    uvpointList.push_back(t1);
+    
+    uvpointList.push_back(t4);
+    uvpointList.push_back(t3);
+    uvpointList.push_back(t2);
+    
+    return uvpointList;
+}
+
+//=============================================================================
+
 void AOpenGLTexture::correctData(const AImage& image, TData* data)
 {
     const TData* originalData = image.data();

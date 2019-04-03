@@ -6,6 +6,7 @@
 #include <string>
 
 #include "aimage.h"
+#include "apoint2d.h"
 
 //=============================================================================
 
@@ -32,6 +33,8 @@ public:
     
     /// Default destructor
     ~AOpenGLTexture();
+    
+    TPoints2DList generatePlaneUVPoints() const;
     
     /// Bind texture
     void bind() const;
