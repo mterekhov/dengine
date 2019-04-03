@@ -62,7 +62,7 @@
 		4C938AFA224E1832008D803A /* amacbundle.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AF9224E1832008D803A /* amacbundle.mm */; };
 		4C938AFD224E2BE8008D803A /* aplane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AFB224E2BE8008D803A /* aplane.cpp */; };
 		4CA20CB02253559B000FA833 /* achanger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CA20CAE2253559B000FA833 /* achanger.cpp */; };
-		4CA20CB3225357A7000FA833 /* atexturechanger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CA20CB1225357A7000FA833 /* atexturechanger.cpp */; };
+		4CA20CB3225357A7000FA833 /* aspritechanger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CA20CB1225357A7000FA833 /* aspritechanger.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -179,8 +179,8 @@
 		4C938AFC224E2BE8008D803A /* aplane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aplane.h; path = ../common/game/aplane.h; sourceTree = "<group>"; };
 		4CA20CAE2253559B000FA833 /* achanger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = achanger.cpp; path = ../common/game/achanger.cpp; sourceTree = "<group>"; };
 		4CA20CAF2253559B000FA833 /* achanger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = achanger.h; path = ../common/game/achanger.h; sourceTree = "<group>"; };
-		4CA20CB1225357A7000FA833 /* atexturechanger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = atexturechanger.cpp; path = ../common/game/atexturechanger.cpp; sourceTree = "<group>"; };
-		4CA20CB2225357A7000FA833 /* atexturechanger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = atexturechanger.h; path = ../common/game/atexturechanger.h; sourceTree = "<group>"; };
+		4CA20CB1225357A7000FA833 /* aspritechanger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = aspritechanger.cpp; path = ../common/game/aspritechanger.cpp; sourceTree = "<group>"; };
+		4CA20CB2225357A7000FA833 /* aspritechanger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = aspritechanger.h; path = ../common/game/aspritechanger.h; sourceTree = "<group>"; };
 		4CA55EEF224EAA2A006249BF /* aopengl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = aopengl.h; path = ../common/game/aopengl.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -377,8 +377,8 @@
 		4CA20CB4225357AF000FA833 /* AnimationChangers */ = {
 			isa = PBXGroup;
 			children = (
-				4CA20CB2225357A7000FA833 /* atexturechanger.h */,
-				4CA20CB1225357A7000FA833 /* atexturechanger.cpp */,
+				4CA20CB2225357A7000FA833 /* aspritechanger.h */,
+				4CA20CB1225357A7000FA833 /* aspritechanger.cpp */,
 				4CA20CAF2253559B000FA833 /* achanger.h */,
 				4CA20CAE2253559B000FA833 /* achanger.cpp */,
 			);
@@ -532,7 +532,7 @@
 				4C45AB6E224A88EE004141E7 /* awad.cpp in Sources */,
 				4C938AED224E17F0008D803A /* ascenegraph.cpp in Sources */,
 				4C45AB69224A88EE004141E7 /* apicture.cpp in Sources */,
-				4CA20CB3225357A7000FA833 /* atexturechanger.cpp in Sources */,
+				4CA20CB3225357A7000FA833 /* aspritechanger.cpp in Sources */,
 				4C45AB66224A88EE004141E7 /* asprite.cpp in Sources */,
 				4C938AEA224E17F0008D803A /* arenderservice.cpp in Sources */,
 				4C938ADC224E17D9008D803A /* amatrix.cpp in Sources */,

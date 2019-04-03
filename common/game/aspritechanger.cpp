@@ -1,6 +1,7 @@
-#include "atexturechanger.h"
+#include "aspritechanger.h"
 #include "anodeobject.h"
 #include "aopengltexture.h"
+#include "aopenglstate.h"
 
 //==============================================================================
 
@@ -9,7 +10,7 @@ namespace spcTGame
 
 //==============================================================================
 
-ATextureChanger::ATextureChanger(const spcWAD::ASprite& wadSprite, ATextureManager& textureManager) : _textureManager(textureManager)
+ASpriteChanger::ASpriteChanger(const spcWAD::ASprite& wadSprite, ATextureManager& textureManager) : _textureManager(textureManager)
 {
     TFramesList animationsList;
     
@@ -18,6 +19,8 @@ ATextureChanger::ATextureChanger(const spcWAD::ASprite& wadSprite, ATextureManag
     //  IJKLMNO die
     
     TAnimationFramesList picturesList = AAnimationBuilder().buildAnimation(wadSprite);
+    TInt maxHeight = wadSprite.spriteHeight();
+    TInt maxWidth = wadSprite.spriteWidth();
     for (TAnimationFramesListIter iter = picturesList.begin(); iter != picturesList.end(); iter++)
     {
         TFrameProjectionsList pictureProjectionsList = *iter;
@@ -25,8 +28,12 @@ ATextureChanger::ATextureChanger(const spcWAD::ASprite& wadSprite, ATextureManag
         for (TFrameProjectionsListIter pictureIter = pictureProjectionsList.begin(); pictureIter != pictureProjectionsList.end(); pictureIter++)
         {
             spcWAD::APicture picture = *pictureIter;
-            AOpenGLTexture& newTexture = _textureManager.createOrFindTexture(picture.patchName(), picture.imageData.mirrorImage());
-            textureProjections.push_back(newTexture);
+            TSpriteAnimationFrame newFrame;
+            AOpenGLTexture& frameTexture = _textureManager.createOrFindTexture(picture.patchName(), picture.imageData);
+            newFrame.texture = frameTexture;
+//            newFrame.scale = AVector(1, static_cast<TFloat>(maxWidth) / static_cast<TFloat>(picture.imageData.width()), static_cast<TFloat>(maxHeight) / static_cast<TFloat>(picture.imageData.height()));
+            newFrame.scale = AVector(1,1,0.1);
+            textureProjections.push_back(newFrame);
         }
         animationsList.push_back(textureProjections);
     }
@@ -37,24 +44,19 @@ ATextureChanger::ATextureChanger(const spcWAD::ASprite& wadSprite, ATextureManag
 
 //==============================================================================
 
-//TAnimatedTexturesList ATextureManager::recreateSkippedProjections(TFrameProjectionsList& projectionsList)
-//{
-//
-//}
-
-//==============================================================================
-
-ATextureChanger::~ATextureChanger()
+ASpriteChanger::~ASpriteChanger()
 {
 }
 
 //==============================================================================
 
-void ATextureChanger::make(ANodeObject *object)
+void ASpriteChanger::make(ANodeObject *object)
 {
     TProjectionsList projections = *_framesListIter;
-    AOpenGLTexture& newTexture = projections[0];
-    object->applyTexture(newTexture);
+    object->applyTexture(projections[0].texture);
+    AOpenGLState *instance = AOpenGLState::shared();
+    instance->scale(projections[0].scale);
+
     _framesListIter++;
     if (_framesListIter == _framesList.end())
     {
