@@ -11,7 +11,7 @@
 #include "aplane.h"
 #include "aflat.h"
 #include "aanimationbuilder.h"
-#include "atexturechanger.h"
+#include "aspritechanger.h"
 
 //==============================================================================
 
@@ -56,7 +56,7 @@ void AGame::startGame()
     //  attach animation
     AAnimation monsterTextureAnimation;
     monsterTextureAnimation._animationTrigger = 10;
-    monsterTextureAnimation.appendChanger(new ATextureChanger(bossSprite, _sceneGraph._textureManager));
+    monsterTextureAnimation.appendChanger(new ASpriteChanger(bossSprite, _sceneGraph._textureManager));
     newNode.attachAnimation(monsterTextureAnimation);
 
     //  create floor
