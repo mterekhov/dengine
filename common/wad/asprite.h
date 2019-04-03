@@ -38,6 +38,9 @@ public:
     const APicture& findPicture(const std::string& pictureName) const;
     void addPicture(const APicture& newPicture);
 
+    int spriteHeight() const;
+    int spriteWidth() const;
+    int spriteSize() const;
 	std::string spritesPrefix;
 };
 
