@@ -25,12 +25,12 @@ private:
     AColor _clearColor;
     AColor _drawColor;
     TFloat _lineWidth;
+    TFloat _screenWidth;
+    TFloat _screenHeight;
     TBool _textureEnabled;
     
     void clearColorSetup(const AColor& color);
     void drawColorSetup(const AColor& color);
-    void setupOthoProjection(const TFloat screenWidth, const TFloat screenHeight);
-    void setupIsometricProjection(const TFloat screenWidth, const TFloat screenHeight);
 
 public:
     static void create();
@@ -48,7 +48,9 @@ public:
     AColor drawColor() const;
     void drawColor(const AColor& color);
 
-    void frustumSetup(const TFloat screenWidth, const TFloat screenHeight);
+    void setupOthoProjection();
+    void setupIsometricProjection();
+    void frustumSetup(const TFloat screenWidth, const TFloat screenHeight, const bool shouldbeOrtho);
 
     void pushMarices();
     void popMarices();

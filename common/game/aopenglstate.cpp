@@ -113,14 +113,34 @@ void AOpenGLState::clearColorSetup(const AColor& color)
 
 //==============================================================================
 
-void AOpenGLState::frustumSetup(const TFloat screenWidth, const TFloat screenHeight)
+void AOpenGLState::frustumSetup(const TFloat screenWidth, const TFloat screenHeight, const bool shouldbeOrtho)
 {
-    AOGLWrapper::oglViewport(0.0f, 0.0f, screenWidth, screenHeight);
+    _screenWidth = screenWidth;
+    _screenHeight = screenHeight;
+    
+    
+    if (shouldbeOrtho)
+    {
+        setupOthoProjection();
+    }
+    else
+    {
+        setupIsometricProjection();
+    }
+    
+}
+
+//==============================================================================
+
+void AOpenGLState::setupOthoProjection()
+{
+    AOGLWrapper::oglViewport(0.0f, 0.0f, _screenWidth, _screenHeight);
     AOGLWrapper::oglMatrixMode(GL_PROJECTION);
     AOGLWrapper::oglLoadIdentity();
     
-//    setupOthoProjection(screenWidth, screenHeight);
-    setupIsometricProjection(screenWidth, screenHeight);
+    AOGLWrapper::oglOrtho(-_screenWidth / 2.0f, _screenWidth / 2.0f,
+                          _screenHeight / 2.0, -_screenHeight / 2.0,
+                          1, -1);
     
     AOGLWrapper::oglMatrixMode(GL_MODELVIEW);
     AOGLWrapper::oglLoadIdentity();
@@ -128,18 +148,9 @@ void AOpenGLState::frustumSetup(const TFloat screenWidth, const TFloat screenHei
 
 //==============================================================================
 
-void AOpenGLState::setupOthoProjection(const TFloat screenWidth, const TFloat screenHeight)
+void AOpenGLState::setupIsometricProjection()
 {
-    AOGLWrapper::oglOrtho(-screenWidth / 2.0f, screenWidth / 2.0f,
-                          screenHeight / 2.0, -screenHeight / 2.0,
-                          1, -1);
-}
-
-//==============================================================================
-
-void AOpenGLState::setupIsometricProjection(const TFloat screenWidth, const TFloat screenHeight)
-{
-    TFloat aspect = screenWidth / screenHeight;
+    TFloat aspect = _screenWidth / _screenHeight;
     TFloat near = 0.1f;
     TFloat far = 10000.0f;
     TFloat fieldOfView = 45.0f;
@@ -147,7 +158,14 @@ void AOpenGLState::setupIsometricProjection(const TFloat screenWidth, const TFlo
     TFloat width = size;
     TFloat height = size / aspect;
     
+    AOGLWrapper::oglViewport(0.0f, 0.0f, _screenWidth, _screenHeight);
+    AOGLWrapper::oglMatrixMode(GL_PROJECTION);
+    AOGLWrapper::oglLoadIdentity();
+
     AOGLWrapper::oglFrustum(-width, width, -height, height, near, far);
+
+    AOGLWrapper::oglMatrixMode(GL_MODELVIEW);
+    AOGLWrapper::oglLoadIdentity();
 }
 
 //==============================================================================
