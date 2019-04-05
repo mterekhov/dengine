@@ -90,7 +90,7 @@ int ASprite::spriteWidth() const
     int maxWidth = 0;
     for (TPicturesListConstIter iter = _picturesList.begin(); iter != _picturesList.end(); iter++)
     {
-        if ((iter->imageData.width() < maxWidth) || (maxWidth == 0))
+        if ((iter->imageData.width() > maxWidth) || (maxWidth == 0))
         {
             maxWidth = iter->imageData.width();
         }
@@ -106,7 +106,7 @@ int ASprite::spriteHeight() const
     int maxHeight = 0;
     for (TPicturesListConstIter iter = _picturesList.begin(); iter != _picturesList.end(); iter++)
     {
-        if ((iter->imageData.height() < maxHeight) || (maxHeight == 0))
+        if ((iter->imageData.height() > maxHeight) || (maxHeight == 0))
         {
             maxHeight = iter->imageData.height();
         }

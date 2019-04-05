@@ -150,7 +150,6 @@ void AOpenGLTexture::locateSize(const TWidth width, const THeight height)
 
 void AOpenGLTexture::bind() const
 {
-    printf("binding <%i>\n", _id);
     AOGLWrapper::oglBindTexture(GL_TEXTURE_2D, _id);
 }
 

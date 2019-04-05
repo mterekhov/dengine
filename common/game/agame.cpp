@@ -46,16 +46,19 @@ void AGame::startGame()
     spcWAD::AWAD wadResources(ABundle().fullPathToResource("doom.wad"));
     spcWAD::ALevel e1m8 = wadResources.readLevel("e1m8");
 
-    const spcWAD::ASprite& bossSprite = e1m8.findSprite("boss");
+    const spcWAD::ASprite& bossSprite = e1m8.findSprite("sarg");
 
     //  create mosnter node
-    const spcWAD::APicture& bossPicture = bossSprite.findPicture("bossa1");
+    const spcWAD::APicture& bossPicture = bossSprite.findPicture("sarga1");
+    TFloat aspectHeight = static_cast<TFloat>(bossPicture.imageData.height()) / static_cast<TFloat>(bossSprite.spriteHeight());
+    TFloat aspectWidth = static_cast<TFloat>(bossPicture.imageData.width()) / static_cast<TFloat>(bossSprite.spriteWidth());
     AOpenGLTexture& monsterTexture = _sceneGraph._textureManager.createOrFindTexture(bossPicture.patchName(), bossPicture.imageData);
     ASceneNode& newNode = _sceneGraph.addObject(new AMonster(monsterTexture), ESCENENODETYPE_TEXTURED, ESCENENODETRANSPARENCY_FULL);
-
+    newNode.changeScale(AVector(1, aspectHeight, aspectWidth));
+    
     //  attach animation
     AAnimation monsterTextureAnimation;
-    monsterTextureAnimation._animationTrigger = 10;
+    monsterTextureAnimation._animationTrigger = 5;
     monsterTextureAnimation.appendChanger(new ASpriteChanger(bossSprite, _sceneGraph._textureManager));
     newNode.attachAnimation(monsterTextureAnimation);
 

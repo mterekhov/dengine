@@ -34,10 +34,11 @@ void ARenderService::processRender()
     AOpenGLState* oglState = AOpenGLState::shared();
     oglState->clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     oglState->pushMarices();
-    ADrawBasics::installCamera(AVector(5, 1, 0),
+    ADrawBasics::installCamera(AVector(3, 1, 0),
                                AVector(0, 0, 0),
                                AVector(0, 1.0f, 0));
 
+    ADrawBasics::drawOrigin(APoint(0, 0, 0), 1);
     ADrawBasics::drawGrid(50, 50, 1);
     //  render textured objects
     renderTexturedObjects();
@@ -78,13 +79,16 @@ void ARenderService::renderObjectWithTransparency(const ESceneNodeTrasnsparency 
             continue;
         }
         
-        instance->pushMarices();
-        instance->scale(node.scale());
-        instance->rotation(node.rotation());
-        instance->translate(node.position());
         node.bindTexture();
+        instance->pushMarices();
         node.applyAnimation();
+        
+        instance->pushMarices();
+        instance->translate(node.position());
+        instance->rotation(node.rotation());
+        instance->scale(node.scale());
         node.renderObject();
+        instance->popMarices();
         instance->popMarices();
     }
 

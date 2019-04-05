@@ -54,6 +54,29 @@ TPointsList AMonster::generatePlanePoints(const TFloat textureWidth, const TFloa
 
 //==============================================================================
 
+TPoints2DList AMonster::generatePlaneUVPoints(const AOpenGLTexture& texture) const
+{
+    TPoints2DList uvpointList;
+    TFloat aspect = 1;
+    
+    APoint2D t1 = APoint2D(0.0f, 0.0f);
+    APoint2D t2 = APoint2D(0.0f, aspect);
+    APoint2D t3 = APoint2D(aspect, aspect);
+    APoint2D t4 = APoint2D(aspect, 0.0f);
+    
+    uvpointList.push_back(t4);
+    uvpointList.push_back(t3);
+    uvpointList.push_back(t1);
+    
+    uvpointList.push_back(t1);
+    uvpointList.push_back(t3);
+    uvpointList.push_back(t2);
+    
+    return uvpointList;
+}
+    
+//==============================================================================
+
 void AMonster::renderObject() const
 {
     TPointsList coordspoints = generatePlanePoints(_texture.imageWidth(), _texture.imageHeight());
