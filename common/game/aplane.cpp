@@ -79,7 +79,7 @@ void APlane::renderObject() const
 
 //==============================================================================
 
-void APlane::applyTexture()
+void APlane::bindTexture()
 {
     _texture.bind();
 }

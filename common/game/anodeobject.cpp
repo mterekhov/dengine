@@ -32,7 +32,7 @@ void ANodeObject::assignTexture(AOpenGLTexture& texture)
 
 //==============================================================================
 
-void ANodeObject::applyTexture()
+void ANodeObject::bindTexture()
 {
 
 }

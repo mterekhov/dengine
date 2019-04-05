@@ -32,7 +32,7 @@ public:
     virtual ~APlane();
 
     virtual void renderObject() const;
-    virtual void applyTexture();
+    virtual void bindTexture();
     virtual void assignTexture(AOpenGLTexture& texture);
 
     TFloat planeSize;

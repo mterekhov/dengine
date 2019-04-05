@@ -28,15 +28,7 @@ TPointsList AMonster::generatePlanePoints(const TFloat textureWidth, const TFloa
     
     TFloat monsterWidth = 1.0f;
     TFloat monsterHeight = 1.0f;
-//    if (textureWidth >= textureHeight)
-//    {
-//        monsterWidth = textureHeight / textureWidth;
-//    }
-//    else
-//    {
-//        monsterHeight = textureWidth / textureHeight;
-//    }
-    
+
     APoint p1 = APoint();
     APoint p2 = APoint(p1.x, p1.y + monsterWidth, p1.z);  //p5
     APoint p3 = APoint(p1.x, p1.y + monsterWidth, p1.z + monsterHeight);  //p8
@@ -97,7 +89,7 @@ void AMonster::assignTexture(AOpenGLTexture& texture)
 
 //==============================================================================
 
-void AMonster::applyTexture()
+void AMonster::bindTexture()
 {
     _texture.bind();
 }
