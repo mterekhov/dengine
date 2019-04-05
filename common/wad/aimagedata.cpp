@@ -86,7 +86,7 @@ void AImageData::destroy()
 bool AImageData::exportIntoTga(const std::string& fileName)
 {
     ATGAExporter tgaExporter;
-    return tgaExporter.exportData(fileName, mirrorImage().data(), _width, _height, _bytesPerPixel);
+    return tgaExporter.exportData(fileName, _data, _width, _height, _bytesPerPixel);
 }
 
 //=============================================================================

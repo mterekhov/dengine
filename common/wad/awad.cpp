@@ -53,6 +53,11 @@ AWAD::AWAD(const std::string& fileName) : _type(WADTYPE_UNKNOWN), _fileName(file
     if (!readDemos(wadFile))
         throw;
 
+    for (TLumpsListIter iter = _tableOfContents.begin(); iter != _tableOfContents.end(); iter++)
+    {
+        printf("%s\n", iter->lumpName.c_str());
+    }
+    
     for (TFlatsListIter iter = _flatsList.begin(); iter != _flatsList.end(); iter++)
     {
         AFlat& flat = *iter;
@@ -450,6 +455,33 @@ ALevel AWAD::readLevel(const std::string& levelName)
 const AFlat& AWAD::findFlat(const std::string& flatName) const
 {
     return AUtilities::findFlat(flatName, _flatsList);
+}
+
+//=============================================================================
+
+APicture AWAD::readPicture(const std::string& pictureLumpName)
+{
+    if (pictureLumpName.length() == 0)
+    {
+        return APicture();
+    }
+    
+    TLumpsListConstIter lumpIter = AUtilities::findLumpIter(pictureLumpName, _tableOfContents);
+    if (lumpIter == _tableOfContents.end())
+    {
+        return APicture();
+    }
+    ALump lump = (*lumpIter);
+    unsigned char *lumpData = new unsigned char [lump.lumpSize];
+    FILE* wadFile = 0;
+    wadFile = fopen(_fileName.c_str(), "rb");
+    if (!wadFile)
+        throw;
+    AUtilities::readLumpData(wadFile, lump, lumpData);
+    APicture picture(lumpData, lump.lumpName, _palete);
+    delete [] lumpData;
+    
+    return picture;
 }
 
 //=============================================================================

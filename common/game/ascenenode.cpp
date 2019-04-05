@@ -93,7 +93,7 @@ void ASceneNode::bindTexture()
         return;
     }
     
-    _nodeObject->applyTexture();
+    _nodeObject->bindTexture();
 }
 
 //==============================================================================

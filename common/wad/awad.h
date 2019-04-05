@@ -37,6 +37,7 @@ public:
     ~AWAD();
     ALevel readLevel(const std::string& levelName);
     const AFlat& findFlat(const std::string& flatName) const;
+    APicture readPicture(const std::string& pictureLumpName);
 
 private:
 	APalete _palete;    //  palete for every image resource
