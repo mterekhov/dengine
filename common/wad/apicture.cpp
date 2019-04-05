@@ -17,6 +17,14 @@ APicture::APicture() : _patchName("")
 
 //=============================================================================
 
+APicture::APicture(const AImageData& incomingData, const std::string& incomingName) : _patchName(incomingName)
+{
+    imageData = AImageData(incomingData.width(), incomingData.height(), incomingData.bytesPerPixel());
+    memcpy(imageData.data(), incomingData.data(), imageData.dataSize());
+}
+
+//=============================================================================
+    
 APicture::APicture(const unsigned char* incomingData, const std::string& incomingName, const APalete& palete) : _patchName(incomingName)
 {
 	if (incomingData)

@@ -26,8 +26,8 @@ typedef TAnimationFramesList::const_iterator TAnimationFramesListConstIter;
 class AAnimationBuilder
 {
 private:
-    std::list<std::string> shouldbeMirrored(const std::string& pictureName, const std::string& spritePrefix) const;
-    
+    TFrameProjectionsList shouldbeMirrored(const spcWAD::APicture& picture, const std::string& pictureName, const std::string& spritePrefix) const;
+
 public:
     AAnimationBuilder();
     ~AAnimationBuilder();

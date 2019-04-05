@@ -30,7 +30,7 @@ TAnimationFramesList AAnimationBuilder::buildAnimation(const spcWAD::ASprite& wa
     {
         const spcWAD::APicture& picture = *iter;
         std::string frameName = picture.patchName();
-        frameName = frameName.erase(0, wadSprite.spritesPrefix.length());;
+        frameName = frameName.erase(0, wadSprite.spritesPrefix.length());
         std::string animationName = frameName.substr(0, 1);
         std::string animationProjection = frameName.substr(1, 1);
         if (!currentAnimation.length())
@@ -46,7 +46,8 @@ TAnimationFramesList AAnimationBuilder::buildAnimation(const spcWAD::ASprite& wa
             }
             tmpProjectionList = TFrameProjectionsList();
         }
-        tmpProjectionList.push_back(picture);
+        TFrameProjectionsList mirrored = shouldbeMirrored(picture, frameName, wadSprite.spritesPrefix);
+        tmpProjectionList.insert(tmpProjectionList.end(), mirrored.begin(), mirrored.end());
     }
 
     return list;
@@ -54,14 +55,24 @@ TAnimationFramesList AAnimationBuilder::buildAnimation(const spcWAD::ASprite& wa
 
 //==============================================================================
     
-std::list<std::string> AAnimationBuilder::shouldbeMirrored(const std::string& pictureName, const std::string& spritePrefix) const
+TFrameProjectionsList AAnimationBuilder::shouldbeMirrored(const spcWAD::APicture& picture, const std::string& pictureName, const std::string& spritePrefix) const
 {
-    std::list<std::string> mirornamesList;
+    TFrameProjectionsList list;
     
-    std::size_t pos = pictureName.find_last_of(spritePrefix);
-    std::string frameId = pictureName.substr(pos + 1);
+    if (pictureName.size() < 3)
+    {
+        list.push_back(picture);
+        return list;
+    }
+    std::string originalProjection = spritePrefix + pictureName.substr(0, 2);
+    std::string mirroredProjection = spritePrefix + pictureName.substr(2, 2);
 
-    return mirornamesList;
+    spcWAD::APicture original(picture.imageData, originalProjection);
+    spcWAD::APicture mirrored(picture.imageData.mirrorImage(), mirroredProjection);
+    list.push_back(original);
+    list.push_back(mirrored);
+
+    return list;
 }
     
 //==============================================================================

@@ -27,7 +27,8 @@ class APicture
 {
 public:
     APicture();
-	APicture(const unsigned char* incomingData, const std::string& incomingName, const APalete& palete);
+    APicture(const unsigned char* incomingData, const std::string& incomingName, const APalete& palete);
+    APicture(const AImageData& incomingData, const std::string& incomingName);
 	APicture(const APicture& patch);
     ~APicture();
 	APicture& operator=(const APicture& rv);
