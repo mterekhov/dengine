@@ -27,6 +27,7 @@ class ARenderService
 private:
     ASceneGraph& _sceneGraph;
 
+    void renderUI();
     void renderTexturedObjects();
     void renderObjectWithTransparency(const ESceneNodeTrasnsparency nodeTransparency);
 

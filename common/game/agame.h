@@ -8,6 +8,7 @@
 #include "alogic.h"
 #include "akeyboardcontroller.h"
 #include "agamestepscontroller.h"
+#include "awad.h"
 
 //==============================================================================
 
@@ -21,6 +22,7 @@ class AGame
 private:
     void init();
     void render();
+    void createUIElements(spcWAD::AWAD& wad);
 
     ASceneGraph _sceneGraph;
     ARenderService _renderService;

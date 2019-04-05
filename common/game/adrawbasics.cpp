@@ -67,7 +67,7 @@ void ADrawBasics::drawTexturedPlane(const TPointsList& coordspoints, const TPoin
 void ADrawBasics::drawTexturedCube(const APoint& pos, const TFloat cubeSize, AOpenGLTexture& texture)
 {
     TPointsList coordspoints = ADrawBasics::generateCoords(pos, cubeSize);
-    TPoints2DList uvpoints = ADrawBasics::generateUV(texture);
+    TPoints2DList uvpoints = texture.generatePlaneUVPoints();
     ADataLiner dataLiner;
     dataLiner.pushCoordPointList(coordspoints);
     dataLiner.pushUVPointList(uvpoints);
@@ -314,66 +314,6 @@ void ADrawBasics::drawTriangles(const ADataLiner& dataLiner)
     drawTriangles(line, (dataLiner.arrayStride() == 3) ? 0 : dataLiner.arrayStride(), dataLiner.pointsCount());
     
     delete [] line;
-}
-
-//==============================================================================
-
-
-TPoints2DList ADrawBasics::generateUV(const AOpenGLTexture& tex)
-{
-    TPoints2DList points;
-    
-    TFloat xaspect = static_cast<TFloat>(tex.imageWidth()) / static_cast<TFloat>(tex.width());
-    TFloat yaspect = static_cast<TFloat>(tex.imageHeight()) / static_cast<TFloat>(tex.height());
-
-    APoint2D p1 = APoint2D(0.0f, 0.0f);
-    APoint2D p2 = APoint2D(0.0f, yaspect);
-    APoint2D p3 = APoint2D(xaspect, yaspect);
-    APoint2D p4 = APoint2D(xaspect, 0.0f);
-
-    points.push_back(p3);
-    points.push_back(p2);
-    points.push_back(p4);
-    points.push_back(p2);
-    points.push_back(p1);
-    points.push_back(p4);
-
-    points.push_back(p2);
-    points.push_back(p1);
-    points.push_back(p3);
-    points.push_back(p3);
-    points.push_back(p1);
-    points.push_back(p4);
-    
-    points.push_back(p2);
-    points.push_back(p1);
-    points.push_back(p3);
-    points.push_back(p3);
-    points.push_back(p1);
-    points.push_back(p4);
-
-    points.push_back(p3);
-    points.push_back(p2);
-    points.push_back(p4);
-    points.push_back(p2);
-    points.push_back(p1);
-    points.push_back(p4);
-
-    points.push_back(p3);
-    points.push_back(p2);
-    points.push_back(p4);
-    points.push_back(p2);
-    points.push_back(p1);
-    points.push_back(p4);
-
-    points.push_back(p2);
-    points.push_back(p1);
-    points.push_back(p3);
-    points.push_back(p3);
-    points.push_back(p1);
-    points.push_back(p4);
-
-    return points;
 }
 
 //==============================================================================

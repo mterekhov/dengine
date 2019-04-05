@@ -5,13 +5,13 @@
 #include "aoglwrapper.h"
 #include "amonster.h"
 #include "abundle.h"
-#include "awad.h"
 #include "alevel.h"
 #include "types.h"
 #include "aplane.h"
 #include "aflat.h"
 #include "aanimationbuilder.h"
 #include "aspritechanger.h"
+#include "aopenglsprite.h"
 
 //==============================================================================
 
@@ -48,7 +48,7 @@ void AGame::startGame()
 
     const spcWAD::ASprite& bossSprite = e1m8.findSprite("sarg");
 
-    //  create mosnter node
+    //  create monster node
     const spcWAD::APicture& bossPicture = bossSprite.findPicture("sarga1");
     TFloat aspectHeight = static_cast<TFloat>(bossPicture.imageData.height()) / static_cast<TFloat>(bossSprite.spriteHeight());
     TFloat aspectWidth = static_cast<TFloat>(bossPicture.imageData.width()) / static_cast<TFloat>(bossSprite.spriteWidth());
@@ -65,12 +65,31 @@ void AGame::startGame()
     //  create floor
     const spcWAD::AFlat& planeFlat = wadResources.findFlat("floor4_8");
     APlane *floorPlane = new APlane(_sceneGraph._textureManager.createOrFindTexture(planeFlat.flatName(), planeFlat.imageData()));
-    floorPlane->planeSize = 40;
+    floorPlane->planeSize = 80;
     ASceneNode& newNode2 = _sceneGraph.addObject(floorPlane, ESCENENODETYPE_TEXTURED, ESCENENODETRANSPARENCY_NONE);
     newNode2.changePosition(APoint(-floorPlane->planeSize / 2.0f, 0.0f, -floorPlane->planeSize / 2.0f));
+
+    createUIElements(wadResources);
     
     _logic.startGame();
 }
+
+//==============================================================================
+
+void AGame::createUIElements(spcWAD::AWAD& wad)
+{
+    spcWAD::APicture picture = wad.readPicture("stbar");
+    picture.savePatchIntoTga("/Users/michael/Pictures/stbar.tga");
+    AOpenGLTexture& hudTexture = _sceneGraph._textureManager.createOrFindTexture(picture.patchName(), picture.imageData);
+    AOpenGLSprite *hud = new AOpenGLSprite(hudTexture);
+    hud->planeSize.width = 1;
+    hud->planeSize.height = static_cast<TFloat>(picture.imageData.height()) / static_cast<TFloat>(picture.imageData.width());
+
+    ASceneNode& newNode2 = _sceneGraph.addUIElement(hud, ESCENENODETRANSPARENCY_NONE);
+    
+//    newNode2.changePosition(APoint(-floorPlane->planeSize / 2.0f, 0.0f, -floorPlane->planeSize / 2.0f));
+}
+
 
 //==============================================================================
 
@@ -96,7 +115,7 @@ void AGame::processKeyboardEvent(const TUint buttonCode)
 void AGame::updateScreenSize(const TFloat screenWidth, const TFloat screenHeight)
 {
     AOpenGLState* oglState = spcTGame::AOpenGLState::shared();
-    oglState->frustumSetup(screenWidth, screenHeight);
+    oglState->frustumSetup(screenWidth, screenHeight, false);
 }
 
 //==============================================================================

@@ -32,6 +32,7 @@ typedef TObjectsList::const_iterator TObjectsListConstIter;
 class ASceneGraph
 {
 private:
+    TSceneNodesList _uiElementsList;
     TSceneNodesList _texturedNodesList;
     TSceneNodesList _solidNodesList;
     
@@ -43,8 +44,10 @@ public:
     ASceneGraph();
     ~ASceneGraph();
     
+    ASceneNode& addUIElement(ANodeObject *object, const ESceneNodeTrasnsparency nodeTransparency = ESCENENODETRANSPARENCY_NONE);
     ASceneNode& addObject(ANodeObject *object, const ESceneNodeType nodeType, const ESceneNodeTrasnsparency nodeTransparency = ESCENENODETRANSPARENCY_NONE);
     TSceneNodesList& texturedNodes();
+    TSceneNodesList& uiElementsNodes();
 };
 
 //==============================================================================

@@ -20,6 +20,17 @@ ASceneGraph::~ASceneGraph()
 
 //==============================================================================
 
+ASceneNode& ASceneGraph::addUIElement(ANodeObject *object, const ESceneNodeTrasnsparency nodeTransparency)
+{
+    _objectsList.push_back(object);
+    ASceneNode newNode(object, AVector(1.0f, 1.0f, 1.0f), AVector(), 0, APoint(), ESCENENODETYPE_TEXTURED, nodeTransparency);
+    _uiElementsList.push_back(newNode);
+    
+    return _uiElementsList.back();
+}
+    
+//==============================================================================
+    
 ASceneNode& ASceneGraph::addObject(ANodeObject* object, const ESceneNodeType nodeType, const ESceneNodeTrasnsparency nodeTransparency)
 {
     _objectsList.push_back(object);
@@ -46,6 +57,13 @@ ASceneNode& ASceneGraph::addObject(ANodeObject* object, const ESceneNodeType nod
 TSceneNodesList& ASceneGraph::texturedNodes()
 {
     return _texturedNodesList;
+}
+
+//==============================================================================
+
+TSceneNodesList& ASceneGraph::uiElementsNodes()
+{
+    return _uiElementsList;
 }
 
 //==============================================================================
