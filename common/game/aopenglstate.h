@@ -29,7 +29,9 @@ private:
     
     void clearColorSetup(const AColor& color);
     void drawColorSetup(const AColor& color);
-    
+    void setupOthoProjection(const TFloat screenWidth, const TFloat screenHeight);
+    void setupIsometricProjection(const TFloat screenWidth, const TFloat screenHeight);
+
 public:
     static void create();
     static AOpenGLState* shared();
@@ -47,7 +49,7 @@ public:
     void drawColor(const AColor& color);
 
     void frustumSetup(const TFloat screenWidth, const TFloat screenHeight);
-    
+
     void pushMarices();
     void popMarices();
     

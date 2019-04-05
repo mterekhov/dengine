@@ -47,6 +47,7 @@ AOpenGLState::AOpenGLState() : _lineWidth(1.0f), _textureEnabled(false), _curren
 
     AOGLWrapper::oglEnable(GL_BLEND);
     AOGLWrapper::oglBlendFunc();
+    
     AOGLWrapper::oglEnable(GL_CULL_FACE);
 	AOGLWrapper::oglShadeModel(GL_SMOOTH); // Type of shading for the polygons
     AOGLWrapper::oglEnableClientState(GL_VERTEX_ARRAY);
@@ -115,7 +116,29 @@ void AOpenGLState::clearColorSetup(const AColor& color)
 void AOpenGLState::frustumSetup(const TFloat screenWidth, const TFloat screenHeight)
 {
     AOGLWrapper::oglViewport(0.0f, 0.0f, screenWidth, screenHeight);
+    AOGLWrapper::oglMatrixMode(GL_PROJECTION);
+    AOGLWrapper::oglLoadIdentity();
     
+//    setupOthoProjection(screenWidth, screenHeight);
+    setupIsometricProjection(screenWidth, screenHeight);
+    
+    AOGLWrapper::oglMatrixMode(GL_MODELVIEW);
+    AOGLWrapper::oglLoadIdentity();
+}
+
+//==============================================================================
+
+void AOpenGLState::setupOthoProjection(const TFloat screenWidth, const TFloat screenHeight)
+{
+    AOGLWrapper::oglOrtho(-screenWidth / 2.0f, screenWidth / 2.0f,
+                          screenHeight / 2.0, -screenHeight / 2.0,
+                          1, -1);
+}
+
+//==============================================================================
+
+void AOpenGLState::setupIsometricProjection(const TFloat screenWidth, const TFloat screenHeight)
+{
     TFloat aspect = screenWidth / screenHeight;
     TFloat near = 0.1f;
     TFloat far = 10000.0f;
@@ -124,12 +147,7 @@ void AOpenGLState::frustumSetup(const TFloat screenWidth, const TFloat screenHei
     TFloat width = size;
     TFloat height = size / aspect;
     
-    AOGLWrapper::oglMatrixMode(GL_PROJECTION);
-    AOGLWrapper::oglLoadIdentity();
     AOGLWrapper::oglFrustum(-width, width, -height, height, near, far);
-    
-    AOGLWrapper::oglMatrixMode(GL_MODELVIEW);
-    AOGLWrapper::oglLoadIdentity();
 }
 
 //==============================================================================

@@ -32,6 +32,7 @@ public:
     static void oglBlendFunc();
     static void oglDepthFunc(TEnum func);
 
+    static void oglOrtho(TFloat left, TFloat right, TFloat bottom, TFloat top, TFloat zNear, TFloat zFar);
     static void oglFrustum(TFloat left, TFloat right, TFloat bottom, TFloat top, TFloat zNear, TFloat zFar);
     static void oglPushMatrix();
     static void oglMatrixMode(TEnum mode);
