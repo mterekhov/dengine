@@ -51,52 +51,6 @@ void ARenderService::processRender()
 
 //==============================================================================
 
-void ARenderService::renderUI()
-{
-    AOpenGLState *instance = AOpenGLState::shared();
-    instance->pushMarices();
-    instance->setupOthoProjection();
-
-    AColor previousColor = instance->drawColor();
-    instance->drawColor(AColor::whiteColor());
-//    for (TFloat i = -50; i < 50; i+=0.5)
-//    {
-//        TFloat line[] = {-50, i, 50, i};
-//        glVertexPointer(2, GL_FLOAT, 0, line);
-//        glDrawArrays(GL_LINES, 0, 4);
-//    }
-//    
-//    for (TFloat i = -50; i < 50; i+=0.5)
-//    {
-//        TFloat line[] = {i, -50, i, 50};
-//        glVertexPointer(2, GL_FLOAT, 0, line);
-//        glDrawArrays(GL_LINES, 0, 4);
-//    }
-
-    instance->textureEnable();
-
-    TSceneNodesList& uielementsList = _sceneGraph.uiElementsNodes();
-    TSceneNodesListIter iterBegin = uielementsList.begin();
-    TSceneNodesListIter iterEnd = uielementsList.end();
-    for (TSceneNodesListIter iter = iterBegin; iter != iterEnd; iter++)
-    {
-        ASceneNode &node = *iter;
-        node.bindTexture();
-        instance->pushMarices();
-        instance->translate(node.position());
-        instance->rotation(node.rotation());
-        instance->scale(node.scale());
-        node.renderObject();
-        instance->popMarices();
-    }
-
-    instance->textureDisable();
-    instance->drawColor(previousColor);
-    instance->popMarices();
-}
-    
-//==============================================================================
-
 void ARenderService::renderTexturedObjects()
 {
     AOpenGLState *instance = AOpenGLState::shared();
@@ -140,6 +94,52 @@ void ARenderService::renderObjectWithTransparency(const ESceneNodeTrasnsparency 
         instance->popMarices();
         instance->popMarices();
     }
+}
+
+//==============================================================================
+
+void ARenderService::renderUI()
+{
+    AOpenGLState *instance = AOpenGLState::shared();
+    instance->pushMarices();
+    instance->setupOthoProjection();
+    
+    AColor previousColor = instance->drawColor();
+    instance->drawColor(AColor::whiteColor());
+    for (TFloat i = -50; i < 50; i += 5.0f)
+    {
+        TFloat line[] = {-50, i, 50, i};
+        glVertexPointer(2, GL_FLOAT, 0, line);
+        glDrawArrays(GL_LINES, 0, 4);
+    }
+
+    for (TFloat i = -50; i < 50; i += 5.0f)
+    {
+        TFloat line[] = {i, -50, i, 50};
+        glVertexPointer(2, GL_FLOAT, 0, line);
+        glDrawArrays(GL_LINES, 0, 4);
+    }
+    
+    instance->textureEnable();
+    
+    TSceneNodesList& uielementsList = _sceneGraph.uiElementsNodes();
+    TSceneNodesListIter iterBegin = uielementsList.begin();
+    TSceneNodesListIter iterEnd = uielementsList.end();
+    for (TSceneNodesListIter iter = iterBegin; iter != iterEnd; iter++)
+    {
+        ASceneNode &node = *iter;
+        node.bindTexture();
+        instance->pushMarices();
+        instance->translate(node.position());
+        instance->rotation(node.rotation());
+        instance->scale(node.scale());
+        node.renderObject();
+        instance->popMarices();
+    }
+    
+    instance->textureDisable();
+    instance->drawColor(previousColor);
+    instance->popMarices();
 }
 
 //==============================================================================

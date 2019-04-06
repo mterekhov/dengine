@@ -114,7 +114,7 @@ TEnum AOGLWrapper::oglGetError()
 
 void AOGLWrapper::oglOrtho(TFloat left, TFloat right, TFloat bottom, TFloat top, TFloat zNear, TFloat zFar)
 {
-    glFrustum(left, right, bottom, top, zNear, zFar);
+    glOrtho(left, right, bottom, top, zNear, zFar);
 }
 
 //==============================================================================

@@ -127,8 +127,8 @@ void AOpenGLState::setupOthoProjection()
 {
     AOGLWrapper::oglMatrixMode(GL_PROJECTION);
     AOGLWrapper::oglLoadIdentity();
-    
-    AOGLWrapper::oglOrtho(0, _screenWidth, _screenHeight, 0, 1.0f, -1.0f);
+
+    AOGLWrapper::oglOrtho(0.0f, _screenWidth, 0.0f, _screenHeight, 1.0f, -1.0f);
 
     AOGLWrapper::oglMatrixMode(GL_MODELVIEW);
     AOGLWrapper::oglLoadIdentity();

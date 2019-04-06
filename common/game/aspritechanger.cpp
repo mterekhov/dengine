@@ -31,12 +31,14 @@ ASpriteChanger::ASpriteChanger(const spcWAD::ASprite& wadSprite, ATextureManager
         for (TFrameProjectionsListIter pictureIter = pictureProjectionsList.begin(); pictureIter != pictureProjectionsList.end(); pictureIter++)
         {
             spcWAD::APicture picture = *pictureIter;
-            TFloat aspectHeight = static_cast<TFloat>(picture.imageData.height()) / static_cast<TFloat>(maxHeight);
-            TFloat aspectWidth = static_cast<TFloat>(picture.imageData.width()) / static_cast<TFloat>(maxWidth);
             TSpriteAnimationFrame newFrame;
             AOpenGLTexture& frameTexture = _textureManager.createOrFindTexture(picture.patchName(), picture.imageData);
             newFrame.texture = frameTexture;
+            
+            TFloat aspectHeight = static_cast<TFloat>(picture.imageData.height()) / static_cast<TFloat>(maxHeight);
+            TFloat aspectWidth = static_cast<TFloat>(picture.imageData.width()) / static_cast<TFloat>(maxWidth);
             newFrame.scale = AVector(1, aspectHeight, aspectWidth);
+            
             textureProjections.push_back(newFrame);
         }
         animationsList.push_back(textureProjections);
