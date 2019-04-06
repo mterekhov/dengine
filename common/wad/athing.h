@@ -38,8 +38,9 @@ public:
 	short type;
 	short options;
 
-	static TThingList checkThingUnique(const TThingList& thingsList);
-    
+    static TThingList checkThingUnique(const TThingList& thingsList);
+    static TSpriteList findMonsters(const TSpriteList& thingsList);
+
     bool hasSprite() const;
     std::string spritePrefix() const;
 	

@@ -12,25 +12,25 @@ namespace spcWAD
 
 std::map<int, std::string> ThingsMap =
 {
-	{1, "play"},
-	{2, "play"},
-	{3, "play"},
-    {4, "play"},
+	{1, "play"},    //  Player
+	{2, "play"},    //  Player
+	{3, "play"},    //  Player
+    {4, "play"},    //  Player
     {5, "BKEY"},
     {6, "YKEY"},
     {8, "BPAK"},
-    {9, "SPOS"},
-	{10, "play"},
+    {9, "SPOS"},    //  Monster: ShotgunGuy
+	{10, "play"},   //  Player
 	{11, "CELP"},
-    {12, "play"},
+    {12, "play"},    //  Player
     {13, "AMM1"},
-	{15, "play"},
+	{15, "play"},    //  Player
 	{24, "POL5"},
     {34, "CAND"},
     {35, "CBRA"},
     {46, "TRED"},
     {48, "ELEC"},
-    {58, "sarg"},
+    {58, "sarg"},   //  Monster: Pinky Invisible
 	{2001, "SHOT"},
 	{2002, "MGUN"},
     {2003, "LAUN"},
@@ -54,12 +54,20 @@ std::map<int, std::string> ThingsMap =
 	{2046, "brok"},
 	{2048, "ammo"},
 	{2049, "SBOX"},
-	{3001, "TROO"},
-    {3002, "SARG"},
-    {3003, "BOSS"},
+    {3001, "TROO"}, //  Monster: Imp
+    {3002, "SARG"}, //  Monster: Pinky
+    {3003, "BOSS"}, //  Monster: Hell Knight
     {3004, "POSS"},
 };
 
+    std::list<std::string> MonstersIdsList =
+    {
+        "BOSS",
+        "SARG",
+        "TROO",
+        "SPOS"
+    };
+    
 //=============================================================================
 
 AThing::AThing(unsigned char *thingData)
@@ -149,6 +157,26 @@ TThingList AThing::checkThingUnique(const TThingList& thingsList)
 	thingsListSorted.erase(std::unique(thingsListSorted.begin(), thingsListSorted.end()) , thingsListSorted.end());
 	
 	return thingsListSorted;
+}
+
+//=============================================================================
+
+TSpriteList AThing::findMonsters(const TSpriteList& thingsList)
+{
+    TSpriteList monstersList;
+
+    for (TSpriteListConstIter iter = thingsList.begin(); iter != thingsList.end(); iter++)
+    {
+        for (std::list<std::string>::const_iterator monsterIdIter = MonstersIdsList.begin(); monsterIdIter != MonstersIdsList.end(); monsterIdIter++)
+        {
+            if (AUtilities::stringCompare(iter->spritesPrefix, *monsterIdIter))
+            {
+                monstersList.push_back(*iter);
+            }
+        }
+    }
+    
+    return monstersList;
 }
 
 //=============================================================================

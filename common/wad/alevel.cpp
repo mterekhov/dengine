@@ -70,6 +70,13 @@ const ASprite& ALevel::findSprite(const std::string& spritePrefix)
 
 //=============================================================================
 
+TSpriteList ALevel::monstersList() const
+{
+    return AThing::findMonsters(_spritesList);
+}
+
+//=============================================================================
+
 const TThingList& ALevel::levelItemsList() const
 {
     return _thingsList;
