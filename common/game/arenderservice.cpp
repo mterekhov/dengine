@@ -46,10 +46,7 @@ void ARenderService::processRender()
     renderTexturedObjects();
     
     oglState->popMarices();
-    
-    oglState->setupOthoProjection();
     renderUI();
-    
 }
 
 //==============================================================================
@@ -57,8 +54,25 @@ void ARenderService::processRender()
 void ARenderService::renderUI()
 {
     AOpenGLState *instance = AOpenGLState::shared();
+    instance->pushMarices();
+    instance->setupOthoProjection();
+
     AColor previousColor = instance->drawColor();
     instance->drawColor(AColor::whiteColor());
+//    for (TFloat i = -50; i < 50; i+=0.5)
+//    {
+//        TFloat line[] = {-50, i, 50, i};
+//        glVertexPointer(2, GL_FLOAT, 0, line);
+//        glDrawArrays(GL_LINES, 0, 4);
+//    }
+//    
+//    for (TFloat i = -50; i < 50; i+=0.5)
+//    {
+//        TFloat line[] = {i, -50, i, 50};
+//        glVertexPointer(2, GL_FLOAT, 0, line);
+//        glDrawArrays(GL_LINES, 0, 4);
+//    }
+
     instance->textureEnable();
 
     TSceneNodesList& uielementsList = _sceneGraph.uiElementsNodes();
@@ -78,6 +92,7 @@ void ARenderService::renderUI()
 
     instance->textureDisable();
     instance->drawColor(previousColor);
+    instance->popMarices();
 }
     
 //==============================================================================

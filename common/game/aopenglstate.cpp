@@ -113,35 +113,23 @@ void AOpenGLState::clearColorSetup(const AColor& color)
 
 //==============================================================================
 
-void AOpenGLState::frustumSetup(const TFloat screenWidth, const TFloat screenHeight, const bool shouldbeOrtho)
+void AOpenGLState::frustumSetup(const TFloat screenWidth, const TFloat screenHeight)
 {
     _screenWidth = screenWidth;
     _screenHeight = screenHeight;
     
-    
-    if (shouldbeOrtho)
-    {
-        setupOthoProjection();
-    }
-    else
-    {
-        setupIsometricProjection();
-    }
-    
+    AOGLWrapper::oglViewport(0.0f, 0.0f, _screenWidth, _screenHeight);
 }
 
 //==============================================================================
 
 void AOpenGLState::setupOthoProjection()
 {
-    AOGLWrapper::oglViewport(0.0f, 0.0f, _screenWidth, _screenHeight);
     AOGLWrapper::oglMatrixMode(GL_PROJECTION);
     AOGLWrapper::oglLoadIdentity();
     
-    AOGLWrapper::oglOrtho(-_screenWidth / 2.0f, _screenWidth / 2.0f,
-                          _screenHeight / 2.0, -_screenHeight / 2.0,
-                          1, -1);
-    
+    AOGLWrapper::oglOrtho(0, _screenWidth, _screenHeight, 0, 1.0f, -1.0f);
+
     AOGLWrapper::oglMatrixMode(GL_MODELVIEW);
     AOGLWrapper::oglLoadIdentity();
 }
@@ -158,7 +146,6 @@ void AOpenGLState::setupIsometricProjection()
     TFloat width = size;
     TFloat height = size / aspect;
     
-    AOGLWrapper::oglViewport(0.0f, 0.0f, _screenWidth, _screenHeight);
     AOGLWrapper::oglMatrixMode(GL_PROJECTION);
     AOGLWrapper::oglLoadIdentity();
 

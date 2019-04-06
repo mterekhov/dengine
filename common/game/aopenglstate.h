@@ -50,7 +50,7 @@ public:
 
     void setupOthoProjection();
     void setupIsometricProjection();
-    void frustumSetup(const TFloat screenWidth, const TFloat screenHeight, const bool shouldbeOrtho);
+    void frustumSetup(const TFloat screenWidth, const TFloat screenHeight);
 
     void pushMarices();
     void popMarices();

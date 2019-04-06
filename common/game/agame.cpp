@@ -115,7 +115,7 @@ void AGame::processKeyboardEvent(const TUint buttonCode)
 void AGame::updateScreenSize(const TFloat screenWidth, const TFloat screenHeight)
 {
     AOpenGLState* oglState = spcTGame::AOpenGLState::shared();
-    oglState->frustumSetup(screenWidth, screenHeight, false);
+    oglState->frustumSetup(screenWidth, screenHeight);
 }
 
 //==============================================================================
