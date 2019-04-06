@@ -41,26 +41,41 @@ void AGame::init()
 
 //==============================================================================
 
-void AGame::startGame()
+void AGame::generateMonster(const std::string& spriteName, spcWAD::ALevel& level)
 {
-    spcWAD::AWAD wadResources(ABundle().fullPathToResource("doom.wad"));
-    spcWAD::ALevel e1m8 = wadResources.readLevel("e1m8");
-
-    const spcWAD::ASprite& bossSprite = e1m8.findSprite("sarg");
-
-    //  create monster node
-    const spcWAD::APicture& bossPicture = bossSprite.findPicture("sarga1");
-    TFloat aspectHeight = static_cast<TFloat>(bossPicture.imageData.height()) / static_cast<TFloat>(bossSprite.spriteHeight());
-    TFloat aspectWidth = static_cast<TFloat>(bossPicture.imageData.width()) / static_cast<TFloat>(bossSprite.spriteWidth());
+    const spcWAD::ASprite& monsterSprite = level.findSprite(spriteName);
+    const spcWAD::APicture& bossPicture = monsterSprite.findPicture(spriteName + "a1");
     AOpenGLTexture& monsterTexture = _sceneGraph._textureManager.createOrFindTexture(bossPicture.patchName(), bossPicture.imageData);
-    ASceneNode& newNode = _sceneGraph.addObject(new AMonster(monsterTexture), ESCENENODETYPE_TEXTURED, ESCENENODETRANSPARENCY_FULL);
+    
+    if (_currentMonster)
+    {
+        delete _currentMonster;
+        _currentMonster = 0;
+    }
+    _currentMonster = new AMonster(monsterTexture);
+    ASceneNode& newNode = _sceneGraph.addObject(_currentMonster, ESCENENODETYPE_TEXTURED, ESCENENODETRANSPARENCY_FULL);
+    TFloat aspectHeight = static_cast<TFloat>(bossPicture.imageData.height()) / static_cast<TFloat>(monsterSprite.spriteHeight());
+    TFloat aspectWidth = static_cast<TFloat>(bossPicture.imageData.width()) / static_cast<TFloat>(monsterSprite.spriteWidth());
     newNode.changeScale(AVector(1, aspectHeight, aspectWidth));
     
     //  attach animation
     AAnimation monsterTextureAnimation;
-    monsterTextureAnimation._animationTrigger = 5;
-    monsterTextureAnimation.appendChanger(new ASpriteChanger(bossSprite, _sceneGraph._textureManager));
+    monsterTextureAnimation._animationTrigger = 60;
+    monsterTextureAnimation.appendChanger(new ASpriteChanger(monsterSprite, _sceneGraph._textureManager));
     newNode.attachAnimation(monsterTextureAnimation);
+}
+
+//==============================================================================
+
+void AGame::startGame()
+{
+    spcWAD::AWAD wadResources(ABundle().fullPathToResource("doom.wad"));
+    spcWAD::ALevel e1m8 = wadResources.readLevel("e1m8");
+    spcWAD::TSpriteList monsters = e1m8.monstersList();
+
+
+    //  create monster node
+    generateMonster("boss", e1m8);
 
     //  create floor
     const spcWAD::AFlat& planeFlat = wadResources.findFlat("floor4_8");

@@ -17,18 +17,25 @@ namespace spcTGame
     
 //==============================================================================
 
+class AMonster;
+
+//==============================================================================
+
 class AGame
 {
 private:
     void init();
     void render();
     void createUIElements(spcWAD::AWAD& wad);
+    void generateMonster(const std::string& spriteName, spcWAD::ALevel& level);
 
     ASceneGraph _sceneGraph;
     ARenderService _renderService;
     ALogic _logic;
     AKeyboardController _keyboardController;
     AGameStepsController _gameStepsController;
+    
+    AMonster *_currentMonster;
         
 public:
     AGame();
