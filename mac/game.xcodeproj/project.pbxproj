@@ -34,7 +34,7 @@
 		4C4F80132250FFB3000F842A /* aanimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C4F80112250FFB3000F842A /* aanimation.cpp */; };
 		4C4F801722510992000F842A /* aquaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C4F801522510992000F842A /* aquaternion.cpp */; };
 		4C5CDE102257E47B00D7444E /* asize2d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C5CDE0E2257E47B00D7444E /* asize2d.cpp */; };
-		4C5CDE132257E5E900D7444E /* aopenglsprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C5CDE112257E5E900D7444E /* aopenglsprite.cpp */; };
+		4C5CDE132257E5E900D7444E /* abutton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C5CDE112257E5E900D7444E /* abutton.cpp */; };
 		4C938AAA224E1718008D803A /* celtic.tga in Resources */ = {isa = PBXBuildFile; fileRef = 4C938AA8224E1718008D803A /* celtic.tga */; };
 		4C938AAB224E1718008D803A /* doom.wad in Resources */ = {isa = PBXBuildFile; fileRef = 4C938AA9224E1718008D803A /* doom.wad */; };
 		4C938AB4224E1768008D803A /* aopengltexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AAC224E1768008D803A /* aopengltexture.cpp */; };
@@ -123,8 +123,8 @@
 		4C4F801622510992000F842A /* aquaternion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = aquaternion.h; path = ../common/game/aquaternion.h; sourceTree = "<group>"; };
 		4C5CDE0E2257E47B00D7444E /* asize2d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = asize2d.cpp; path = ../common/game/asize2d.cpp; sourceTree = "<group>"; };
 		4C5CDE0F2257E47B00D7444E /* asize2d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = asize2d.h; path = ../common/game/asize2d.h; sourceTree = "<group>"; };
-		4C5CDE112257E5E900D7444E /* aopenglsprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aopenglsprite.cpp; path = ../common/game/aopenglsprite.cpp; sourceTree = "<group>"; };
-		4C5CDE122257E5E900D7444E /* aopenglsprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aopenglsprite.h; path = ../common/game/aopenglsprite.h; sourceTree = "<group>"; };
+		4C5CDE112257E5E900D7444E /* abutton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = abutton.cpp; path = ../common/game/abutton.cpp; sourceTree = "<group>"; };
+		4C5CDE122257E5E900D7444E /* abutton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = abutton.h; path = ../common/game/abutton.h; sourceTree = "<group>"; };
 		4C938AA8224E1718008D803A /* celtic.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = celtic.tga; path = ../resources/celtic.tga; sourceTree = "<group>"; };
 		4C938AA9224E1718008D803A /* doom.wad */ = {isa = PBXFileReference; lastKnownFileType = file; name = doom.wad; path = ../resources/doom.wad; sourceTree = "<group>"; };
 		4C938AAC224E1768008D803A /* aopengltexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aopengltexture.cpp; path = ../common/game/aopengltexture.cpp; sourceTree = "<group>"; };
@@ -204,8 +204,8 @@
 		4C1B89E922491C7E00418BE5 /* Render */ = {
 			isa = PBXGroup;
 			children = (
-				4C5CDE122257E5E900D7444E /* aopenglsprite.h */,
-				4C5CDE112257E5E900D7444E /* aopenglsprite.cpp */,
+				4C5CDE122257E5E900D7444E /* abutton.h */,
+				4C5CDE112257E5E900D7444E /* abutton.cpp */,
 				4C938AFC224E2BE8008D803A /* aplane.h */,
 				4C938AFB224E2BE8008D803A /* aplane.cpp */,
 				4C938AE5224E17F0008D803A /* amonster.h */,
@@ -214,8 +214,8 @@
 				4C938AE0224E17F0008D803A /* anodeobject.cpp */,
 				4C938AE1224E17F0008D803A /* arenderservice.h */,
 				4C938AE2224E17F0008D803A /* arenderservice.cpp */,
-				4C938AE7224E17F0008D803A /* ascenegraph.cpp */,
 				4C938AE6224E17F0008D803A /* ascenegraph.h */,
+				4C938AE7224E17F0008D803A /* ascenegraph.cpp */,
 				4C938AE8224E17F0008D803A /* ascenenode.h */,
 				4C938AE4224E17F0008D803A /* ascenenode.cpp */,
 			);
@@ -530,7 +530,7 @@
 				4C938AB5224E1768008D803A /* atga.cpp in Sources */,
 				4C45AB6B224A88EE004141E7 /* alump.cpp in Sources */,
 				4C4F8010224F946E000F842A /* aanimationbuilder.cpp in Sources */,
-				4C5CDE132257E5E900D7444E /* aopenglsprite.cpp in Sources */,
+				4C5CDE132257E5E900D7444E /* abutton.cpp in Sources */,
 				4C938ADA224E17D9008D803A /* apoint2d.cpp in Sources */,
 				4C45AB75224A88EE004141E7 /* alevel.cpp in Sources */,
 				4C45AB68224A88EE004141E7 /* apalete.cpp in Sources */,

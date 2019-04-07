@@ -35,8 +35,7 @@ private:
     AKeyboardController _keyboardController;
     AGameStepsController _gameStepsController;
     
-    AMonster *_currentMonster;
-        
+    TSceneNodesListIter _currentMonsterNode;
 public:
     AGame();
     ~AGame();

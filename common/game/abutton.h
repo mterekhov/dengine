@@ -1,5 +1,5 @@
-#ifndef SPCTGAME_AOPENGLSPRITE_H
-#define SPCTGAME_AOPENGLSPRITE_H
+#ifndef SPCTGAME_ABUTTON_H
+#define SPCTGAME_ABUTTON_H
 
 //==============================================================================
 
@@ -15,7 +15,7 @@ namespace spcTGame
 
 //==============================================================================
 
-class AOpenGLSprite : public ANodeObject
+class AButton : public ANodeObject
 {
 private:
     AOpenGLTexture& _texture;
@@ -24,14 +24,14 @@ private:
     TPoints2DList generatePlanePoints(const ASize2D& squarePlaneSize) const;
 
 public:
-    AOpenGLSprite(AOpenGLTexture& texture);
-    virtual ~AOpenGLSprite();
+    AButton(AOpenGLTexture& texture);
+    virtual ~AButton();
 
     virtual void renderObject() const;
     virtual void bindTexture();
     virtual void assignTexture(AOpenGLTexture& texture);
 
-    ASize2D planeSize;
+    ASize2D buttonSize;
 };
 
 //==============================================================================
@@ -40,4 +40,4 @@ public:
 
 //==============================================================================
 
-#endif  //  SPCTGAME_AOPENGLSPRITE_H
+#endif  //  SPCTGAME_ABUTTON_H

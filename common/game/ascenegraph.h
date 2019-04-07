@@ -45,7 +45,8 @@ public:
     ~ASceneGraph();
     
     ASceneNode& addUIElement(ANodeObject *object, const ESceneNodeTrasnsparency nodeTransparency = ESCENENODETRANSPARENCY_NONE);
-    ASceneNode& addObject(ANodeObject *object, const ESceneNodeType nodeType, const ESceneNodeTrasnsparency nodeTransparency = ESCENENODETRANSPARENCY_NONE);
+    TSceneNodesListIter addObject(ANodeObject *object, const ESceneNodeType nodeType, const ESceneNodeTrasnsparency nodeTransparency = ESCENENODETRANSPARENCY_NONE);
+    void removeObject(TSceneNodesListIter nodeIter);
     TSceneNodesList& texturedNodes();
     TSceneNodesList& uiElementsNodes();
 };

@@ -30,8 +30,28 @@ ASceneNode& ASceneGraph::addUIElement(ANodeObject *object, const ESceneNodeTrasn
 }
     
 //==============================================================================
+
+void ASceneGraph::removeObject(TSceneNodesListIter nodeIter)
+{
+    ANodeObject *object = nodeIter->nodeObject();
+    _objectsList.remove(object);
+    delete object;
     
-ASceneNode& ASceneGraph::addObject(ANodeObject* object, const ESceneNodeType nodeType, const ESceneNodeTrasnsparency nodeTransparency)
+    switch (nodeIter->nodeType())
+    {
+        case ESCENENODETYPE_TEXTURED:
+            _texturedNodesList.erase(nodeIter);
+        break;
+            
+        case ESCENENODETYPE_SOLID:
+            _solidNodesList.erase(nodeIter);
+        break;
+    }
+}
+
+//==============================================================================
+
+TSceneNodesListIter ASceneGraph::addObject(ANodeObject* object, const ESceneNodeType nodeType, const ESceneNodeTrasnsparency nodeTransparency)
 {
     _objectsList.push_back(object);
     ASceneNode newNode(object, AVector(1.0f, 1.0f, 1.0f), AVector(), 0, APoint(), nodeType, nodeTransparency);
@@ -40,16 +60,16 @@ ASceneNode& ASceneGraph::addObject(ANodeObject* object, const ESceneNodeType nod
     {
         case ESCENENODETYPE_TEXTURED:
             _texturedNodesList.push_back(newNode);
-            return _texturedNodesList.back();
+            return --(_texturedNodesList.end());
         break;
             
         case ESCENENODETYPE_SOLID:
             _solidNodesList.push_back(newNode);
-            return _solidNodesList.back();
+            return --_solidNodesList.end();
         break;
     }
     
-    return _texturedNodesList.back();
+    return --_texturedNodesList.end();
 }
 
 //==============================================================================

@@ -1,4 +1,4 @@
-#include "aopenglsprite.h"
+#include "abutton.h"
 #include "adrawbasics.h"
 #include "aopenglstate.h"
 #include "aoglwrapper.h"
@@ -10,19 +10,19 @@ namespace spcTGame
     
 //==============================================================================
 
-AOpenGLSprite::AOpenGLSprite(AOpenGLTexture& texture) : _texture(texture), planeSize(0, 0)
+AButton::AButton(AOpenGLTexture& texture) : _texture(texture), buttonSize(0, 0)
 {
 }
 
 //==============================================================================
 
-AOpenGLSprite::~AOpenGLSprite()
+AButton::~AButton()
 {
 }
 
 //==============================================================================
     
-TPoints2DList AOpenGLSprite::generatePlaneUVPoints(const AOpenGLTexture& texture) const
+TPoints2DList AButton::generatePlaneUVPoints(const AOpenGLTexture& texture) const
 {
     TPoints2DList uvpointList;
     
@@ -44,14 +44,14 @@ TPoints2DList AOpenGLSprite::generatePlaneUVPoints(const AOpenGLTexture& texture
 
 //==============================================================================
 
-TPoints2DList AOpenGLSprite::generatePlanePoints(const ASize2D& squarePlaneSize) const
+TPoints2DList AButton::generatePlanePoints(const ASize2D& squarePlaneSize) const
 {
     TPoints2DList pointList;
     
     APoint2D p1;
-    APoint2D p2 = APoint2D(p1.x,                         p1.y + squarePlaneSize.height);  //p5
-    APoint2D p3 = APoint2D(p1.x + squarePlaneSize.width, p1.y + squarePlaneSize.height);  //p8
-    APoint2D p4 = APoint2D(p1.x + squarePlaneSize.width, p1.y);  //p4
+    APoint2D p2 = APoint2D(p1.x,                         p1.y + squarePlaneSize.height);
+    APoint2D p3 = APoint2D(p1.x + squarePlaneSize.width, p1.y + squarePlaneSize.height);
+    APoint2D p4 = APoint2D(p1.x + squarePlaneSize.width, p1.y);
     
     pointList.push_back(p1);
     pointList.push_back(p3);
@@ -65,9 +65,9 @@ TPoints2DList AOpenGLSprite::generatePlanePoints(const ASize2D& squarePlaneSize)
 
 //==============================================================================
 
-void AOpenGLSprite::renderObject() const
+void AButton::renderObject() const
 {
-    TPoints2DList coordspoints = generatePlanePoints(planeSize);
+    TPoints2DList coordspoints = generatePlanePoints(buttonSize);
     TPoints2DList uvpoints = generatePlaneUVPoints(_texture);
     TFloat line [] = {
         coordspoints[0].x, coordspoints[0].y,
@@ -98,14 +98,14 @@ void AOpenGLSprite::renderObject() const
 
 //==============================================================================
 
-void AOpenGLSprite::bindTexture()
+void AButton::bindTexture()
 {
     _texture.bind();
 }
 
 //==============================================================================
 
-void AOpenGLSprite::assignTexture(AOpenGLTexture& texture)
+void AButton::assignTexture(AOpenGLTexture& texture)
 {
     _texture = texture;
 }
