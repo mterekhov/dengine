@@ -98,8 +98,10 @@ void AGame::createUIElements(spcWAD::AWAD& wad)
     AButton *hud = new AButton(hudTexture);
     hud->buttonSize.width = static_cast<TFloat>(picture.imageData.width());
     hud->buttonSize.height = static_cast<TFloat>(picture.imageData.height());
-
-    ASceneNode& newNode2 = _sceneGraph.addUIElement(hud, ESCENENODETRANSPARENCY_NONE);
+    hud->handler = this;
+    hud->payLoad = new std::string("m_doom");
+    
+    _sceneGraph.addUIElement(hud);
 }
 
 
@@ -124,6 +126,18 @@ void AGame::processKeyboardEvent(const TUint buttonCode)
 
 //==============================================================================
 
+void AGame::processMouseEvent(const APoint2D& point)
+{
+    TSceneNodesList& uiElements = _sceneGraph.uiElementsNodes();
+    for (TSceneNodesListIter iter = uiElements.begin(); iter != uiElements.end(); iter++)
+    {
+        AButton *button = static_cast<AButton *>(iter->nodeObject());
+        button->processEvent(point);
+    }
+}
+
+//==============================================================================
+
 void AGame::updateScreenSize(const TFloat screenWidth, const TFloat screenHeight)
 {
     AOpenGLState* oglState = spcTGame::AOpenGLState::shared();
@@ -132,4 +146,12 @@ void AGame::updateScreenSize(const TFloat screenWidth, const TFloat screenHeight
 
 //==============================================================================
     
+void AGame::handleTapEvent(const APoint2D& point, void *payLoad)
+{
+    std::string *character = static_cast<std::string *>(payLoad);
+    printf("%.3f\t%.3f\t%s\n", point.x, point.y, character->c_str());
+}
+
+//==============================================================================
+
 }   //  namespace spcTGame

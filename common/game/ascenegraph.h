@@ -7,6 +7,7 @@
 #include "atexturemanager.h"
 #include "anodeobject.h"
 #include "ascenenode.h"
+#include "abutton.h"
 
 //==============================================================================
 
@@ -27,6 +28,11 @@ typedef std::list<ANodeObject *> TObjectsList;
 typedef TObjectsList::iterator TObjectsListIter;
 typedef TObjectsList::const_iterator TObjectsListConstIter;
 
+typedef std::list<AButton> TButtonsList;
+typedef TButtonsList::iterator TButtonsListIter;
+typedef TButtonsList::const_iterator TButtonsListConstIter;
+    
+    
 //==============================================================================
 
 class ASceneGraph

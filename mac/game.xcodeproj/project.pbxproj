@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C1B89F1224920FE00418BE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C1B89F0224920FE00418BE5 /* Assets.xcassets */; };
+		4C2288702259FEEF00E09A40 /* abuttonhandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C22886E2259FEEF00E09A40 /* abuttonhandler.cpp */; };
 		4C2E7AB722453AD10059E112 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C2E7AB522453AD10059E112 /* MainMenu.xib */; };
 		4C2E7ABA22453AD10059E112 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E7AB922453AD10059E112 /* main.m */; };
 		4C2E7AC522453B0C0059E112 /* ARenderView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E7AC222453B0C0059E112 /* ARenderView.mm */; };
@@ -69,6 +70,8 @@
 
 /* Begin PBXFileReference section */
 		4C1B89F0224920FE00418BE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C22886E2259FEEF00E09A40 /* abuttonhandler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = abuttonhandler.cpp; path = ../common/game/abuttonhandler.cpp; sourceTree = "<group>"; };
+		4C22886F2259FEEF00E09A40 /* abuttonhandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = abuttonhandler.h; path = ../common/game/abuttonhandler.h; sourceTree = "<group>"; };
 		4C2E7AAD22453AD00059E112 /* game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2E7AB622453AD10059E112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4C2E7AB822453AD10059E112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -204,8 +207,6 @@
 		4C1B89E922491C7E00418BE5 /* Render */ = {
 			isa = PBXGroup;
 			children = (
-				4C5CDE122257E5E900D7444E /* abutton.h */,
-				4C5CDE112257E5E900D7444E /* abutton.cpp */,
 				4C938AFC224E2BE8008D803A /* aplane.h */,
 				4C938AFB224E2BE8008D803A /* aplane.cpp */,
 				4C938AE5224E17F0008D803A /* amonster.h */,
@@ -261,6 +262,17 @@
 			name = System;
 			sourceTree = "<group>";
 		};
+		4C228871225A008E00E09A40 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				4C22886F2259FEEF00E09A40 /* abuttonhandler.h */,
+				4C22886E2259FEEF00E09A40 /* abuttonhandler.cpp */,
+				4C5CDE122257E5E900D7444E /* abutton.h */,
+				4C5CDE112257E5E900D7444E /* abutton.cpp */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
 		4C2E7AA422453AD00059E112 = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +313,7 @@
 		4C2E7AC7224540D20059E112 /* GameEngine */ = {
 			isa = PBXGroup;
 			children = (
+				4C228871225A008E00E09A40 /* Buttons */,
 				4C938AF1224E180A008D803A /* agame.cpp */,
 				4C938AF3224E180A008D803A /* agame.h */,
 				4C938AF0224E180A008D803A /* alogic.cpp */,
@@ -542,6 +555,7 @@
 				4C5CDE102257E47B00D7444E /* asize2d.cpp in Sources */,
 				4C938AB4224E1768008D803A /* aopengltexture.cpp in Sources */,
 				4C45AB6E224A88EE004141E7 /* awad.cpp in Sources */,
+				4C2288702259FEEF00E09A40 /* abuttonhandler.cpp in Sources */,
 				4C938AED224E17F0008D803A /* ascenegraph.cpp in Sources */,
 				4C45AB69224A88EE004141E7 /* apicture.cpp in Sources */,
 				4CA20CB3225357A7000FA833 /* aspritechanger.cpp in Sources */,

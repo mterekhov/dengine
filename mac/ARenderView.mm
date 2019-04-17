@@ -5,7 +5,7 @@
 
 //==============================================================================
 
-@interface ARenderView ()
+@interface ARenderView ()<NSGestureRecognizerDelegate>
     @property (nonatomic, assign) NSTimeInterval animationInterval;
     @property (nonatomic, strong) NSTimer *animationTimer;
     @property (nonatomic, assign) spcTGame::AGame *gameEngine;
@@ -105,6 +105,13 @@
 - (void)keyDown:(NSEvent *)theEvent
 {
     self.gameEngine->processKeyboardEvent(theEvent.keyCode);
+}
+
+//==============================================================================
+
+- (void)mouseUp:(NSEvent *)event
+{
+    self.gameEngine->processMouseEvent(spcTGame::APoint2D([event locationInWindow].x, [event locationInWindow].y));
 }
 
 //==============================================================================

@@ -9,6 +9,7 @@
 #include "akeyboardcontroller.h"
 #include "agamestepscontroller.h"
 #include "awad.h"
+#include "abuttonhandler.h"
 
 //==============================================================================
 
@@ -21,7 +22,7 @@ class AMonster;
 
 //==============================================================================
 
-class AGame
+class AGame : public AButtonHandler
 {
 private:
     void init();
@@ -43,7 +44,10 @@ public:
     void updateScreenSize(const TFloat screenWidth, const TFloat screenHeight);
     void startGame();
     void processKeyboardEvent(const TUint buttonCode);
+    void processMouseEvent(const APoint2D& point);
     void processGameCycle();
+    
+    virtual void handleTapEvent(const APoint2D& point, void *payLoad);
 };
 
 //==============================================================================

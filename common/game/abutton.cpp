@@ -10,7 +10,7 @@ namespace spcTGame
     
 //==============================================================================
 
-AButton::AButton(AOpenGLTexture& texture) : _texture(texture), buttonSize(0, 0)
+AButton::AButton(AOpenGLTexture& texture) : _texture(texture), buttonSize(0, 0), payLoad(0)
 {
 }
 
@@ -48,7 +48,7 @@ TPoints2DList AButton::generatePlanePoints(const ASize2D& squarePlaneSize) const
 {
     TPoints2DList pointList;
     
-    APoint2D p1;
+    APoint2D p1 = buttonPosition;
     APoint2D p2 = APoint2D(p1.x,                         p1.y + squarePlaneSize.height);
     APoint2D p3 = APoint2D(p1.x + squarePlaneSize.width, p1.y + squarePlaneSize.height);
     APoint2D p4 = APoint2D(p1.x + squarePlaneSize.width, p1.y);
@@ -108,6 +108,28 @@ void AButton::bindTexture()
 void AButton::assignTexture(AOpenGLTexture& texture)
 {
     _texture = texture;
+}
+
+//==============================================================================
+
+void AButton::processEvent(const APoint2D& point)
+{
+    if ((point.x < buttonPosition.x) || (point.x > buttonPosition.x + buttonSize.width))
+    {
+        return;
+    }
+    
+    if ((point.y < buttonPosition.y) || (point.y > buttonPosition.y + buttonSize.height))
+    {
+        return;
+    }
+
+    if (!handler)
+    {
+        return;
+    }
+    
+    handler->handleTapEvent(point, payLoad);
 }
 
 //==============================================================================

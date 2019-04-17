@@ -7,6 +7,7 @@
 #include "aopengltexture.h"
 #include "apoint2d.h"
 #include "asize2d.h"
+#include "abuttonhandler.h"
 
 //==============================================================================
 
@@ -30,8 +31,13 @@ public:
     virtual void renderObject() const;
     virtual void bindTexture();
     virtual void assignTexture(AOpenGLTexture& texture);
+    
+    void processEvent(const APoint2D& point);
 
     ASize2D buttonSize;
+    APoint2D buttonPosition;
+    AButtonHandler *handler;
+    void *payLoad;
 };
 
 //==============================================================================
