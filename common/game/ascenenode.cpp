@@ -86,18 +86,6 @@ void ASceneNode::applyAnimation()
 
 //==============================================================================
 
-void ASceneNode::bindTexture()
-{
-    if (_nodeObject == 0)
-    {
-        return;
-    }
-    
-    _nodeObject->bindTexture();
-}
-
-//==============================================================================
-
 void ASceneNode::changePosition(const APoint& newPoint)
 {
     _position = newPoint;

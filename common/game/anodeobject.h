@@ -24,7 +24,6 @@ public:
     
     virtual void renderObject() const;
     virtual void assignTexture(AOpenGLTexture& texture);
-    virtual void bindTexture();
 };
 
 //==============================================================================

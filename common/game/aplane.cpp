@@ -74,14 +74,8 @@ void APlane::renderObject() const
     ADataLiner dataLiner;
     dataLiner.pushCoordPointList(coordspoints);
     dataLiner.pushUVPointList(uvpoints);
-    ADrawBasics::drawDataLiner(dataLiner);
-}
-
-//==============================================================================
-
-void APlane::bindTexture()
-{
     _texture.bind();
+    ADrawBasics::drawDataLiner(dataLiner);
 }
 
 //==============================================================================

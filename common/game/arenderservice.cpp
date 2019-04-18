@@ -81,8 +81,7 @@ void ARenderService::renderObjectWithTransparency(const ESceneNodeTrasnsparency 
         {
             continue;
         }
-        
-        node.bindTexture();
+
         instance->pushMarices();
         node.applyAnimation();
         
@@ -129,7 +128,6 @@ void ARenderService::renderUI()
     for (TSceneNodesListIter iter = iterBegin; iter != iterEnd; iter++)
     {
         ASceneNode &node = *iter;
-        node.bindTexture();
         instance->pushMarices();
         instance->translate(node.position());
         instance->rotation(node.rotation());

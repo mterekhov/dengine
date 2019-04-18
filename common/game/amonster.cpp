@@ -77,6 +77,7 @@ void AMonster::renderObject() const
     ADataLiner dataLiner;
     dataLiner.pushCoordPointList(coordspoints);
     dataLiner.pushUVPointList(uvpoints);
+    _texture.bind();
     ADrawBasics::drawDataLiner(dataLiner);
 }
 
@@ -85,13 +86,6 @@ void AMonster::renderObject() const
 void AMonster::assignTexture(AOpenGLTexture& texture)
 {
     _texture = texture;
-}
-
-//==============================================================================
-
-void AMonster::bindTexture()
-{
-    _texture.bind();
 }
 
 //==============================================================================

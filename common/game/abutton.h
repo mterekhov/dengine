@@ -29,7 +29,6 @@ public:
     virtual ~AButton();
 
     virtual void renderObject() const;
-    virtual void bindTexture();
     virtual void assignTexture(AOpenGLTexture& texture);
     
     void processEvent(const APoint2D& point);

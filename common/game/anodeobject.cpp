@@ -32,11 +32,4 @@ void ANodeObject::assignTexture(AOpenGLTexture& texture)
 
 //==============================================================================
 
-void ANodeObject::bindTexture()
-{
-
-}
-
-//==============================================================================
-
 }   //  namespace spcTGame
