@@ -27,7 +27,7 @@ class AGame : public AButtonHandler
 private:
     void init();
     void render();
-    void createUIElements(spcWAD::AWAD& wad);
+    void createUIElements(const spcWAD::ALevel& level, spcWAD::AWAD& wad);
     void generateMonster(const std::string& spriteName, spcWAD::ALevel& level);
 
     ASceneGraph _sceneGraph;

@@ -69,11 +69,8 @@ void AGame::generateMonster(const std::string& spriteName, spcWAD::ALevel& level
 void AGame::startGame()
 {
     spcWAD::AWAD wadResources(ABundle().fullPathToResource("doom.wad"));
-    spcWAD::ALevel e1m8 = wadResources.readLevel("e1m8");
+    spcWAD::ALevel e1m8 = wadResources.readLevel("e2m6");
     spcWAD::TSpriteList monsters = e1m8.monstersList();
-
-    //  create monster node
-    generateMonster("boss", e1m8);
 
     //  create floor
     const spcWAD::AFlat& planeFlat = wadResources.findFlat("floor4_8");
@@ -82,26 +79,44 @@ void AGame::startGame()
     TSceneNodesListIter newNode2 = _sceneGraph.addObject(floorPlane, ESCENENODETYPE_TEXTURED, ESCENENODETRANSPARENCY_NONE);
     newNode2->changePosition(APoint(-floorPlane->planeSize / 2.0f, 0.0f, -floorPlane->planeSize / 2.0f));
 
-    createUIElements(wadResources);
+    createUIElements(e1m8, wadResources);
     
     _logic.startGame();
 }
 
 //==============================================================================
 
-void AGame::createUIElements(spcWAD::AWAD& wad)
+void AGame::createUIElements(const spcWAD::ALevel& level, spcWAD::AWAD& wad)
 {
-    spcWAD::APicture picture = wad.readPicture("m_doom");
-    picture.savePatchIntoTga("/Users/michael/Pictures/stbar.tga");
-    AOpenGLTexture& hudTexture = _sceneGraph._textureManager.createOrFindTexture(picture.patchName(), picture.imageData);
-
-    AButton *hud = new AButton(hudTexture);
-    hud->buttonSize.width = static_cast<TFloat>(picture.imageData.width());
-    hud->buttonSize.height = static_cast<TFloat>(picture.imageData.height());
-    hud->handler = this;
-    hud->payLoad = new std::string("m_doom");
+    spcWAD::TSpriteList monstersList = level.monstersList();
+    spcWAD::TSpriteListIter iter = monstersList.begin();
     
-    _sceneGraph.addUIElement(hud);
+    spcWAD::APicture picture = wad.readPicture(iter->spritesPrefix + "a1");
+    TFloat spaceBetween = 20.0f;
+    APoint2D buttonPosition(10.0f, 0.0f);
+    TFloat sizeScale = 3.0f;
+    ASize2D buttonSize(picture.imageData.width() * sizeScale, picture.imageData.height() * sizeScale);
+    AButton *hud = 0;
+    for (;iter != monstersList.end(); iter++)
+    {
+        picture = wad.readPicture(iter->spritesPrefix + "a1");
+        AOpenGLTexture& hudTexture = _sceneGraph._textureManager.createOrFindTexture(picture.patchName(), picture.imageData);
+
+        if (hud)
+        {
+            buttonPosition.y += hud->buttonSize.height;
+            buttonPosition.y += spaceBetween;
+        }
+        hud = new AButton(hudTexture);
+        hud->buttonSize.width = static_cast<TFloat>(picture.imageData.width());
+        hud->buttonSize.height = static_cast<TFloat>(picture.imageData.height());
+        hud->handler = this;
+        hud->payLoad = new std::string(iter->spritesPrefix);
+        hud->buttonPosition = buttonPosition;
+        hud->buttonSize = buttonSize;
+        
+        _sceneGraph.addUIElement(hud);
+    }
 }
 
 
@@ -150,6 +165,10 @@ void AGame::handleTapEvent(const APoint2D& point, void *payLoad)
 {
     std::string *character = static_cast<std::string *>(payLoad);
     printf("%.3f\t%.3f\t%s\n", point.x, point.y, character->c_str());
+    //  create monster node
+    spcWAD::AWAD wadResources(ABundle().fullPathToResource("doom.wad"));
+    spcWAD::ALevel e1m8 = wadResources.readLevel("e2m6");
+    generateMonster(*character, e1m8);
 }
 
 //==============================================================================

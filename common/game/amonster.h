@@ -22,7 +22,7 @@ namespace spcTGame
 class AMonster : public ANodeObject
 {
 private:
-    AOpenGLTexture& _texture;
+    AOpenGLTexture _texture;
     
     TPoints2DList generatePlaneUVPoints(const AOpenGLTexture& texture) const;
     TPointsList generatePlanePoints(const TFloat textureWidth, const TFloat textureHeight) const;
