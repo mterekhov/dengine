@@ -91,6 +91,10 @@ void AGame::createUIElements(const spcWAD::ALevel& level, spcWAD::AWAD& wad)
     spcWAD::TSpriteList monstersList = level.monstersList();
     spcWAD::TSpriteListIter iter = monstersList.begin();
     
+    //  flat20
+    const spcWAD::AFlat& buttonBackgroundFlat = wad.findFlat("FLOOR4_6");
+    AOpenGLTexture& hudBackground = _sceneGraph._textureManager.createOrFindTexture(buttonBackgroundFlat.flatName(), buttonBackgroundFlat.imageData());
+    
     spcWAD::APicture picture = wad.readPicture(iter->spritesPrefix + "a1");
     TFloat spaceBetween = 20.0f;
     APoint2D buttonPosition(10.0f, 0.0f);
@@ -114,6 +118,7 @@ void AGame::createUIElements(const spcWAD::ALevel& level, spcWAD::AWAD& wad)
         hud->payLoad = new std::string(iter->spritesPrefix);
         hud->buttonPosition = buttonPosition;
         hud->buttonSize = buttonSize;
+        hud->assignBackgroundTexture(hudBackground);
         
         _sceneGraph.addUIElement(hud);
     }

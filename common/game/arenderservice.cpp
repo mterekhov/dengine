@@ -99,6 +99,8 @@ void ARenderService::renderObjectWithTransparency(const ESceneNodeTrasnsparency 
 
 void ARenderService::renderUI()
 {
+    AOGLWrapper::oglDisable(GL_DEPTH_TEST);
+
     AOpenGLState *instance = AOpenGLState::shared();
     instance->pushMarices();
     instance->setupOthoProjection();
@@ -139,6 +141,7 @@ void ARenderService::renderUI()
     instance->textureDisable();
     instance->drawColor(previousColor);
     instance->popMarices();
+    AOGLWrapper::oglEnable(GL_DEPTH_TEST);
 }
 
 //==============================================================================

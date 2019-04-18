@@ -19,8 +19,9 @@ namespace spcTGame
 class AButton : public ANodeObject
 {
 private:
-    AOpenGLTexture& _texture;
-    
+    AOpenGLTexture _texture;
+    AOpenGLTexture _backgroundTexture;
+
     TPoints2DList generatePlaneUVPoints(const AOpenGLTexture& texture) const;
     TPoints2DList generatePlanePoints(const ASize2D& squarePlaneSize) const;
 
@@ -30,7 +31,8 @@ public:
 
     virtual void renderObject() const;
     virtual void assignTexture(AOpenGLTexture& texture);
-    
+    void assignBackgroundTexture(AOpenGLTexture& texture);
+
     void processEvent(const APoint2D& point);
 
     ASize2D buttonSize;

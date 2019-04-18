@@ -91,10 +91,23 @@ void AButton::renderObject() const
 
     
     TUint strideInBytes = sizeof(TFloat) * 4;
-    
-    _texture.bind();
     AOGLWrapper::oglTexCoordPointer(2, GL_FLOAT, strideInBytes, &line[2]);
-    ADrawBasics::drawTriangles(line, strideInBytes, 6);
+
+    if (_backgroundTexture.height() > 0.0f)
+    {
+        _backgroundTexture.bind();
+        ADrawBasics::drawTriangles(line, strideInBytes, 6);
+    }
+
+    _texture.bind();
+    ADrawBasics::drawTriangles(line, strideInBytes, 6);    
+}
+
+//==============================================================================
+
+void AButton::assignBackgroundTexture(AOpenGLTexture& texture)
+{
+    _backgroundTexture = texture;
 }
 
 //==============================================================================
