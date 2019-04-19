@@ -12,6 +12,7 @@
 #include "aanimationbuilder.h"
 #include "aspritechanger.h"
 #include "abutton.h"
+#include "abanner.h"
 
 //==============================================================================
 
@@ -20,7 +21,7 @@ namespace spcTGame
     
 //==============================================================================
     
-    AGame::AGame() : _renderService(_sceneGraph), _logic(_gameStepsController), _keyboardController(_gameStepsController), _currentMonsterNode(_sceneGraph.texturedNodes().end())
+AGame::AGame() : _renderService(_sceneGraph), _logic(_gameStepsController), _keyboardController(_gameStepsController), _currentMonsterNode(_sceneGraph.texturedNodes().end())
 {
     init();
 }
@@ -88,38 +89,52 @@ void AGame::startGame()
 
 void AGame::createUIElements(const spcWAD::ALevel& level, spcWAD::AWAD& wad)
 {
+    TFloat leftShift = 20.0f;
+    TFloat topShift = 20.0f;
+    spcWAD::APicture doomLogoPicture = wad.readPicture("m_doom");
+    TFloat menuWidth = doomLogoPicture.imageData.width();
+    TFloat menuHeight = 500;
+
+    ASize2D menuSize(menuWidth, menuHeight);
+    const spcWAD::AFlat& menuBackgroundFlat = wad.findFlat("FLOOR4_6");
+    AOpenGLTexture& menuBackgroundTexture = _sceneGraph._textureManager.createOrFindTexture(menuBackgroundFlat.flatName(), menuBackgroundFlat.imageData());
+    ABanner *menu = new ABanner(menuBackgroundTexture);
+    menu->bannerSize = menuSize;
+    menu->bannerPosition = APoint2D(leftShift, topShift);
+    _sceneGraph.addUIElement(menu);
+
+    AOpenGLTexture& doomLogoTexture = _sceneGraph._textureManager.createOrFindTexture(doomLogoPicture.patchName(), doomLogoPicture.imageData);
+    ABanner *doomLogo = new ABanner(doomLogoTexture);
+    doomLogo->bannerSize = ASize2D(menuWidth, doomLogoPicture.imageData.height());
+    doomLogo->bannerPosition = APoint2D(leftShift, menuHeight - doomLogoPicture.imageData.height());
+    _sceneGraph.addUIElement(doomLogo);
+
     spcWAD::TSpriteList monstersList = level.monstersList();
     spcWAD::TSpriteListIter iter = monstersList.begin();
-    
-    //  flat20
-    const spcWAD::AFlat& buttonBackgroundFlat = wad.findFlat("FLOOR4_6");
-    AOpenGLTexture& hudBackground = _sceneGraph._textureManager.createOrFindTexture(buttonBackgroundFlat.flatName(), buttonBackgroundFlat.imageData());
-    
+
     spcWAD::APicture picture = wad.readPicture(iter->spritesPrefix + "a1");
     TFloat spaceBetween = 20.0f;
-    APoint2D buttonPosition(10.0f, 0.0f);
-    TFloat sizeScale = 3.0f;
+    APoint2D buttonPosition(leftShift, doomLogo->bannerPosition.y - spaceBetween);
+    TFloat sizeScale = 1.0f;
     ASize2D buttonSize(picture.imageData.width() * sizeScale, picture.imageData.height() * sizeScale);
     AButton *hud = 0;
+    const spcWAD::AFlat& buttonBackground = wad.findFlat("flat20");
+    AOpenGLTexture& buttonBackgroundTexture = _sceneGraph._textureManager.createOrFindTexture(buttonBackground.flatName(), buttonBackground.imageData());
     for (;iter != monstersList.end(); iter++)
     {
         picture = wad.readPicture(iter->spritesPrefix + "a1");
         AOpenGLTexture& hudTexture = _sceneGraph._textureManager.createOrFindTexture(picture.patchName(), picture.imageData);
 
-        if (hud)
-        {
-            buttonPosition.y += hud->buttonSize.height;
-            buttonPosition.y += spaceBetween;
-        }
         hud = new AButton(hudTexture);
-        hud->buttonSize.width = static_cast<TFloat>(picture.imageData.width());
-        hud->buttonSize.height = static_cast<TFloat>(picture.imageData.height());
         hud->handler = this;
         hud->payLoad = new std::string(iter->spritesPrefix);
-        hud->buttonPosition = buttonPosition;
+
         hud->buttonSize = buttonSize;
-        hud->assignBackgroundTexture(hudBackground);
-        
+        buttonPosition.y -= hud->buttonSize.height;
+        buttonPosition.y -= spaceBetween;
+        hud->buttonPosition = buttonPosition;
+        hud->assignBackgroundTexture(buttonBackgroundTexture);
+
         _sceneGraph.addUIElement(hud);
     }
 }

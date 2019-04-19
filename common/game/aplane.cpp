@@ -46,12 +46,11 @@ TPointsList APlane::generatePlanePoints(const TFloat squarePlaneSize) const
 TPoints2DList APlane::generatePlaneUVPoints(const AOpenGLTexture& texture) const
 {
     TPoints2DList uvpointList;
-    TFloat aspect = texture.imageWidth();
     
     APoint2D t1 = APoint2D(0.0f, 0.0f);
-    APoint2D t2 = APoint2D(0.0f, aspect);
-    APoint2D t3 = APoint2D(aspect, aspect);
-    APoint2D t4 = APoint2D(aspect, 0.0f);
+    APoint2D t2 = APoint2D(0.0f, texture.imageWidth());
+    APoint2D t3 = APoint2D(texture.imageWidth(), texture.imageWidth());
+    APoint2D t4 = APoint2D(texture.imageWidth(), 0.0f);
 
     uvpointList.push_back(t4);
     uvpointList.push_back(t3);

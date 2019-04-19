@@ -66,6 +66,7 @@
 		4C938AFD224E2BE8008D803A /* aplane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C938AFB224E2BE8008D803A /* aplane.cpp */; };
 		4CA20CB02253559B000FA833 /* achanger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CA20CAE2253559B000FA833 /* achanger.cpp */; };
 		4CA20CB3225357A7000FA833 /* aspritechanger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CA20CB1225357A7000FA833 /* aspritechanger.cpp */; };
+		4CCDDADB2268744C000476C4 /* abanner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDDAD92268744B000476C4 /* abanner.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -191,6 +192,8 @@
 		4CA20CB1225357A7000FA833 /* aspritechanger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = aspritechanger.cpp; path = ../common/game/aspritechanger.cpp; sourceTree = "<group>"; };
 		4CA20CB2225357A7000FA833 /* aspritechanger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = aspritechanger.h; path = ../common/game/aspritechanger.h; sourceTree = "<group>"; };
 		4CA55EEF224EAA2A006249BF /* aopengl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = aopengl.h; path = ../common/game/aopengl.h; sourceTree = "<group>"; };
+		4CCDDAD92268744B000476C4 /* abanner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = abanner.cpp; path = ../common/game/abanner.cpp; sourceTree = "<group>"; };
+		4CCDDADA2268744B000476C4 /* abanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = abanner.h; path = ../common/game/abanner.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +268,8 @@
 		4C228871225A008E00E09A40 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				4CCDDADA2268744B000476C4 /* abanner.h */,
+				4CCDDAD92268744B000476C4 /* abanner.cpp */,
 				4C22886F2259FEEF00E09A40 /* abuttonhandler.h */,
 				4C22886E2259FEEF00E09A40 /* abuttonhandler.cpp */,
 				4C5CDE122257E5E900D7444E /* abutton.h */,
@@ -524,6 +529,7 @@
 				4C938AD9224E17D9008D803A /* avector.cpp in Sources */,
 				4C938AEB224E17F0008D803A /* amonster.cpp in Sources */,
 				4C2E7AC522453B0C0059E112 /* ARenderView.mm in Sources */,
+				4CCDDADB2268744C000476C4 /* abanner.cpp in Sources */,
 				4C2E7ABA22453AD10059E112 /* main.m in Sources */,
 				4C45AB76224A88EE004141E7 /* aendoom.cpp in Sources */,
 				4C45AB6A224A88EE004141E7 /* alevelintegrity.cpp in Sources */,
