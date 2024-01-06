@@ -1,0 +1,3 @@
+[submodule "submodules/wad"]
+	path = submodules/wad
+	url = https://github.com/mterekhov/wad.git
