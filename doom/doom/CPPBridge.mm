@@ -22,6 +22,20 @@
     delete self.ganeshaEngine;
 }
 
+- (spcGaneshaEngine::GRenderGraph)loadContent {
+    spcGaneshaEngine::GRenderGraph newRenderGraph;
+
+    //  Load texture shader
+    NSString *shaderPath = [NSBundle.mainBundle pathForResource: @"frag.spv" ofType: nil];
+    newRenderGraph.pushFragmentShader(shaderPath.UTF8String);
+    
+    //  load vertex shader
+    shaderPath = [NSBundle.mainBundle pathForResource: @"vert.spv" ofType: nil];
+    newRenderGraph.pushVertexShader(shaderPath.UTF8String);
+
+    return newRenderGraph;
+}
+
 - (void)launchEngineWithLayer:(nullable CALayer *) layer {
     if (!layer) {
         NSLog(@"ACHTUNG: layer is nil");
@@ -29,6 +43,8 @@
     }
     
     self.ganeshaEngine = new spcGaneshaEngine::GGanesha();
+    self.ganeshaEngine->renderGraph = [self loadContent];
+    
     if (!self.ganeshaEngine->initEngine((__bridge void *)layer,
                                         static_cast<spcGaneshaEngine::TUInt>(CGRectGetWidth(layer.bounds)),
                                         static_cast<spcGaneshaEngine::TUInt>(CGRectGetHeight(layer.bounds)))) {
