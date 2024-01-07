@@ -10,16 +10,47 @@
 		DE79CE7B2B4A105B0092675F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79CE7A2B4A105B0092675F /* AppDelegate.swift */; };
 		DE79CE7D2B4A105B0092675F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79CE7C2B4A105B0092675F /* ViewController.swift */; };
 		DE79CE7F2B4A105C0092675F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE79CE7E2B4A105C0092675F /* Assets.xcassets */; };
-		DE79CE822B4A105C0092675F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE79CE802B4A105C0092675F /* Main.storyboard */; };
+		DEB9BC1A2B4B418800A138D5 /* CPPBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = DEB9BC172B4B418800A138D5 /* CPPBridge.mm */; };
+		DEB9BC1B2B4B418800A138D5 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9BC182B4B418800A138D5 /* Application.swift */; };
+		DEB9BC1E2B4B424800A138D5 /* vulkan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB9BC1D2B4B424800A138D5 /* vulkan.framework */; };
+		DEB9BC1F2B4B424800A138D5 /* vulkan.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEB9BC1D2B4B424800A138D5 /* vulkan.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DEB9BC222B4B42A700A138D5 /* ganesha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB9BC212B4B42A700A138D5 /* ganesha.framework */; };
+		DEB9BC232B4B42A700A138D5 /* ganesha.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEB9BC212B4B42A700A138D5 /* ganesha.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEB9BC292B4B43DC00A138D5 /* frag.spv in Resources */ = {isa = PBXBuildFile; fileRef = DEB9BC252B4B43DC00A138D5 /* frag.spv */; };
+		DEB9BC2C2B4B43DC00A138D5 /* vert.spv in Resources */ = {isa = PBXBuildFile; fileRef = DEB9BC282B4B43DC00A138D5 /* vert.spv */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DEB9BC202B4B424800A138D5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DEB9BC232B4B42A700A138D5 /* ganesha.framework in Embed Frameworks */,
+				DEB9BC1F2B4B424800A138D5 /* vulkan.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DE79CE772B4A105B0092675F /* doom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = doom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE79CE7A2B4A105B0092675F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE79CE7C2B4A105B0092675F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE79CE7E2B4A105C0092675F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DE79CE812B4A105C0092675F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE79CE832B4A105C0092675F /* doom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = doom.entitlements; sourceTree = "<group>"; };
+		DEB9BC152B4B418700A138D5 /* doom-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "doom-Bridging-Header.h"; sourceTree = "<group>"; };
+		DEB9BC172B4B418800A138D5 /* CPPBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CPPBridge.mm; sourceTree = "<group>"; };
+		DEB9BC182B4B418800A138D5 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		DEB9BC192B4B418800A138D5 /* CPPBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPPBridge.h; sourceTree = "<group>"; };
+		DEB9BC1D2B4B424800A138D5 /* vulkan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = vulkan.framework; path = "../vulkansdk-macos-1.3.268.1/macOS/Frameworks/vulkan.framework"; sourceTree = "<group>"; };
+		DEB9BC212B4B42A700A138D5 /* ganesha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ganesha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEB9BC252B4B43DC00A138D5 /* frag.spv */ = {isa = PBXFileReference; lastKnownFileType = file; path = frag.spv; sourceTree = "<group>"; };
+		DEB9BC262B4B43DC00A138D5 /* shader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.vert; sourceTree = "<group>"; };
+		DEB9BC272B4B43DC00A138D5 /* shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.frag; sourceTree = "<group>"; };
+		DEB9BC282B4B43DC00A138D5 /* vert.spv */ = {isa = PBXFileReference; lastKnownFileType = file; path = vert.spv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEB9BC222B4B42A700A138D5 /* ganesha.framework in Frameworks */,
+				DEB9BC1E2B4B424800A138D5 /* vulkan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,8 +69,10 @@
 		DE79CE6E2B4A105B0092675F = {
 			isa = PBXGroup;
 			children = (
+				DEB9BC242B4B43DC00A138D5 /* shaders */,
 				DE79CE792B4A105B0092675F /* doom */,
 				DE79CE782B4A105B0092675F /* Products */,
+				DEB9BC1C2B4B424800A138D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,13 +87,37 @@
 		DE79CE792B4A105B0092675F /* doom */ = {
 			isa = PBXGroup;
 			children = (
+				DEB9BC182B4B418800A138D5 /* Application.swift */,
 				DE79CE7A2B4A105B0092675F /* AppDelegate.swift */,
 				DE79CE7C2B4A105B0092675F /* ViewController.swift */,
+				DEB9BC192B4B418800A138D5 /* CPPBridge.h */,
+				DEB9BC172B4B418800A138D5 /* CPPBridge.mm */,
 				DE79CE7E2B4A105C0092675F /* Assets.xcassets */,
-				DE79CE802B4A105C0092675F /* Main.storyboard */,
 				DE79CE832B4A105C0092675F /* doom.entitlements */,
+				DEB9BC152B4B418700A138D5 /* doom-Bridging-Header.h */,
 			);
 			path = doom;
+			sourceTree = "<group>";
+		};
+		DEB9BC1C2B4B424800A138D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEB9BC212B4B42A700A138D5 /* ganesha.framework */,
+				DEB9BC1D2B4B424800A138D5 /* vulkan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEB9BC242B4B43DC00A138D5 /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				DEB9BC252B4B43DC00A138D5 /* frag.spv */,
+				DEB9BC262B4B43DC00A138D5 /* shader.vert */,
+				DEB9BC272B4B43DC00A138D5 /* shader.frag */,
+				DEB9BC282B4B43DC00A138D5 /* vert.spv */,
+			);
+			name = shaders;
+			path = resources/shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,6 +130,7 @@
 				DE79CE732B4A105B0092675F /* Sources */,
 				DE79CE742B4A105B0092675F /* Frameworks */,
 				DE79CE752B4A105B0092675F /* Resources */,
+				DEB9BC202B4B424800A138D5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -93,6 +153,7 @@
 				TargetAttributes = {
 					DE79CE762B4A105B0092675F = {
 						CreatedOnToolsVersion = 15.1;
+						LastSwiftMigration = 1510;
 					};
 				};
 			};
@@ -120,7 +181,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE79CE7F2B4A105C0092675F /* Assets.xcassets in Resources */,
-				DE79CE822B4A105C0092675F /* Main.storyboard in Resources */,
+				DEB9BC2C2B4B43DC00A138D5 /* vert.spv in Resources */,
+				DEB9BC292B4B43DC00A138D5 /* frag.spv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,23 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEB9BC1B2B4B418800A138D5 /* Application.swift in Sources */,
 				DE79CE7D2B4A105B0092675F /* ViewController.swift in Sources */,
 				DE79CE7B2B4A105B0092675F /* AppDelegate.swift in Sources */,
+				DEB9BC1A2B4B418800A138D5 /* CPPBridge.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		DE79CE802B4A105C0092675F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE79CE812B4A105C0092675F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DE79CE842B4A105C0092675F /* Debug */ = {
@@ -273,24 +326,29 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = doom/doom.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UAVM255T7W;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../vulkansdk-macos-1.3.268.1/macOS/Frameworks";
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_NSPrincipalClass = "$(PRODUCT_NAME).Application";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.icgsmartcosmetics.doom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "doom/doom-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -300,24 +358,28 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = doom/doom.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UAVM255T7W;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../vulkansdk-macos-1.3.268.1/macOS/Frameworks";
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_NSPrincipalClass = "$(PRODUCT_NAME).Application";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.icgsmartcosmetics.doom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "doom/doom-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
