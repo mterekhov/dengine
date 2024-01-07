@@ -26,12 +26,15 @@
     spcGaneshaEngine::GRenderGraph newRenderGraph;
 
     //  Load texture shader
-    NSString *shaderPath = [NSBundle.mainBundle pathForResource: @"frag.spv" ofType: nil];
-    newRenderGraph.pushFragmentShader(shaderPath.UTF8String);
+    NSString *filePath = [NSBundle.mainBundle pathForResource: @"frag.spv" ofType: nil];
+    newRenderGraph.pushFragmentShader(filePath.UTF8String);
     
     //  load vertex shader
-    shaderPath = [NSBundle.mainBundle pathForResource: @"vert.spv" ofType: nil];
-    newRenderGraph.pushVertexShader(shaderPath.UTF8String);
+    filePath = [NSBundle.mainBundle pathForResource: @"vert.spv" ofType: nil];
+    newRenderGraph.pushVertexShader(filePath.UTF8String);
+    
+    filePath = [NSBundle.mainBundle pathForResource: @"BIGDOOR2.tga" ofType: nil];
+    newRenderGraph.pushTextureFilePath(filePath.UTF8String);
 
     return newRenderGraph;
 }
