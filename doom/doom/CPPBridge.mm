@@ -25,6 +25,31 @@
 - (spcGaneshaEngine::GRenderGraph)loadContent {
     spcGaneshaEngine::GRenderGraph newRenderGraph;
 
+    const std::vector<spcGaneshaEngine::Vertex> vertexes = {
+        { spcGaneshaEngine::GPoint(-0.5f, -0.3, -0.5f), spcGaneshaEngine::GPoint2D{2.0f, 0.0f} },
+        { spcGaneshaEngine::GPoint(0.5f, -0.3, -0.5f), spcGaneshaEngine::GPoint2D{0.0f, 0.0f} },
+        { spcGaneshaEngine::GPoint(0.5f, -0.3, 0.5f), spcGaneshaEngine::GPoint2D{0.0f, 2.0f} },
+        { spcGaneshaEngine::GPoint(-0.5f, -0.3, 0.5f), spcGaneshaEngine::GPoint2D{2.0f, 2.0f} },
+
+        { spcGaneshaEngine::GPoint(0.0f, -0.1, 0.0f), spcGaneshaEngine::GPoint2D{2.0f, 0.0f} },
+        { spcGaneshaEngine::GPoint(1.0f, -0.1, 0.0f), spcGaneshaEngine::GPoint2D{0.0f, 0.0f} },
+        { spcGaneshaEngine::GPoint(1.0f, -0.1, 1.0f), spcGaneshaEngine::GPoint2D{0.0f, 2.0f} },
+        { spcGaneshaEngine::GPoint(0.0f, -0.1, 1.0f), spcGaneshaEngine::GPoint2D{2.0f, 2.0f} },
+
+        { spcGaneshaEngine::GPoint(-2.5f, 0.0f, -2.5f), spcGaneshaEngine::GPoint2D{2.0f, 0.0f} },
+        { spcGaneshaEngine::GPoint(2.5f, 0.0f, -2.5f), spcGaneshaEngine::GPoint2D{0.0f, 0.0f} },
+        { spcGaneshaEngine::GPoint(2.5f, 0.0f, 2.5f), spcGaneshaEngine::GPoint2D{0.0f, 2.0f} },
+        { spcGaneshaEngine::GPoint(-2.5f, 0.0f, 2.5f), spcGaneshaEngine::GPoint2D{2.0f, 2.0f} }
+    };
+    newRenderGraph.defineVertexesArray(vertexes);
+
+    const spcGaneshaEngine::TIndexArray indexes = {
+        2, 1, 0, 0, 3, 2,
+        6, 5, 4, 4, 7, 6,
+        10, 9, 8, 8, 11, 10
+    };
+    newRenderGraph.defineIndexesArray(indexes);
+
     //  Load texture shader
     NSString *filePath = [NSBundle.mainBundle pathForResource: @"frag.spv" ofType: nil];
     newRenderGraph.pushFragmentShader(filePath.UTF8String);
