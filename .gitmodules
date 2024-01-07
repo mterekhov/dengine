@@ -1,0 +1,6 @@
+[submodule "submodules/wad"]
+	path = submodules/wad
+	url = https://github.com/mterekhov/wad.git
+[submodule "submodules/ganesha"]
+	path = submodules/ganesha
+	url = https://github.com/mterekhov/ganesha.git
