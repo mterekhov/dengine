@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		DE69D2042B4B485F002D28E2 /* BIGDOOR2.tga in Resources */ = {isa = PBXBuildFile; fileRef = DE69D2032B4B485F002D28E2 /* BIGDOOR2.tga */; };
+		DE69D2072B4B6716002D28E2 /* doom.wad in Resources */ = {isa = PBXBuildFile; fileRef = DE69D2052B4B6716002D28E2 /* doom.wad */; };
+		DE69D2082B4B6716002D28E2 /* DOOM2.WAD in Resources */ = {isa = PBXBuildFile; fileRef = DE69D2062B4B6716002D28E2 /* DOOM2.WAD */; };
+		DE69D20A2B4B672A002D28E2 /* wad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE69D2092B4B672A002D28E2 /* wad.framework */; };
+		DE69D20B2B4B672A002D28E2 /* wad.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE69D2092B4B672A002D28E2 /* wad.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE79CE7B2B4A105B0092675F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79CE7A2B4A105B0092675F /* AppDelegate.swift */; };
 		DE79CE7D2B4A105B0092675F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79CE7C2B4A105B0092675F /* ViewController.swift */; };
 		DE79CE7F2B4A105C0092675F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE79CE7E2B4A105C0092675F /* Assets.xcassets */; };
@@ -28,6 +32,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				DE69D20B2B4B672A002D28E2 /* wad.framework in Embed Frameworks */,
 				DEB9BC232B4B42A700A138D5 /* ganesha.framework in Embed Frameworks */,
 				DEB9BC1F2B4B424800A138D5 /* vulkan.framework in Embed Frameworks */,
 			);
@@ -38,6 +43,9 @@
 
 /* Begin PBXFileReference section */
 		DE69D2032B4B485F002D28E2 /* BIGDOOR2.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = BIGDOOR2.tga; sourceTree = "<group>"; };
+		DE69D2052B4B6716002D28E2 /* doom.wad */ = {isa = PBXFileReference; lastKnownFileType = file; name = doom.wad; path = resources/doom.wad; sourceTree = "<group>"; };
+		DE69D2062B4B6716002D28E2 /* DOOM2.WAD */ = {isa = PBXFileReference; lastKnownFileType = file; name = DOOM2.WAD; path = resources/DOOM2.WAD; sourceTree = "<group>"; };
+		DE69D2092B4B672A002D28E2 /* wad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = wad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE79CE772B4A105B0092675F /* doom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = doom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE79CE7A2B4A105B0092675F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE79CE7C2B4A105B0092675F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE69D20A2B4B672A002D28E2 /* wad.framework in Frameworks */,
 				DEB9BC222B4B42A700A138D5 /* ganesha.framework in Frameworks */,
 				DEB9BC1E2B4B424800A138D5 /* vulkan.framework in Frameworks */,
 			);
@@ -80,6 +89,8 @@
 		DE79CE6E2B4A105B0092675F = {
 			isa = PBXGroup;
 			children = (
+				DE69D2052B4B6716002D28E2 /* doom.wad */,
+				DE69D2062B4B6716002D28E2 /* DOOM2.WAD */,
 				DE69D2022B4B485F002D28E2 /* images */,
 				DEB9BC242B4B43DC00A138D5 /* shaders */,
 				DE79CE792B4A105B0092675F /* doom */,
@@ -114,6 +125,7 @@
 		DEB9BC1C2B4B424800A138D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE69D2092B4B672A002D28E2 /* wad.framework */,
 				DEB9BC212B4B42A700A138D5 /* ganesha.framework */,
 				DEB9BC1D2B4B424800A138D5 /* vulkan.framework */,
 			);
@@ -192,10 +204,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE69D2082B4B6716002D28E2 /* DOOM2.WAD in Resources */,
 				DE79CE7F2B4A105C0092675F /* Assets.xcassets in Resources */,
 				DEB9BC2C2B4B43DC00A138D5 /* vert.spv in Resources */,
 				DE69D2042B4B485F002D28E2 /* BIGDOOR2.tga in Resources */,
 				DEB9BC292B4B43DC00A138D5 /* frag.spv in Resources */,
+				DE69D2072B4B6716002D28E2 /* doom.wad in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
