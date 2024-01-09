@@ -135,9 +135,9 @@
 		DEB9BC242B4B43DC00A138D5 /* shaders */ = {
 			isa = PBXGroup;
 			children = (
-				DEB9BC252B4B43DC00A138D5 /* frag.spv */,
 				DEB9BC262B4B43DC00A138D5 /* shader.vert */,
 				DEB9BC272B4B43DC00A138D5 /* shader.frag */,
+				DEB9BC252B4B43DC00A138D5 /* frag.spv */,
 				DEB9BC282B4B43DC00A138D5 /* vert.spv */,
 			);
 			name = shaders;
