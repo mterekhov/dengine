@@ -11,10 +11,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CPPBridge : NSObject
 
-- (void)launchEngineWithLayer:(nullable CALayer *) layer;
+- (void)launchEngineWithLayer: (nullable CALayer *) layer;
 - (void)stopEngine;
-- (void)drawableSizeWillChange: (CGSize)size;
+
 - (void)drawFrame;
+
+- (void)drawableSizeWillChange: (CGSize)size;
 - (void)processKeyboardEventWithKeyCode: (uint16_t)keyCode;
 - (void)processMouseMoveWithDiffX: (CGFloat) diff_x
                            diff_y: (CGFloat) diff_y;
