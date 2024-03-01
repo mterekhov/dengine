@@ -33,12 +33,8 @@ class ViewController: NSViewController, MTKViewDelegate {
         ganeshaReady = true
     }
     
-    override func viewDidDisappear() {
-        super.viewDidDisappear()
-        ganeshaBridge.stopEngine()
-    }
-    
     override func keyDown(with event: NSEvent) {
+//        event.isARepeat
         ganeshaBridge.processKeyboardEvent(withKeyCode: event.keyCode);
     }
         

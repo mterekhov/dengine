@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CPPBridge : NSObject
 
 - (void)launchEngineWithLayer: (nullable CALayer *) layer;
-- (void)stopEngine;
 
 - (void)drawFrame;
 

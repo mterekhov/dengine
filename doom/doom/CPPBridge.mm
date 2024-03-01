@@ -9,7 +9,7 @@
 #import <wad/wad.h>
 
 #import "CPPBridge.h"
-#import "DoomApplicationFabric.h"
+#import "doomapplication.h"
 
 @interface CPPBridge ()
 
@@ -27,12 +27,8 @@
     spcGaneshaEngine::GGaneshaContent content = [self loadContent];
     content.viewport.width = CGRectGetWidth(layer.bounds);
     content.viewport.height = CGRectGetHeight(layer.bounds);
-    self.doomGame = DoomApplicationFabric::createApplication((__bridge void *)layer,
-                                                             content);
-}
-
-- (void)stopEngine {
-//    self.ganeshaEngine->destroyVulkan();
+    self.doomGame = new DoomApplication((__bridge void *)layer,
+                                        content);
 }
 
 - (void)drawableSizeWillChange: (CGSize)size {

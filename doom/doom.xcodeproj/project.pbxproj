@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE5FD13F2B867380002207A1 /* DoomApplicationFabric.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE5FD13E2B867380002207A1 /* DoomApplicationFabric.cpp */; };
+		DE5FD1462B9234C2002207A1 /* doomapplication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE5FD1442B9234C2002207A1 /* doomapplication.cpp */; };
 		DE69D2042B4B485F002D28E2 /* BIGDOOR2.tga in Resources */ = {isa = PBXBuildFile; fileRef = DE69D2032B4B485F002D28E2 /* BIGDOOR2.tga */; };
 		DE69D2072B4B6716002D28E2 /* doom.wad in Resources */ = {isa = PBXBuildFile; fileRef = DE69D2052B4B6716002D28E2 /* doom.wad */; };
 		DE69D2082B4B6716002D28E2 /* DOOM2.WAD in Resources */ = {isa = PBXBuildFile; fileRef = DE69D2062B4B6716002D28E2 /* DOOM2.WAD */; };
@@ -43,8 +43,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DE5FD13D2B867380002207A1 /* DoomApplicationFabric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoomApplicationFabric.h; sourceTree = "<group>"; };
-		DE5FD13E2B867380002207A1 /* DoomApplicationFabric.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DoomApplicationFabric.cpp; sourceTree = "<group>"; };
+		DE5FD1442B9234C2002207A1 /* doomapplication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = doomapplication.cpp; sourceTree = "<group>"; };
+		DE5FD1452B9234C2002207A1 /* doomapplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doomapplication.h; sourceTree = "<group>"; };
 		DE69D2032B4B485F002D28E2 /* BIGDOOR2.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = BIGDOOR2.tga; sourceTree = "<group>"; };
 		DE69D2052B4B6716002D28E2 /* doom.wad */ = {isa = PBXFileReference; lastKnownFileType = file; name = doom.wad; path = resources/doom.wad; sourceTree = "<group>"; };
 		DE69D2062B4B6716002D28E2 /* DOOM2.WAD */ = {isa = PBXFileReference; lastKnownFileType = file; name = DOOM2.WAD; path = resources/DOOM2.WAD; sourceTree = "<group>"; };
@@ -113,13 +113,13 @@
 		DE79CE792B4A105B0092675F /* doom */ = {
 			isa = PBXGroup;
 			children = (
-				DE5FD13D2B867380002207A1 /* DoomApplicationFabric.h */,
-				DE5FD13E2B867380002207A1 /* DoomApplicationFabric.cpp */,
+				DE5FD1452B9234C2002207A1 /* doomapplication.h */,
+				DE5FD1442B9234C2002207A1 /* doomapplication.cpp */,
+				DEB9BC192B4B418800A138D5 /* CPPBridge.h */,
+				DEB9BC172B4B418800A138D5 /* CPPBridge.mm */,
 				DEB9BC182B4B418800A138D5 /* Application.swift */,
 				DE79CE7A2B4A105B0092675F /* AppDelegate.swift */,
 				DE79CE7C2B4A105B0092675F /* ViewController.swift */,
-				DEB9BC192B4B418800A138D5 /* CPPBridge.h */,
-				DEB9BC172B4B418800A138D5 /* CPPBridge.mm */,
 				DE79CE7E2B4A105C0092675F /* Assets.xcassets */,
 				DE79CE832B4A105C0092675F /* doom.entitlements */,
 				DEB9BC152B4B418700A138D5 /* doom-Bridging-Header.h */,
@@ -225,9 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE5FD1462B9234C2002207A1 /* doomapplication.cpp in Sources */,
 				DEB9BC1B2B4B418800A138D5 /* Application.swift in Sources */,
 				DE79CE7D2B4A105B0092675F /* ViewController.swift in Sources */,
-				DE5FD13F2B867380002207A1 /* DoomApplicationFabric.cpp in Sources */,
 				DE79CE7B2B4A105B0092675F /* AppDelegate.swift in Sources */,
 				DEB9BC1A2B4B418800A138D5 /* CPPBridge.mm in Sources */,
 			);
