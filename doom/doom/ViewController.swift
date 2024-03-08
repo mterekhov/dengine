@@ -46,7 +46,7 @@ class ViewController: NSViewController, MTKViewDelegate {
         mousePoint.y += 1;
         
         if lastMousePoint == NSZeroPoint {
-            lastMousePoint = screenCenterPoint
+            lastMousePoint = mousePoint
         }
         
         if (mousePoint.x > ceil(9.0 * view.bounds.width / 10.0)) ||
