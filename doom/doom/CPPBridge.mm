@@ -65,7 +65,10 @@
     filePath = [NSBundle.mainBundle pathForResource: @"BIGDOOR2.tga" ofType: nil];
     content.addSprite(filePath.UTF8String);
     
-    content.cameraData.positionPoint = spcGaneshaEngine::GPoint(0, -1, 10);
+    content.cameraData.eyePoint = spcGaneshaEngine::GPoint(1, 1, 1);
+    content.cameraData.targetPoint = spcGaneshaEngine::GPoint(0, 0, 0);
+    content.cameraData.upVector = spcGaneshaEngine::GVector(0, 1, 0);
+    content.applicationTitle = "DOOM";
     
     return content;
 }
