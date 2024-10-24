@@ -10,9 +10,9 @@ import MetalKit
 
 class ViewController: NSViewController, MTKViewDelegate {
     
+    private var doomApplication: DoomApplicationProxy?
+
     private var lastMousePoint = NSZeroPoint
-    private let ganeshaBridge = CPPBridge()
-    private var ganeshaReady = false
     private var previousMousePoint = NSZeroPoint;
 
     override var acceptsFirstResponder: Bool {
@@ -20,7 +20,7 @@ class ViewController: NSViewController, MTKViewDelegate {
             return true
         }
     }
-    
+
     override func viewDidAppear() {
         super.viewDidAppear()
 
@@ -28,14 +28,16 @@ class ViewController: NSViewController, MTKViewDelegate {
         let trackArea = NSTrackingArea(rect: view.frame, options: [.mouseMoved, .activeInActiveApp], owner: self);
         view.addTrackingArea(trackArea);
 //        CGDisplayHideCursor(CGMainDisplayID());
+
+        doomApplication = DoomApplicationProxy(metalLayer: view.layer)
+        doomApplication?.initGame();
         
-        ganeshaBridge.launchEngine(with: view.layer)
-        ganeshaReady = true
+        let gundleFilePath = Bundle.main.url(forResource: "test_scene", withExtension: "gundle")
+        doomApplication?.loadContent(withGundleFilePath: gundleFilePath?.absoluteString ?? "")
     }
     
     override func keyDown(with event: NSEvent) {
-//        event.isARepeat
-        ganeshaBridge.processKeyboardEvent(withKeyCode: event.keyCode);
+        doomApplication?.processKeyboardEvent(withKeyCode: event.keyCode);
     }
         
     override func mouseMoved(with event: NSEvent) {
@@ -64,7 +66,7 @@ class ViewController: NSViewController, MTKViewDelegate {
 
         let diff_x = lastMousePoint.x - mousePoint.x
         let diff_y = lastMousePoint.y - mousePoint.y
-        ganeshaBridge.processMouseMove(withDiffX: diff_x, diff_y: diff_y);
+        doomApplication?.processMouseMove(withDiff_x: diff_x, diff_y: diff_y);
         lastMousePoint = mousePoint
     }
     
@@ -75,19 +77,11 @@ class ViewController: NSViewController, MTKViewDelegate {
     //  MARK: - MTKViewDelegate -
 
     func draw(in view: MTKView) {
-        if !ganeshaReady {
-            return
-        }
-        
-        ganeshaBridge.drawFrame()
+        doomApplication?.renderFrame()
     }
 
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-        if !ganeshaReady {
-            return
-        }
-
-        ganeshaBridge.drawableSizeWillChange(size)
+        doomApplication?.updateFrameSize(with: size)
     }
 
 }
